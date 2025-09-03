@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'GeoScribeⅡ绿山软件建观'
-subtitle: '地震处理'
+subtitle: '观测系统'
 date: 2025-09-02
 categories: 技术
 tags: 绿山软件 地震处理 GeoScribeⅡ
