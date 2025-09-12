@@ -113,6 +113,8 @@ music-id: 2120442088
 
 至此，整个建观流程已经完成，可以点击 **Plot** --> **Map View** 查看检波点和炮点图，检查是否导入成功。检查无误后，点击 **File** --> **Save Database** 保存文件。
 
+**Interfaces** --> **SPS**，设置好炮点、检波点和关系文件的保存位置和名称后，导出为SPS文件。
+
 ![GeoScribe2_9.png](https://youke1.picui.cn/s1/2025/09/02/68b6ba49bdb16.png)
 
 ![GeoScribe2_10.png](https://youke1.picui.cn/s1/2025/09/02/68b6ba496fa89.png)
