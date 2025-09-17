@@ -90,6 +90,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+  toc_levels: 1..6 # 支持从 h1 到 h6 的标题生成目录
 
 # RSS
 RSS: true
