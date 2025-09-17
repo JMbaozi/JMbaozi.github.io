@@ -104,7 +104,7 @@
         @media screen and (max-width: 900px) {
         .post-toc {
             position: fixed;
-            top: 100px;
+            top: 60px;
             right: 0;
             width: 200px;
             max-height: 70vh;
@@ -119,7 +119,6 @@
 
         #toc-toggle {
             position: fixed;
-            top: 20px;
             right: 20px;
             z-index: 1000;
             background: #007acc;
@@ -128,12 +127,10 @@
             border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
-            transition: background 0.2s;
+            transition: background 0.2s, top 0.2s;
         }
 
-        #toc-toggle:hover {
-            background: #005999;
-        }
+        #toc-toggle:hover { background: #005999; }
         }
       </style>
 </head>

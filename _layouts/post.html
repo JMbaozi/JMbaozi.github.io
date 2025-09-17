@@ -236,6 +236,24 @@
           }
         });
       }
+      
+      // 调整目录按钮位置
+      function adjustTOCButtonPosition(){
+        const tocToggle = document.getElementById('toc-toggle');
+        let topOffset = 20; // 默认距离顶部
+        const header = document.querySelector('header'); // 如果你有 header
+        if(header){
+          const rect = header.getBoundingClientRect();
+          topOffset = rect.bottom + 10; // header 底部 + 10px 间距
+        }
+        tocToggle.style.top = topOffset + 'px';
+      }
+
+      // 初始调整
+      adjustTOCButtonPosition();
+
+      // 页面大小变化时也调整
+      window.addEventListener('resize', adjustTOCButtonPosition);
 
       document.addEventListener('scroll', onScroll);
       onScroll();
