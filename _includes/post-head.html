@@ -36,5 +36,91 @@
             width:60px;
             height: 60px;
         }	
+        /* 桌面端目录 */
+        .post-toc {
+        position: sticky;
+        top: 100px; /* 粘性顶部 */
+        align-self: flex-start;
+        width: 240px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        background: #f9f9f9;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        font-size: 14px;
+        transition: transform 0.3s ease-in-out;
+        }
+
+        .post-toc h2 {
+        margin-top: 0;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        }
+
+        .post-toc ul {
+        list-style: none;
+        padding-left: 12px;
+        }
+
+        .post-toc li {
+        margin: 5px 0;
+        cursor: pointer;
+        }
+
+        .post-toc a {
+        text-decoration: none;
+        color: #007acc;
+        transition: color 0.2s;
+        }
+
+        .post-toc a:hover { color: #005999; }
+        .post-toc a.active { font-weight: bold; color: #d23669; }
+
+        .collapsed > ul { display: none; }
+        .toggle::before {
+        content: "▶ ";
+        font-size: 10px;
+        display: inline-block;
+        transition: transform 0.2s;
+        }
+        .expanded > .toggle::before { transform: rotate(90deg); }
+
+        /* 移动端样式 */
+        @media screen and (max-width: 900px) {
+        .post-toc {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            max-height: 70vh;
+            transform: translateX(110%);
+            z-index: 999;
+        }
+
+        .post-toc.show {
+            transform: translateX(0);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #toc-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #007acc;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        #toc-toggle:hover {
+            background: #005999;
+        }
+        }
       </style>
 </head>
