@@ -161,107 +161,124 @@
     <a href="#"><img src="/assets/img/goTop.png" border="0"></a>
   </div> 
 
-  <!-- 目录 -->
+  <!-- 目录按钮（移动端） -->
   <div id="toc-toggle">目录</div>
+
+  <!-- 右侧目录（桌面端固定） -->
   <aside class="post-toc">
     <h2>目录</h2>
-    <!-- 自动生成 TOC -->
+    <!-- TOC 会自动生成 -->
   </aside>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const tocAside = document.querySelector(".post-toc");
-      const tocToggle = document.getElementById("toc-toggle");
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocAside = document.querySelector(".post-toc");
+    const tocToggle = document.getElementById("toc-toggle");
+    
+    // 自动生成 TOC：只抓正文 .post-body 内 H1~H6，排除 toc-ignore
+    function generateTOC() {
+      const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
+      const tocUL = document.createElement('ul');
+      headings.forEach(heading => {
+        if(!heading.id){
+          heading.id = heading.textContent.trim().replace(/\s+/g,'-').toLowerCase();
+        }
+        const li = document.createElement('li');
+        li.dataset.level = heading.tagName.substring(1); // H1=1,H2=2,...
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocUL.appendChild(li);
+      });
+      tocAside.appendChild(tocUL);
+    }
 
-      // 自动生成 TOC（H1~H6）
-      function generateTOC() {
-        const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
-        const tocUL = document.createElement('ul');
+    generateTOC();
+    const tocLinks = tocAside.querySelectorAll('a');
 
-        headings.forEach(heading => {
-          if (!heading.id) {
-            heading.id = heading.textContent.trim().replace(/\s+/g, '-').toLowerCase();
+    // 折叠功能
+    tocAside.querySelectorAll('li').forEach(li => {
+      const nextUL = li.querySelector('ul');
+      if(nextUL){
+        li.classList.add('collapsed');
+        const link = li.querySelector('a');
+        link.classList.add('toggle');
+        link.addEventListener('click', function(e){
+          if(li.classList.contains('collapsed')){
+            li.classList.remove('collapsed');
+            li.classList.add('expanded');
+          } else {
+            li.classList.remove('expanded');
+            li.classList.add('collapsed');
           }
-          const li = document.createElement('li');
-          li.dataset.level = heading.tagName.substring(1);
-          const a = document.createElement('a');
-          a.href = '#' + heading.id;
-          a.textContent = heading.textContent;
-          li.appendChild(a);
-          tocUL.appendChild(li);
         });
-
-        tocAside.appendChild(tocUL);
       }
+    });
 
-      generateTOC();
+    // 高亮逻辑
+    const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
 
-      const tocLinks = tocAside.querySelectorAll('a');
+    function onScroll() {
+      let current = headings[0];
+      headings.forEach(h => {
+        if(h.getBoundingClientRect().top < 100) current = h; // 阈值可调
+      });
 
-      // 折叠功能
+      tocLinks.forEach(link => link.classList.remove('active'));
+      const activeLink = tocAside.querySelector(`a[href="#${current.id}"]`);
+      if(activeLink) activeLink.classList.add('active');
+
+      // 自动展开父 li
       tocAside.querySelectorAll('li').forEach(li => {
-        const nextUL = li.querySelector('ul');
-        if(nextUL){
-          li.classList.add('collapsed');
-          const link = li.querySelector('a');
-          link.classList.add('toggle');
-          link.addEventListener('click', function(e){
-            if(li.classList.contains('collapsed')){
-              li.classList.remove('collapsed');
-              li.classList.add('expanded');
-            } else {
-              li.classList.remove('expanded');
-              li.classList.add('collapsed');
-            }
-          });
+        if(li.contains(activeLink)){
+          let parent = li.parentElement.closest('li');
+          while(parent){
+            parent.classList.remove('collapsed');
+            parent.classList.add('expanded');
+            parent = parent.parentElement.closest('li');
+          }
         }
       });
+    }
 
-      // 滚动高亮 & 自动展开父目录
-      function onScroll() {
-        let current = document.querySelector('.post-content h1');
-        document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6').forEach(h => {
-          if(h.getBoundingClientRect().top < 150) current = h;
-        });
+    document.addEventListener('scroll', onScroll);
+    onScroll();
 
-        tocLinks.forEach(link => link.classList.remove('active'));
-        const activeLink = tocAside.querySelector(`a[href="#${current.id}"]`);
-        if(activeLink) activeLink.classList.add('active');
-
-        tocAside.querySelectorAll('li').forEach(li => {
-          if(li.contains(activeLink)){
-            let parent = li.parentElement.closest('li');
-            while(parent){
-              parent.classList.remove('collapsed');
-              parent.classList.add('expanded');
-              parent = parent.parentElement.closest('li');
-            }
+    // 点击平滑滚动 + 高亮
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          onScroll(); // 点击立即刷新高亮
+          if(window.innerWidth <= 900){
+            tocAside.classList.remove('show');
           }
-        });
-      }
-
-      document.addEventListener('scroll', onScroll);
-      onScroll();
-
-      // 平滑滚动
-      tocLinks.forEach(link => {
-        link.addEventListener('click', function(e){
-          const targetId = this.getAttribute('href').substring(1);
-          const target = document.getElementById(targetId);
-          if(target){
-            e.preventDefault();
-            target.scrollIntoView({behavior:'smooth', block:'start'});
-            if(window.innerWidth <= 900){
-              tocAside.classList.remove('show');
-            }
-          }
-        });
-      });
-
-      // 移动端按钮
-      tocToggle.addEventListener('click', function(){
-        tocAside.classList.toggle('show');
+        }
       });
     });
+
+    // 移动端按钮自适应顶部
+    function adjustTOCButtonPosition(){
+      let topOffset = 20; // 默认
+      const header = document.querySelector('header');
+      if(header){
+        const rect = header.getBoundingClientRect();
+        topOffset = rect.bottom + 10;
+      }
+      tocToggle.style.top = topOffset + 'px';
+    }
+    adjustTOCButtonPosition();
+    window.addEventListener('resize', adjustTOCButtonPosition);
+
+    // 移动端 TOC 显示隐藏
+    tocToggle.addEventListener('click', function(){
+      tocAside.classList.toggle('show');
+    });
+  });
   </script>
 </body>
 
