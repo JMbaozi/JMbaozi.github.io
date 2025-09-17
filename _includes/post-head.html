@@ -38,11 +38,11 @@
         }
 
 
-        /* 桌面端目录 */
+        /* 桌面端固定目录 */
         .post-toc {
-        position: sticky;
-        top: 100px;
-        align-self: flex-start;
+        position: fixed;        /* 改为 fixed，始终显示 */
+        top: 100px;             /* 距离顶部 */
+        right: 20px;            /* 离右边 20px */
         width: 240px;
         max-height: calc(100vh - 120px);
         overflow-y: auto;
@@ -51,6 +51,7 @@
         border-radius: 8px;
         box-shadow: 0 0 6px rgba(0,0,0,0.15);
         font-size: 14px;
+        z-index: 10;            /* 避免被正文覆盖 */
         transition: transform 0.3s ease-in-out;
         }
 
@@ -103,7 +104,7 @@
         @media screen and (max-width: 900px) {
         .post-toc {
             position: fixed;
-            top: 60px;
+            top: 100px;
             right: 0;
             width: 200px;
             max-height: 70vh;
