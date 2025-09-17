@@ -162,91 +162,102 @@
   <div id="toc-toggle">目录</div>
   <aside class="post-toc">
     <h2>目录</h2>
-    * TOC
-    {:toc}
+    <!-- 自动生成 TOC -->
   </aside>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const tocAside = document.querySelector(".post-toc");
-      const tocLinks = document.querySelectorAll(".post-toc a");
       const tocToggle = document.getElementById("toc-toggle");
 
-      // 初始化折叠子目录
-      document.querySelectorAll(".post-toc li").forEach(li => {
-        const sublist = li.querySelector("ul");
-        if (sublist) {
-          li.classList.add("collapsed");
-          const link = li.querySelector("a");
-          if (link) {
-            link.classList.add("toggle");
-            link.addEventListener("click", function (e) {
-              if (li.classList.contains("collapsed")) {
-                li.classList.remove("collapsed");
-                li.classList.add("expanded");
-              } else {
-                li.classList.remove("expanded");
-                li.classList.add("collapsed");
-              }
-            });
+      // 自动生成 TOC（H1~H6）
+      function generateTOC() {
+        const headings = document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6');
+        const tocUL = document.createElement('ul');
+
+        headings.forEach(heading => {
+          if (!heading.id) {
+            heading.id = heading.textContent.trim().replace(/\s+/g, '-').toLowerCase();
           }
+
+          const li = document.createElement('li');
+          li.dataset.level = heading.tagName.substring(1); // H1=1,H2=2,...
+          const a = document.createElement('a');
+          a.href = '#' + heading.id;
+          a.textContent = heading.textContent;
+          li.appendChild(a);
+          tocUL.appendChild(li);
+        });
+
+        tocAside.appendChild(tocUL);
+      }
+
+      generateTOC();
+
+      const tocLinks = tocAside.querySelectorAll('a');
+
+      // 折叠功能
+      tocAside.querySelectorAll('li').forEach(li => {
+        const nextUL = li.querySelector('ul');
+        if(nextUL){
+          li.classList.add('collapsed');
+          const link = li.querySelector('a');
+          link.classList.add('toggle');
+          link.addEventListener('click', function(e){
+            if(li.classList.contains('collapsed')){
+              li.classList.remove('collapsed');
+              li.classList.add('expanded');
+            } else {
+              li.classList.remove('expanded');
+              li.classList.add('collapsed');
+            }
+          });
         }
       });
 
-      // 获取所有标题
-      const headings = Array.from(tocLinks).map(link => {
-        const id = link.getAttribute("href").substring(1);
-        return document.getElementById(id);
-      });
-
+      // 滚动高亮 & 自动展开父目录
       function onScroll() {
-        let current = headings[0];
-        for (let heading of headings) {
-          if (heading && heading.getBoundingClientRect().top < 150) {
-            current = heading;
-          }
-        }
+        let current = document.querySelector('.post-content h1');
+        document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6').forEach(h => {
+          if(h.getBoundingClientRect().top < 150) current = h;
+        });
 
-        tocLinks.forEach(link => link.classList.remove("active"));
-        const activeLink = document.querySelector('.post-toc a[href="#' + current.id + '"]');
-        if (activeLink) activeLink.classList.add("active");
+        tocLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = tocAside.querySelector(`a[href="#${current.id}"]`);
+        if(activeLink) activeLink.classList.add('active');
 
-        // 自动展开当前章节所在折叠目录
-        tocLinks.forEach(link => {
-          const li = link.parentElement;
-          if (link === activeLink) {
-            let parent = li.parentElement.closest("li");
-            while (parent) {
-              parent.classList.remove("collapsed");
-              parent.classList.add("expanded");
-              parent = parent.parentElement.closest("li");
+        tocAside.querySelectorAll('li').forEach(li => {
+          if(li.contains(activeLink)){
+            let parent = li.parentElement.closest('li');
+            while(parent){
+              parent.classList.remove('collapsed');
+              parent.classList.add('expanded');
+              parent = parent.parentElement.closest('li');
             }
           }
         });
       }
 
-      document.addEventListener("scroll", onScroll);
+      document.addEventListener('scroll', onScroll);
       onScroll();
 
       // 平滑滚动
       tocLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-          const targetId = this.getAttribute("href").substring(1);
+        link.addEventListener('click', function(e){
+          const targetId = this.getAttribute('href').substring(1);
           const target = document.getElementById(targetId);
-          if (target) {
+          if(target){
             e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-            // 移动端点击目录后收起
-            if (window.innerWidth <= 900) {
-              tocAside.classList.remove("show");
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            if(window.innerWidth <= 900){
+              tocAside.classList.remove('show');
             }
           }
         });
       });
 
-      // 移动端目录按钮
-      tocToggle.addEventListener("click", function () {
-        tocAside.classList.toggle("show");
+      // 移动端按钮
+      tocToggle.addEventListener('click', function(){
+        tocAside.classList.toggle('show');
       });
     });
   </script>
