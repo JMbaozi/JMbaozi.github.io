@@ -21,6 +21,7 @@ nav:
   archive: '/archive.html'  
   comment: '/Comment.html'
   friends: '/friends'
+  hall: '/hall/'
   about: '/about.html'
 
 # Footer
