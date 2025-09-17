@@ -32,18 +32,21 @@
   </header>
   <div class="post-content visible">
     {% if page.subtitle %}
-    <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+    <h2 class="post-subtitle toc-ignore">{{ page.subtitle }}</h2>
     {% endif %}
 	<!-- 在正文开头添加网易云音乐插件 -->
     {% if page.music-id %}
       {% include cloud-music.html %}
     {% endif %} 
-    <article class="markdown-body">
-      {{ page.content }}
-    </article>
+
+    <div class="post-body">
+      <article class="markdown-body">
+        {{ page.content }}
+      </article>
+    </div>
 
     {% if site.social-share %}
-    <div class="social-share-wrapper">
+    <div class="social-share-wrapper toc-ignore">
       <div class="social-share"></div>
     </div>
     {% endif %}
@@ -171,16 +174,15 @@
 
       // 自动生成 TOC（H1~H6）
       function generateTOC() {
-        const headings = document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6');
+        const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
         const tocUL = document.createElement('ul');
 
         headings.forEach(heading => {
           if (!heading.id) {
             heading.id = heading.textContent.trim().replace(/\s+/g, '-').toLowerCase();
           }
-
           const li = document.createElement('li');
-          li.dataset.level = heading.tagName.substring(1); // H1=1,H2=2,...
+          li.dataset.level = heading.tagName.substring(1);
           const a = document.createElement('a');
           a.href = '#' + heading.id;
           a.textContent = heading.textContent;
