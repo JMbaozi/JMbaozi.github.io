@@ -158,8 +158,14 @@
 <!--<script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.0.2/js/instantclick-1.2.2.js" type="module"></script>-->
   <!--goTop按钮-->
   <div id="backtop">
-    <a href="#"><img src="/assets/img/goTop.png" border="0"></a>
-  </div> 
+    <a href="javascript:void(0)"><img src="/assets/img/goTop.png" border="0"></a>
+  </div>
+  <script>
+  document.querySelector('#backtop a').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  </script>
 
   <!-- 目录按钮（移动端） -->
   <div id="toc-toggle">目录</div>
