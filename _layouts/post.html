@@ -261,22 +261,18 @@
       });
     });
 
-    // 移动端按钮自适应顶部
-    function adjustTOCButtonPosition(){
-      let topOffset = 20; // 默认
-      const header = document.querySelector('header');
-      if(header){
-        const rect = header.getBoundingClientRect();
-        topOffset = rect.bottom + 10;
-      }
-      tocToggle.style.top = topOffset + 'px';
-    }
-    adjustTOCButtonPosition();
-    window.addEventListener('resize', adjustTOCButtonPosition);
-
-    // 移动端 TOC 显示隐藏
-    tocToggle.addEventListener('click', function(){
+    // 移动端点击按钮切换显示
+    tocToggle.addEventListener('click', function(e){
       tocAside.classList.toggle('show');
+    });
+
+    // 移动端点击页面其他地方收起 TOC
+    document.addEventListener('click', function(e){
+      const isClickInsideTOC = tocAside.contains(e.target);
+      const isClickOnButton = tocToggle.contains(e.target);
+      if(!isClickInsideTOC && !isClickOnButton){
+        tocAside.classList.remove('show');
+      }
     });
   });
   </script>
