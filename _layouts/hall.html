@@ -21,8 +21,11 @@ title: 名人堂
         <h2>{{ person.name }}</h2>
         <p>{{ person.title }}</p>
         <p class="bio">{{ person.bio }}</p>
+        
         {% if person.link %}
+        <!--隐藏查看更多按钮
         <a href="{{ person.link }}" target="_blank" class="more-btn">查看更多</a>
+        -->
         {% endif %}
       </div>
       {% endfor %}
