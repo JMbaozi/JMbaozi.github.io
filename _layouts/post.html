@@ -226,7 +226,7 @@
     });
 
     // 高亮逻辑
-    const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
+    const headings = document.querySelectorAll('.post-body h1:not(.toc-ignore), .post-body h2:not(.toc-ignore), .post-body h3:not(.toc-ignore), .post-body h4:not(.toc-ignore), .post-body h5:not(.toc-ignore), .post-body h6:not(.toc-ignore)');
 
     function onScroll() {
       let current = headings[0];
