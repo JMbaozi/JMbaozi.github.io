@@ -184,26 +184,32 @@
     const tocAside = document.querySelector(".post-toc");
     const tocToggle = document.getElementById("toc-toggle");
     
-    // 自动生成 TOC：只抓正文 .post-body 内 H1~H6，排除 toc-ignore
-    function generateTOC() {
-      const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
-      const tocUL = document.createElement('ul');
-      headings.forEach(heading => {
-        if(!heading.id){
-          heading.id = heading.textContent.trim().replace(/\s+/g,'-').toLowerCase();
-        }
-        const li = document.createElement('li');
-        li.dataset.level = heading.tagName.substring(1); // H1=1,H2=2,...
-        const a = document.createElement('a');
-        a.href = '#' + heading.id;
-        a.textContent = heading.textContent;
-        li.appendChild(a);
-        tocUL.appendChild(li);
-      });
-      tocAside.appendChild(tocUL);
+    // 找正文标题（排除 toc-ignore）
+    const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6:not(.toc-ignore)');
+
+    // 如果没有标题，隐藏 TOC 和按钮
+    if(headings.length === 0){
+      if(tocAside) tocAside.style.display = 'none';
+      if(tocToggle) tocToggle.style.display = 'none';
+      return;
     }
 
-    generateTOC();
+    // 生成 TOC
+    const tocUL = document.createElement('ul');
+    headings.forEach(heading => {
+      if(!heading.id){
+        heading.id = heading.textContent.trim().replace(/\s+/g,'-').toLowerCase();
+      }
+      const li = document.createElement('li');
+      li.dataset.level = heading.tagName.substring(1);
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocUL.appendChild(li);
+    });
+    tocAside.appendChild(tocUL);
+
     const tocLinks = tocAside.querySelectorAll('a');
 
     // 折叠功能
@@ -225,13 +231,11 @@
       }
     });
 
-    // 高亮逻辑
-    const headings = document.querySelectorAll('.post-body h1:not(.toc-ignore), .post-body h2:not(.toc-ignore), .post-body h3:not(.toc-ignore), .post-body h4:not(.toc-ignore), .post-body h5:not(.toc-ignore), .post-body h6:not(.toc-ignore)');
-
+    // 高亮滚动逻辑
     function onScroll() {
       let current = headings[0];
       headings.forEach(h => {
-        if(h.getBoundingClientRect().top < 100) current = h; // 阈值可调
+        if(h.getBoundingClientRect().top < 100) current = h;
       });
 
       tocLinks.forEach(link => link.classList.remove('active'));
@@ -283,6 +287,7 @@
         tocAside.classList.remove('show');
       }
     });
+
   });
   </script>
 </body>
