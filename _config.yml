@@ -73,7 +73,7 @@ postPatterns: 'circuitBoard'
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
   weibo: 'https://weibo.com/p/1005053958305706/home?from=page_100505&mod=TAB#place'
-  zhihu: 'https://www.zhihu.com/people/jiang-meng-90'
+  email: 'yucoled@gmail.com'
   github: 'https://github.com/JMbaozi'
   twitter: 'https://x.com/Yucoly'
 
