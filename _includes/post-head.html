@@ -2,188 +2,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="author" content="{{ site.author }}">
+    <meta name="author"  content="{{ site.author }}">
     <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta name="keywords"
-        content="{% if page.tags.size > 0 %}{% for tag in page.tags  %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}">
+    <meta name="keywords"  content="{% if page.tags.size > 0 %}{% for tag in page.tags  %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}">
     <!-- Open Graph -->
-    <meta property="og:title"
-        content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | prepend: site.url }}">
     <meta property="og:description" content="{{ site.description }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
-    <link rel="stylesheet" href="{{ " /assets/css/github-markdown.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ " /assets/css/prism.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ " /assets/css/share.min.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ " /assets/css/app.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/github-markdown.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/prism.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/share.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/app.min.css" | relative_url }}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    {% if site.mathjax %}
-    {% include mathjax.html %}
-    {% endif %}
+	{% if site.mathjax %}
+	{% include mathjax.html %}
+	{% endif %}
     {% include anchor.html %}
     <style>
-        #backtop img {
-            /* back to top button */
-            width: 50px;
+        #backtop img { /* back to top button */
+            width:50px;
             height: 50px;
             position: fixed;
-            bottom: 33px;
-            /* 小按钮到浏览器底边的距离 */
-            right: 40px;
-            /* 小按钮到浏览器右边框的距离 */
+            bottom: 33px; /* 小按钮到浏览器底边的距离 */
+            right: 40px; /* 小按钮到浏览器右边框的距离 */
             transition: all 0.2s ease;
         }
-
-        #backtop img:hover {
-            /* 小按钮上有鼠标悬停时 */
-            width: 60px;
+        #backtop img:hover { /* 小按钮上有鼠标悬停时 */
+            width:60px;
             height: 60px;
         }
 
 
         /* 桌面端固定目录 */
         .post-toc {
-            position: fixed;
-            /* 改为 fixed，始终显示 */
-            top: 40%;
-            /* 距离顶部 */
-            right: 20px;
-            /* 离右边 20px */
-            width: 240px;
-            max-height: calc(100vh - 120px);
-            overflow-y: auto;
-            background: #f9f9f9;
-            padding: 10px 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-            font-size: 14px;
-            z-index: 10;
-            /* 避免被正文覆盖 */
-            transition: transform 0.3s ease-in-out;
+        position: fixed;        /* 改为 fixed，始终显示 */
+        top: 40%;             /* 距离顶部 */
+        right: 20px;            /* 离右边 20px */
+        width: 240px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        background: #f9f9f9;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        font-size: 14px;
+        z-index: 10;            /* 避免被正文覆盖 */
+        transition: transform 0.3s ease-in-out;
         }
 
         .post-toc h2 {
-            margin-top: 0;
-            font-size: 16px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+        margin-top: 0;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
         }
 
         .post-toc ul {
-            list-style: none;
-            padding-left: 0;
-            margin-left: 0;
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
         }
 
         .post-toc li {
-            margin: 4px 0;
-            cursor: pointer;
+        margin: 4px 0;
+        cursor: pointer;
         }
 
         .post-toc a {
-            text-decoration: none;
-            color: #007acc;
-            transition: color 0.2s;
-            display: block;
+        text-decoration: none;
+        color: #007acc;
+        transition: color 0.2s;
+        display: block;
         }
 
-        .post-toc a:hover {
-            color: #005999;
-        }
+        .post-toc a:hover { color: #005999; }
+        .post-toc a.active { font-weight: bold; color: #d23669; }
 
-        .post-toc a.active {
-            font-weight: bold;
-            color: #d23669;
-        }
-
-        .collapsed>ul {
-            display: none;
-        }
-
+        .collapsed > ul { display: none; }
         .toggle::before {
-            content: "▶ ";
-            font-size: 10px;
-            display: inline-block;
-            transition: transform 0.2s;
+        content: "▶ ";
+        font-size: 10px;
+        display: inline-block;
+        transition: transform 0.2s;
         }
-
-        .expanded>.toggle::before {
-            transform: rotate(90deg);
-        }
+        .expanded > .toggle::before { transform: rotate(90deg); }
 
         /* 缩进显示层级 */
-        .post-toc li[data-level="1"] a {
-            padding-left: 0px;
-        }
-
-        .post-toc li[data-level="2"] a {
-            padding-left: 10px;
-        }
-
-        .post-toc li[data-level="3"] a {
-            padding-left: 20px;
-        }
-
-        .post-toc li[data-level="4"] a {
-            padding-left: 30px;
-        }
-
-        .post-toc li[data-level="5"] a {
-            padding-left: 40px;
-        }
-
-        .post-toc li[data-level="6"] a {
-            padding-left: 50px;
-        }
+        .post-toc li[data-level="1"] a { padding-left: 0px; }
+        .post-toc li[data-level="2"] a { padding-left: 10px; }
+        .post-toc li[data-level="3"] a { padding-left: 20px; }
+        .post-toc li[data-level="4"] a { padding-left: 30px; }
+        .post-toc li[data-level="5"] a { padding-left: 40px; }
+        .post-toc li[data-level="6"] a { padding-left: 50px; }
 
         /* 移动端样式 */
         @media screen and (max-width: 900px) {
-            .post-toc {
-                position: fixed;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                max-height: 70vh;
-                transform: translateX(110%);
-                z-index: 999;
-            }
-
-            .post-toc.show {
-                transform: translateX(0);
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            #toc-toggle {
-                display: none;
-                position: fixed;
-                bottom: 120px;
-                /* 比返回顶部高一点 */
-                right: 20px;
-                width: 44px;
-                height: 44px;
-                line-height: 44px;
-                text-align: center;
-                background: #d23669;
-                color: #fff;
-                border-radius: 50%;
-                font-size: 20px;
-                cursor: pointer;
-                z-index: 999;
-            }
-
-            @media (max-width: 900px) {
-                #toc-toggle {
-                    display: block;
-                }
-            }
-
-            #toc-toggle:hover {
-                background: #005999;
-            }
+        .post-toc {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            max-height: 70vh;
+            transform: translateX(110%);
+            z-index: 999;
         }
-    </style>
+
+        .post-toc.show {
+            transform: translateX(0);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #toc-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            z-index: 1000;
+            background: #007acc;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        /* 移动端才显示 */
+        @media (max-width: 900px) {
+        #toc-toggle {
+            display: block;
+        }
+        }
+        #toc-toggle:hover {
+            background: #005999;
+        }
+        }
+      </style>
 </head>
