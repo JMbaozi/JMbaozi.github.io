@@ -100,45 +100,49 @@
         .post-toc li[data-level="5"] a { padding-left: 40px; }
         .post-toc li[data-level="6"] a { padding-left: 50px; }
 
+        /* 默认隐藏目录按钮 */
+        #toc-toggle {
+            display: none;
+        }
+
         /* 移动端样式 */
         @media screen and (max-width: 900px) {
-        .post-toc {
-            position: fixed;
-            top: 60px;
-            right: 0;
-            width: 200px;
-            max-height: 70vh;
-            transform: translateX(110%);
-            z-index: 999;
-        }
 
-        .post-toc.show {
-            transform: translateX(0);
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+            /* TOC 侧边栏 */
+            .post-toc {
+                position: fixed;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                max-height: 70vh;
+                transform: translateX(110%);
+                z-index: 999;
+            }
 
-        #toc-toggle {
-            position: fixed;
-            top: 60px;
-            right: 20px;
-            z-index: 1000;
-            background: #007acc;
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-        /* 移动端才显示 */
-        @media (max-width: 900px) {
-        #toc-toggle {
-            display: block;
-        }
-        }
-        #toc-toggle:hover {
-            background: #005999;
-        }
+            .post-toc.show {
+                transform: translateX(0);
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+
+            /* TOC 按钮（只在移动端显示） */
+            #toc-toggle {
+                display: block;       /* 移动端才显示 */
+                position: fixed;
+                top: 60px;
+                right: 20px;
+                z-index: 1000;
+                background: #007acc;
+                color: #fff;
+                padding: 8px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: background 0.2s;
+            }
+
+            #toc-toggle:hover {
+                background: #005999;
+            }
         }
       </style>
 </head>
