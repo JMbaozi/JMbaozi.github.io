@@ -1,54 +1,68 @@
 <footer class="g-footer">
   <section>{{ site.title }} ©
-  {% assign current = "now" | date: "%Y" | plus: 0%}
-  {% unless site.footer.since and site.footer.since == current %}
+    {% assign current = "now" | date: "%Y" | plus: 0%}
+    {% unless site.footer.since and site.footer.since == current %}
     {{ site.footer.since }}
     -
-  {% endunless %}
-  {{ current }}
+    {% endunless %}
+    {{ current }}
   </section>
   <section> <a href="https://jmbaozi.github.io/diary">探索好奇</a> | <a href="https://jmbaozi.github.io/">享受乐趣</a></section>
-  <!-- 不蒜子访客计数-->  
+  <!-- 不蒜子访客计数-->
   <!-- 禁用
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <span id="busuanzi_container_page_pv">
     View:<span id="busuanzi_value_page_pv"></span> times
   </span>
   -->
-  <br/>
+  <br />
   <!--ICP备案-->
-	<!--
+  <!--
   <img src="/assets/img/icp.png" style="width:23px;height:23px;margin-bottom:-6px" alt="ICP">
   <a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备20007065号</a>
 	-->
   <!--十年之约-虫洞-->
-  <a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="/assets/img/wormhole_3_tp.gif" alt="" style="width:auto;height:23px;margin-bottom:-6px" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+  <a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="/assets/img/wormhole_3_tp.gif" alt=""
+      style="width:auto;height:23px;margin-bottom:-6px" title="穿梭虫洞-随机访问十年之约友链博客"></a>
   <!--萌国ICP-->
   <font style="font-size:15px">
-    <img style="width:23px;height:23px;margin-bottom:-6px" 
-	src="/assets/img/moe.png">
-	<a href="https://icp.gov.moe" target="_blank" data-pjax-state="">
-    <span style="color:#ff0000">萌</span><span style="color:#ca7900">I</span><span style="color:#48ab18">C</span><span style="color:#2720ac">P</span><span style="color:#9b17ae">备</span> 
-	</a>
-	<a href="https://icp.gov.moe/?keyword=20200502" target="_blank" data-pjax-state=""> <span style="color:#ff0000">20</span><span style="color:#ca7900">20</span><span style="color:#48ab18">05</span><span style="color:#2720ac">02</span><span style="color:#f40428">号</span>
-	</a>
+    <img style="width:23px;height:23px;margin-bottom:-6px" src="/assets/img/moe.png">
+    <a href="https://icp.gov.moe" target="_blank" data-pjax-state="">
+      <span style="color:#ff0000">萌</span><span style="color:#ca7900">I</span><span style="color:#48ab18">C</span><span
+        style="color:#2720ac">P</span><span style="color:#9b17ae">备</span>
+    </a>
+    <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" data-pjax-state=""> <span
+        style="color:#ff0000">20</span><span style="color:#ca7900">20</span><span style="color:#48ab18">05</span><span
+        style="color:#2720ac">02</span><span style="color:#f40428">号</span>
+    </a>
   </font>
 </footer>
 <style>
-  #backtop img { /* back to top button */
-      width:50px;
-      height: 50px;
-      position: fixed;
-      bottom: 33px; /* 小按钮到浏览器底边的距离 */
-      right: 40px; /* 小按钮到浏览器右边框的距离 */
-      transition: all 0.2s ease;
+  #backtop img {
+    /* back to top button */
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 33px;
+    /* 小按钮到浏览器底边的距离 */
+    right: 40px;
+    /* 小按钮到浏览器右边框的距离 */
+    transition: all 0.2s ease;
   }
-  #backtop img:hover { /* 小按钮上有鼠标悬停时 */
-      width:60px;
-      height: 60px;
-  }	
+
+  #backtop img:hover {
+    /* 小按钮上有鼠标悬停时 */
+    width: 60px;
+    height: 60px;
+  }
 </style>
 <!--goTop按钮-->
 <div id="backtop">
-  <a href="#"><img src="/assets/img/goTop.png" border="0"></a>
-</div> 
+  <a href="javascript:void(0)"><img src="/assets/img/goTop.png" border="0"></a>
+</div>
+<script>
+  document.querySelector('#backtop a').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
