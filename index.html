@@ -13,6 +13,16 @@ header-img: 'https://dd-static.jd.com/ddimg/jfs/t1/188250/16/27450/235439/631a99
         border-left: 4px solid #f39c12; /* 左边标记橙色 */
         background-color: #fffbe6;      /* 微黄色背景 */
         transition: background-color 0.3s, transform 0.3s;
+        position: relative; /* 角标绝对定位 */
+    }
+
+    /* 置顶 📌 角标 */
+    .article-item.article-top .top-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 18px; /* emoji 大小 */
+        z-index: 10;
     }
 
     /* 鼠标悬停交互 */
@@ -48,9 +58,12 @@ header-img: 'https://dd-static.jd.com/ddimg/jfs/t1/188250/16/27450/235439/631a99
                 <div class="post-cover">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <img src="{{ post.cover | relative_url }}" alt="">
+                    <!-- 置顶 📌 角标 -->
+                    <span class="top-badge">📌</span>
                 </div>
                 {% endif %}
                 <section class="post-preview">
+                    <span class="top-badge">📌</span>
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <h2 class="post-title">{{ post.title }}</h2>
                     {% if post.subtitle %}
