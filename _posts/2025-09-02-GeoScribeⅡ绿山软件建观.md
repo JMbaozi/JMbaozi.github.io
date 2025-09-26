@@ -60,6 +60,8 @@ music-id: 2120442088
 * Source：炮号
 * Line Number：线号（炮点）
 
+> 设置文件号时可以查看原始数据（segd）的文件名样式，数值范围可能是4位或其它位数（本数据为5位），具体情况具体分析。
+
 ![GeoScribe2_5.png](https://youke1.picui.cn/s1/2025/09/02/68b6b9e1e1315.png)
 
 依次选中参数所对应的数据，然后使用 **DEFINE DATA TYPE** 定义数据类型，全部定义完成后，点击 **SET FIRST DATA LINE** 和 **SET LAST DATA LINE** ，最后点击 **CONFIGURATION COMPLETE.EXIT** 完成数据导入。
@@ -132,3 +134,6 @@ music-id: 2120442088
 ![GeoScribe2_12.png](https://youke1.picui.cn/s1/2025/09/02/68b6ba7869a5c.png)
 ![GeoScribe2_13.png](https://youke1.picui.cn/s1/2025/09/02/68b6ba7847639.png)
 ![GeoScribe2_14.png](https://youke1.picui.cn/s1/2025/09/02/68b6ba786e700.png)
+
+* **Utilities**-->**Datum Statics**可以查看和设定*Datum Elevation*和*Correctional Velocity*值
+* **Utilities**-->**Merge Database**合并多个数据库
