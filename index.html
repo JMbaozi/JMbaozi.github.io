@@ -50,86 +50,77 @@ header-img: 'https://dd-static.jd.com/ddimg/jfs/t1/188250/16/27450/235439/631a99
 <main class="g-container home-content">
     <div class="article-list">
 
-    <!-- 置顶文章，不受分页 -->
-    {% assign top_posts = site.posts | where: "top", true %}
-    {% for post in top_posts %}
-    <article class="article-item article-top">
-    
-    {% if post.cover %}
-    <div class="post-cover">
-        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-        <img src="{{ post.cover | relative_url }}" alt="">
-        <!-- 置顶 📌 角标 -->
-        <span class="top-badge">📌</span>
-    </div>
-    {% endif %}
-    
-    <section class="post-preview">
-        {% if not post.cover %}
-        <!-- 没有封面时也显示角标 -->
-        <span class="top-badge">📌</span>
-        {% endif %}
-        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        {% if post.subtitle.size == 0 or post.subtitle == nil %}
-        <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
-        {% endif %}
-    </section>
-
-    <footer class="post-meta">
-        <div class="post-tags">
-        {% if post.tags.size > 0 %}
-            {% for tag in post.tags %}
-            <a href={{ "tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
-            {% endfor %}
-        {% endif %}
-        </div>
-        <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
-    </footer>
-
-    </article>
-    {% endfor %}
-
-    <!-- 普通文章，使用分页 -->
-    {% for post in paginator.posts %}
-        {% unless post.top %}
-        <article class="article-item">
-            {% if post.cover %}
-            <div class="post-cover">
-            <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-            <img src="{{ post.cover | relative_url }}" alt="">
-            </div>
-            {% endif %}
-            <section class="post-preview">
-            <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% endif %}
-            {% if post.subtitle.size==0 or post.subtitle==nil %}
-            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
-            {% endif %}
-            </section>
-            <footer class="post-meta">
-            <div class="post-tags">
-                {% if post.tags.size > 0 %}
-                {% for tag in post.tags %}
-                <a href={{ "tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
-                {% endfor %}
+        <!-- 置顶文章 -->
+        {% assign top_posts = site.posts | where: "top", true %}
+        {% for post in top_posts %}
+            <article class="article-item article-top">
+                {% if post.cover %}
+                <div class="post-cover">
+                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
+                    <img src="{{ post.cover | relative_url }}" alt="">
+                </div>
                 {% endif %}
-            </div>
-            <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
-            </footer>
-        </article>
-        {% endunless %}
-    {% endfor %}
+                <section class="post-preview">
+                    <span class="top-badge">📌</span>
+                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    {% if post.subtitle %}
+                    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+                    {% endif %}
+                    {% if post.subtitle.size==0 or post.subtitle==nil %}
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
+                    {% endif %}
+                </section>
+                <footer class="post-meta">
+                    <div class="post-tags">
+                        {% if post.tags.size > 0 %}
+                            {% for tag in post.tags  %}
+                            <a href={{ "tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
+                </footer>
+            </article>
+        {% endfor %}
 
-    {% if paginator.total_pages > 1 %}
-        {% include pageNav.html %}
-    {% endif %}
+        <!-- 普通文章 -->
+        {% assign normal_posts = paginator.posts | where_exp:"post","post.top != true" %}
+        {% for post in normal_posts %}
+            <article class="article-item">
+                {% if post.cover %}
+                <div class="post-cover">
+                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
+                    <img src="{{ post.cover | relative_url }}" alt="">
+                </div>
+                {% endif %}
+                <section class="post-preview">
+                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    {% if post.subtitle %}
+                    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+                    {% endif %}
+                    {% if post.subtitle.size==0 or post.subtitle==nil %}
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
+                    {% endif %}
+                </section>
+                <footer class="post-meta">
+                    <div class="post-tags">
+                        {% if post.tags.size > 0 %}
+                            {% for tag in post.tags  %}
+                            <a href={{ "tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
+                </footer>
+            </article>
+        {% endfor %}
+
+        {% if paginator.total_pages > 1 %}
+            {% include pageNav.html %}
+        {% endif %}
+
     </div>
 
     <aside class="g-sidebar-wrapper">
