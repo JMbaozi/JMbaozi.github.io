@@ -246,3 +246,38 @@ $(document).ready(function(){
     });
 
 });
+
+// 导航栏滚动隐藏与显示
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.g-header');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateHeader() {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll <= 0) {
+      header.classList.remove('scrolled', 'header--hidden');
+      header.classList.add('header--visible');
+    } else {
+      header.classList.add('scrolled');
+      if (currentScroll > lastScrollY && currentScroll > 100) {
+        header.classList.remove('header--visible');
+        header.classList.add('header--hidden');
+      } else {
+        header.classList.remove('header--hidden');
+        header.classList.add('header--visible');
+      }
+    }
+
+    lastScrollY = currentScroll;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  });
+});

@@ -1042,3 +1042,34 @@ a {
   .home-banner h3 {
     margin-top: 4px;
     font-size: 16px; } }
+
+
+
+/* ========= 导航滚动隐藏动画 ========== */
+.g-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 58px;
+  padding: 16px 0;
+  background-color: transparent;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+/* 向下滚动时隐藏 */
+.g-header.header--hidden {
+  transform: translateY(-100%);
+}
+
+/* 向上滚动或回到顶部时显示 */
+.g-header.header--visible {
+  transform: translateY(0);
+}
+
+/* 页面下滑后导航变为有底色 */
+.g-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
