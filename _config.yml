@@ -144,8 +144,8 @@ alivetime: true
 alivestart: "12/23/2021"
 
 # Beian 备案号
-beian: '沪ICP备xxxxxxxx号'
-# moe_beian: 'xxxxxxxx'
+# beian: '沪ICP备xxxxxxxx号'
+moe_beian: ' 萌ICP备20200502号'
 
 # CC License
 cclicense: true
