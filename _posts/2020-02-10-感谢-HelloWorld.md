@@ -10,7 +10,8 @@ cover_author: 'inma santiago'
 cover_author_link: 'https://unsplash.com/@inmasantiago'
 pin: false
 submenu: 'begin'
-tags: 杂谈
+tags: 
+- 杂谈
 music-id: 1397350043
 ---
 
