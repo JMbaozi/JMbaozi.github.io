@@ -1,3 +1,12 @@
+---
+layout: page
+home-title: Welcome to yucol's blog!
+description: One, Two, Three
+permalink: /index.html
+langs: ["zh-Hans", "en"]
+lang: "zh-Hans"
+---
+
 # 👋 自我介绍
 
 > **Stay hungry, stay foolish.** > 我是 **Yucol**，一名喜欢看海却离海越来越远的 Developer。

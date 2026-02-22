@@ -1,7 +1,7 @@
 ---
 layout: page
-home-title: Welcome to zhonger's blog!
-description: Writing, writing, writing ...
+home-title: Welcome to yucol's blog!
+description: One, Two, Three
 permalink: /tos.html
 ---
 
