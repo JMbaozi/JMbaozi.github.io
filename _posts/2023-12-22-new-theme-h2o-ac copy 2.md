@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'H2O-ac theme for Jekyll copy'
+title: 'H2O-ac theme for Jekyll copy2'
 subtitle: '基于或许是最漂亮的 Jekyll 主题 H2O 的学术版'
 date: 2023-12-22 19:50:00 +0800
 categories: tech
