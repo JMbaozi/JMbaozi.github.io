@@ -11,7 +11,7 @@ lang: "zh-Hans"
 
 > **Stay hungry, stay foolish.** > 我是 **Yucol**，一名喜欢看海却离海越来越远的 Developer。
 
-热爱电子游戏，主队*TeamSpirit* (*Donk粉*)，喜欢*房东的猫*，喜欢*成果*，每周固定外出呼吸空气的*ENFP-A*选手。
+热爱电子游戏，主队*TeamSpirit* (*Donk粉*)，喜欢*房东的猫*，喜欢*成果*，每周固定外出刷微信步数的*ENFP-A*选手。
 
 ---
 

@@ -40,6 +40,7 @@ nav:
   tags: '/tags.html'
   about:   
     RSS: '/feed.xml'
+    HALL: '/hall/'
 
 # Gray for the whole site 全站灰色
 gray: false

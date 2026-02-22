@@ -1,0 +1,138 @@
+---
+layout: default
+title: 名人堂
+---
+
+<section class="hall-page">
+  <div class="container">
+    <h1 class="page-title">名人堂</h1>
+
+    <!-- 可选搜索/筛选 -->
+    <!--
+    <div class="hall-filter">
+      <input type="text" id="hall-search" placeholder="搜索名人...">
+    </div>
+    -->
+    <!-- 名人卡片网格 -->
+    <div class="hall-grid">
+      {% for person in site.data.hall %}
+      <div class="hall-card">
+        <img src="{{ person.avatar }}" alt="{{ person.name }}">
+        <h2>{{ person.name }}</h2>
+        <p>{{ person.title }}</p>
+        <p class="bio">{{ person.bio }}</p>
+        
+        {% if person.link %}
+        <!--隐藏查看更多按钮
+        <a href="{{ person.link }}" target="_blank" class="more-btn">查看更多</a>
+        -->
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 样式 -->
+<style>
+    .hall-page {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    }
+
+    .page-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    }
+
+    .hall-filter {
+    text-align: center;
+    margin-bottom: 40px;
+    }
+
+    .hall-filter input {
+    padding: 10px 15px;
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    }
+
+    .hall-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    }
+
+    .hall-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hall-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .hall-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    }
+
+    .hall-card h2 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    }
+
+    .hall-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    }
+
+    .hall-card .more-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #fff;
+    background: #007acc;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+    }
+
+    .hall-card .more-btn:hover {
+    background: #005999;
+    }
+
+</style>
+
+<!-- JS 搜索功能 -->
+<!--
+<script>
+const searchInput = document.getElementById('hall-search');
+const cards = document.querySelectorAll('.hall-card');
+
+searchInput.addEventListener('input', function() {
+  const keyword = this.value.toLowerCase();
+  cards.forEach(card => {
+    const name = card.querySelector('h2').textContent.toLowerCase();
+    const bio = card.querySelector('.bio').textContent.toLowerCase();
+    if(name.includes(keyword) || bio.includes(keyword)){
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+</script>
+-->
