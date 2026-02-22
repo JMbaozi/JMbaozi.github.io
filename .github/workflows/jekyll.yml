@@ -1,21 +1,42 @@
 name: Jekyll site CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+# 确保机器人有权限写入 gh-pages 分支
+permissions:
+  contents: write
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    steps: 
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4.4'
-          bundler-cache: false
-      - run: bundle install
-      - run: bundle exec jekyll build
-      - uses: peaceiris/actions-gh-pages@v3.7.3
+          bundler-cache: true # 开启缓存，加快以后编译的速度
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Clean previous builds
+        run: bundle exec jekyll clean
+
+      - name: Build website
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true # 这会强制覆盖远程分支，彻底冲掉顽固的旧文件缓存
