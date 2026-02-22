@@ -5,9 +5,7 @@ subtitle: 'Python操作数据库'
 date: 2020-10-13
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+
 
 tags: Python PyMySQL MySQL 数据库
 music-id: 536870202

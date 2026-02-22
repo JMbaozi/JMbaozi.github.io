@@ -5,9 +5,7 @@ subtitle: '简介'
 date: 2022-09-05
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+
 
 tags: 统计地震学
 music-id: 1839119892

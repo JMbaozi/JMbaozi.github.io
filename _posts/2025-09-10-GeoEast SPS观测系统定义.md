@@ -5,9 +5,7 @@ subtitle: '定观'
 date: 2025-09-10
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+
 
 tags: GeoEast SPS 观测系统
 music-id: 1459852255

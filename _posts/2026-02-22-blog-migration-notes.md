@@ -1,11 +1,15 @@
 ---
 layout: post
 title: '从 H2O 到 H2O-ac：我的博客迁移与填坑笔记'
-subtitle: '记录一次充满挑战的博客主题更换历程'
+subtitle: '一次略微不顺的博客主题更换历程'
 date: 2026-02-22
 categories: blog
 author: yucol
 tags: [Jekyll, GitHub Actions, 填坑, blog]
+cover: 'https://images.unsplash.com/photo-1567351344506-b2e8a94e273b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+cover_author: 'Arthur Chauvineau'
+cover_author_link: 'https://unsplash.com/@arthurchauvineau'
+
 pin: true
 ---
 

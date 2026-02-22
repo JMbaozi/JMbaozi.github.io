@@ -5,9 +5,7 @@ subtitle: 'Draw2D'
 date: 2022-10-17
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+
 
 tags: Matlab
 music-id: 461544126

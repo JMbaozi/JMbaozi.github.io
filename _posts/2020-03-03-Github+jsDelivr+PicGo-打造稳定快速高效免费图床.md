@@ -5,9 +5,6 @@ subtitle: '高速免费图床'
 date: 2020-03-03
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
 
 tags: 杂谈 图床
 music-id: 28560087

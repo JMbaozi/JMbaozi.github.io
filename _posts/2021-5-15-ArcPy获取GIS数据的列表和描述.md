@@ -5,9 +5,7 @@ subtitle: '获取GIS数据的列表和描述'
 date: 2021-5-15
 categories: tech
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+
 
 tags: ArcPy Python
 music-id: 28285341
