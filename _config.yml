@@ -60,7 +60,7 @@ footer:
 # Author 配置博主信息
 author: 'yucol'
 nickname: 'yucol'
-bio: '游戏爱好者，CSGO忠实观众，技术好奇员，网易云村民'
+bio: '🌊 白天想，夜里哭，做梦都想去看海'
 avatar: '/assets/img/profile_photo.jpg'
 
 # Search
@@ -73,7 +73,7 @@ nightMode: false
 comments:
   disqus: false
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
-  waline: true
+  waline: false
   waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: false
   waline_locale: 
@@ -168,7 +168,7 @@ cnzz:
 
 # Busuanzi Analytics
 busuanzi: true
-busuanzi_url: https://busuanzi.lisz.top/js 
+busuanzi_url: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 # Umami Analytics
 umami:
@@ -218,7 +218,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 # Build settings
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 10
   permalink: 'page:num/'
   title: ':title | :num of :max'
   limit: 0
