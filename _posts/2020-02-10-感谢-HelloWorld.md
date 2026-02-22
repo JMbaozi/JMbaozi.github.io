@@ -3,7 +3,7 @@ layout: post
 title: '感谢'
 subtitle: '第一个博客'
 date: 2020-02-10
-categories: tech
+categories: blog
 author: yucol
 cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
 cover_author: 'inma santiago'

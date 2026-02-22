@@ -3,7 +3,7 @@ layout: post
 title: '从 H2O 到 H2O-ac：我的博客迁移与填坑笔记'
 subtitle: '记录一次充满挑战的博客主题更换历程'
 date: 2026-02-22
-categories: tech
+categories: blog
 author: yucol
 tags: [Jekyll, GitHub Actions, 填坑, blog]
 pin: true
