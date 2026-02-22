@@ -3,7 +3,7 @@ layout: post
 title: '我的第一款酒局神器App“摇了么”'
 subtitle: 'PartyDice'
 date: 2026-02-22 21:20:00 +0800
-categories: tech
+categories: app
 author: yucol
 tags: [安卓, 骰子, 游戏, 独立开发]
 ---
