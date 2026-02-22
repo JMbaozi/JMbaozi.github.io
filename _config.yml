@@ -156,7 +156,7 @@ cnzz:
 
 # Busuanzi Analytics
 busuanzi: true
-#busuanzi_url: https://busuanzi.lisz.top/js 
+busuanzi_url: https://busuanzi.lisz.top/js 
 
 # Umami Analytics
 umami:
