@@ -8,8 +8,7 @@ author: yucol
 cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
 cover_author: 'inma santiago'
 cover_author_link: 'https://unsplash.com/@inmasantiago'
-pin: false
-submenu: 'begin'
+
 tags: 杂谈 图床
 music-id: 28560087
 ---

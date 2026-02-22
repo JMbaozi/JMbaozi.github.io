@@ -18,8 +18,6 @@ tags:
 - 前端开发 
 - 学术 
 - 运维
-pin: true
-submenu: 'begin'
 ---
 
 ## 前言
