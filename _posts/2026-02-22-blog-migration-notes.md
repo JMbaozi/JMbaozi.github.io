@@ -6,9 +6,9 @@ date: 2026-02-22
 categories: blog
 author: yucol
 tags: [Jekyll, GitHub Actions, 填坑, blog]
-cover: 'https://images.unsplash.com/photo-1567351344506-b2e8a94e273b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-cover_author: 'Arthur Chauvineau'
-cover_author_link: 'https://unsplash.com/@arthurchauvineau'
+cover: 'https://images.unsplash.com/photo-1506104489822-562ca25152fe?w=1600&q=900'
+cover_author: 'Redd Francisco'
+cover_author_link: 'https://unsplash.com/@reddfrancisco'
 
 pin: true
 ---
