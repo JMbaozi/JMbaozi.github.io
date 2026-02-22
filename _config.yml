@@ -3,7 +3,7 @@ version: 1.5.1
 
 # Site settings 配置站点
 title: 'Mr Jiang'
-description: '个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。'
+description: '个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。'
 keyword: 'yucol，yucol的博客，baozi，python，前端，后段，智慧农业'
 url: 'https://yucol.top' # your host
 
@@ -72,7 +72,7 @@ nightMode: false
 comments:
   disqus: false
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
-  waline: false
+  waline: true
   waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: false
   waline_locale: 
@@ -113,13 +113,24 @@ sns:
   # google-scholar: 'https://scholar.google.com/citations?user=AUupIooAAAAJ'
   # researchgate: 'https://www.researchgate.net/profile/Shengzhou-Li'
   # ORCID: 'https://orcid.org/0000-0001-6973-3825'
-  # github: 'https://github.com/zhonger'
+  github: 'https://github.com/JMbaozi'
+  weibo: 'https://weibo.com/3958305706'
+  twitter: 'https://x.com/Yucoly'
+  instagram: 'https://www.instagram.com/yucoled/'
   # linkedin: 'https://www.linkedin.com/in/shengzhouli/'
   # segmentfault: 'https://segmentfault.com/u/wuwozhonger'
 
 # Links 友情链接
 links:
-  # 'Mr Li': 'https://lisz.me'
+  '北屿': 'https://blog.bj-yan.top/'
+  'PYQ': 'https://peng-yq.github.io/'
+  'VnYzm': 'https://zimingyuan.github.io/'
+  'ZhangZhao Blog': 'https://zhangzhao219.github.io/'
+  '雅余': 'https://yayu.net/'
+  '江快跑': 'https://jiangkp.com/'
+  'Mr Li': 'https://lisz.me'
+
+
 
 # Calendar 日历
 calendar: true
@@ -141,7 +152,7 @@ badges:
 
 # Alive time
 alivetime: true
-alivestart: "12/23/2021"
+alivestart: "02/10/2020"
 
 # Beian 备案号
 # beian: '沪ICP备xxxxxxxx号'
