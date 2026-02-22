@@ -5,9 +5,9 @@ subtitle: '第一个博客'
 date: 2020-02-10
 categories: blog
 author: yucol
-cover: 'https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900'
-cover_author: 'inma santiago'
-cover_author_link: 'https://unsplash.com/@inmasantiago'
+cover: 'https://images.unsplash.com/photo-1510097467424-192d713fd8b2?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+cover_author: 'Gerson Repreza'
+cover_author_link: 'https://unsplash.com/@gersonrepreza'
 tags: 
 - 杂谈
 music-id: 1397350043
