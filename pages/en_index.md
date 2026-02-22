@@ -59,10 +59,10 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 
 # ✨ Hidden Titles
 
-* 🏸 **Professional Shuttlecock Retriever** (Precision prediction of where the birdie lands—usually the floor)
-* 🚴‍♂️ **Elite Road Bike Pusher** (Uphill climbs are 10% pedaling and 90% "walking the bike" with style)
-* 📷 **Expert Lens Wiper** (Keeping every speck of dust at bay since day one)
-* 🎮 **Arena's Best 6th Man** (While Donk is fragging, I'm the one cheering the loudest)
+* 🏸 **Professional Shuttlecock Retriever**
+* 🚴‍♂️ **Elite Road Bike Pusher**
+* 📷 **Expert Lens Wiper**
+* 🎮 **Arena's Best 6th Man**
 
 ---
 
