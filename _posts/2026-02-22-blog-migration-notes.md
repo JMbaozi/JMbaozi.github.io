@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '从旧模版到 H2O-ac：我的博客迁移与填坑笔记'
+title: '从 H2O 到 H2O-ac：我的博客迁移与填坑笔记'
 subtitle: '记录一次充满挑战的博客主题更换历程'
 date: 2026-02-22
 categories: tech
@@ -44,6 +44,12 @@ pin: true
 ### Bug 2：分支挂载错位
 在 GitHub Pages 设置中，如果将部署源选为 `master`，可能无法看到经过 Actions 机器人编译后的成品。
 * **解决方法**：将 GitHub Pages 的部署分支切换到 **`gh-pages`**，这才是机器人存放 HTML 成品的地方。
+
+## 参考文档
+
+* [H2O-ac主题仓库](https://github.com/zhonger/jekyll-theme-H2O-ac)
+* [H2O-ac主题介绍](https://lisz.me/tech/new-theme-h2o-ac)
+* [H2O-ac主题文档](https://h2o-ac-doc.lisz.me/)
 
 ## 结语
 
