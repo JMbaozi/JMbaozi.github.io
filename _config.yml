@@ -2,7 +2,7 @@
 version: 1.5.1
 
 # Site settings 配置站点
-title: '基础环境测试'
+title: 'Mr Jiang'
 description: '个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。'
 keyword: 'yucol，yucol的博客，baozi，python，前端，后段，智慧农业'
 url: 'https://yucol.top/' # your host
