@@ -73,10 +73,10 @@ nightMode: false
 comments:
   disqus: true
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
-  waline: false
+  waline: true
   waline_url: 'https://h2o-ac-waline.lisz.top/'
-  waline_reaction: false
-  waline_locale: 
+  waline_reaction: true
+  waline_locale: "{reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}"
   artalk: false
   artalk_url: 'https://artalk.lisz.top'
   artalk_name: 'h2o-ac'
