@@ -168,7 +168,7 @@ cnzz:
 
 # Busuanzi Analytics
 busuanzi: true
-busuanzi_url: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+busuanzi_url: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 
 # Umami Analytics
 umami:
