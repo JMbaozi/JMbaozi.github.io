@@ -5,7 +5,7 @@ version: 1.5.1
 title: 'Yucol'
 description: '个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。'
 keyword: 'yucol，yucol的博客，baozi，python，前端，后段，智慧农业'
-url: 'https://yucol.top' # your host
+url: 'https://jmbaozi.github.io' # your host
 
 # when build blog on server, if you don't need baseurl, you should leave this value blank.
 # 在服务器上建站时，如果你不需要子域名，请将这一格留空
