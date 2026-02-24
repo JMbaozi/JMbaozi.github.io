@@ -31,7 +31,7 @@
             {% if post.tags.size > 0 %}
                 {% for tag in post.tags  %}
                     {% assign cleaned_tag = tag | strip %}
-                    <a href="{{ "/tags.html#" | append: cleaned_tag | relative_url }}" class="post-tag">{{ cleaned_tag }}</a>
+                    <a href="{{ "/tags.html#" | append: cleaned_tag }}" class="post-tag">{{ cleaned_tag }}</a>
                 {% endfor %}
             {% endif %}
         </div>
