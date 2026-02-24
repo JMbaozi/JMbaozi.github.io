@@ -30,7 +30,8 @@
         <div class="post-tags">
             {% if post.tags.size > 0 %}
                 {% for tag in post.tags  %}
-                <a href={{ "/tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
+                    {% capture tag_name %}{{ tag | strip }}{% endcapture %}
+                    <a href="/tags.html#{{ tag_name }}" class="post-tag">{{ tag_name }}</a>
                 {% endfor %}
             {% endif %}
         </div>
