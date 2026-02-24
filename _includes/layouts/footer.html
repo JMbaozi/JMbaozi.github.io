@@ -32,22 +32,9 @@
         </a>
       </section>
       {% if site.busuanzi %}
-        <script async src="{{ site.busuanzi_url | default: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }}"></script>
         <section class="links">
-          <span id="busuanzi_container_site_pv">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-pv"></use>
-            </svg>
-            {{ footer.views }} <span id="busuanzi_value_site_pv"></span>
-            <b>·</b>
-          </span>
-
-          <span id="busuanzi_container_site_uv" style="display:none">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-user"></use>
-            </svg>
-            {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
-          </span>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
         </section>
       {% endif %}
       <section>
