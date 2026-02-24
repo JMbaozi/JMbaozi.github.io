@@ -33,29 +33,23 @@
       </section>
       {% if site.busuanzi %}
       <section class="links">
-        <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_container_site_pv" style="display:none">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-pv"></use>
-          </svg> {{ footer.views }}
-          {% if site.busuanzi_url %}
-          <span id="busuanzi_site_pv">
-            {% else %}
-            <span id="busuanzi_value_site_pv"></span>
-            {% endif %}
-            <b>·</b>
-          </span>
+          </svg>
+          {{ footer.views }} <span id="busuanzi_value_site_pv"></span>
+          <b>·</b>
         </span>
-        <span id="busuanzi_container_site_uv">
+
+        <span id="busuanzi_container_site_uv" style="display:none">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-user"></use>
-          </svg> {{ footer.visitors }}
-          {% if site.busuanzi_url %}
-          <span id="busuanzi_site_uv"></span>
-          {% else %}
-          <span id="busuanzi_value_site_uv"></span>
-          {% endif %}
+          </svg>
+          {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
         </span>
       </section>
+
+      <script async src="{{ site.busuanzi_url | default: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }}"></script>
       {% endif %}
       <section>
         {% if site.alivetime %}

@@ -56,11 +56,7 @@ type: post
                             <use xlink:href="#icon-pv"></use>
                         </svg>
                         {{ post.cover.view.info }} 
-                        {% if site.busuanzi_url %}
-                        <span id="busuanzi_page_pv"></span>
-                        {% else %}
                         <span id="busuanzi_value_page_pv"></span>
-                        {% endif %}
                         {{ post.cover.view.unit }}
                     </span>
                     {% endif %}
