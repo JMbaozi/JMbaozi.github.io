@@ -28,6 +28,8 @@
     </section>
     <footer class="post-meta">
         <div class="post-tags">
+            <p>测试1：|{{ site.baseurl }}|</p>
+            <p>测试2：|{{ "" | relative_url }}|</p>
             {% if post.tags.size > 0 %}
                 {% for tag in post.tags  %}
                 <a href={{ "/tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
@@ -47,7 +49,5 @@
                 {{ post.date | date: "%Y年%-m月%-d日"  }}
             {% endcase %}
         </time>
-        <p>测试1：|{{ site.baseurl }}|</p>
-        <p>测试2：|{{ "" | relative_url }}|</p>
     </footer>
 </article>
