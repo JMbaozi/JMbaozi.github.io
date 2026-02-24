@@ -47,8 +47,7 @@
                 {{ post.date | date: "%Y年%-m月%-d日"  }}
             {% endcase %}
         </time>
+        <p>测试1：|{{ site.baseurl }}|</p>
+        <p>测试2：|{{ "" | relative_url }}|</p>
     </footer>
 </article>
-
-<p>测试1：|{{ site.baseurl }}|</p>
-<p>测试2：|{{ "" | relative_url }}|</p>
