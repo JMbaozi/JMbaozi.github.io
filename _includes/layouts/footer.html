@@ -32,10 +32,30 @@
         </a>
       </section>
       {% if site.busuanzi %}
-        <section class="links">
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-        </section>
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> {{ footer.views }}
+          {% if site.busuanzi_url %}
+          <span id="busuanzi_site_pv">
+            {% else %}
+            <span id="busuanzi_value_site_pv"></span>
+            {% endif %}
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> {{ footer.visitors }}
+          {% if site.busuanzi_url %}
+          <span id="busuanzi_site_uv"></span>
+          {% else %}
+          <span id="busuanzi_value_site_uv"></span>
+          {% endif %}
+        </span>
+      </section>
       {% endif %}
       <section>
         {% if site.alivetime %}
