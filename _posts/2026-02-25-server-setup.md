@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '从零到一：阿里云 200M 带宽服务器的高级全栈基建（1Panel + Docker + GitHub Actions）'
+title: '从零到一：阿里云 200M 带宽服务器的全栈基建（1Panel + Docker + GitHub Actions）'
 subtitle: '服务器搭建'
 date: 2026-02-25
 categories: server
@@ -38,10 +38,10 @@ cover_author_link: 'https://yucol.top'
 
 1. 安装 1Panel 并在应用商店安装 **OpenResty**（Nginx 的增强版）。
 2. 在“网站”菜单下创建一个静态网站。
-* **路径**：`/opt/1panel/apps/openresty/openresty/www/sites/test/index`（此路径为后期同步的目标 `TARGET`）。
 
+  * **路径**：`/opt/1panel/apps/openresty/openresty/www/sites/test/index`（此路径为后期同步的目标 `TARGET`）。
 
-3. 确保服务器防火墙已开启 80/443 端口，以及 SSH 通讯所需的 22 端口。
+1. 确保服务器防火墙已开启 80/443 端口，以及 SSH 通讯所需的 22 端口。
 
 ## 第二步：建立“信任关系” (SSH Key)
 
