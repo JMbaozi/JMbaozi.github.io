@@ -2,7 +2,7 @@
 layout: post
 title: '从零到一：阿里云 200M 带宽服务器的高级全栈基建（1Panel + Docker + GitHub Actions）'
 subtitle: '服务器搭建'
-date: 2026-02-22
+date: 2026-02-25
 categories: server
 author: yucol
 tags: [服务器, GitHub Actions, blog]
