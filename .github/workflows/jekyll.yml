@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: ["master"]
 
-# 确保机器人有权限写入 gh-pages 分支
+# 确保机器人有权限写入
 permissions:
   contents: write
 
@@ -22,7 +22,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4.4'
-          bundler-cache: true # 开启缓存，加快以后编译的速度
+          bundler-cache: true 
 
       - name: Install dependencies
         run: bundle install
@@ -33,10 +33,23 @@ jobs:
       - name: Build website
         run: bundle exec jekyll build
 
+      # 1. 部署到 GitHub Pages (保留作为备份)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: gh-pages
-          force_orphan: true # 这会强制覆盖远程分支，彻底冲掉顽固的旧文件缓存
+          force_orphan: true 
+
+      # 2. 部署到阿里云服务器
+      - name: Deploy to Aliyun Server
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          # ARGS 参数解释：-r 递归, -l 保持链接, -t 保持时间, -z 压缩传输, -v 显示过程, --delete 删除目标目录中源目录没有的文件
+          ARGS: "-rltzvi --delete"
+          SOURCE: "_site/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
