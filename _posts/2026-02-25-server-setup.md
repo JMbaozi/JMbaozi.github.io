@@ -6,7 +6,7 @@ date: 2026-02-25
 categories: server
 author: yucol
 tags: [服务器, GitHub Actions, blog]
-cover: 'https://pub-e58ead495ed24701b28423dc43c97973.r2.dev/2026/02/badd3f192479846afeaa60f358e947eb.webp'
+cover: 'https://img.yucol.uk/2026/02/badd3f192479846afeaa60f358e947eb.webp'
 cover_author: 'Yucol'
 cover_author_link: 'https://yucol.top'
 ---
