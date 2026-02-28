@@ -1,0 +1,1261 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大地测量学基础-1 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="大地测量学基础-1">
+    <meta name="keywords"
+        content="大地测量学, 学习">
+    
+    <meta property="og:previous_url" content="/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html">
+    
+    
+    <meta property="og:next_url" content="/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2020-02-13 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="大地测量学基础-1 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6" class="post-tag">大地测量学</a>
+            
+            <a href="/tags.html#%E5%AD%A6%E4%B9%A0" class="post-tag">学习</a>
+            
+            
+        </div>
+        <h1>大地测量学基础-1</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 20-02-13">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 20-02-13">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  4.9k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 14 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">大地测量</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <h4 id="基本概念1">基本概念1</h4>
+<ul>
+  <li>大地水准面：大地水准面是指与平均海水面重合并延伸到大陆内部的水准面。是正高的基准面。在测量工作中，均以大地水准面为依据。因地球表面起伏不平和地球内部质量分布不匀，故大地水准面是一个略有起伏的不规则曲面（无法用数学公式表示，所以不能作为大地测量计算的基准面）。该面包围的形体近似于一个旋转椭球，称为“大地体”，常用来表示地球的物理形状。
+<img src="https://ae04.alicdn.com/kf/H655bb16807b04fbba73f835822dafbfeV.png" alt="image.png">
+</li>
+  <li>铅垂线：与大地水准面正交的直线。</li>
+  <li>参考椭球：地球体从整体上看，十分接近于一个规则的旋转椭球体。地球椭球由三个椭球元素：长半轴，短半轴和扁率表示。形状、大小一定且已经与大地体作了最佳拟合的地球椭球称为参考椭球。我国的最佳拟合点，也称为大地原点，位于陕西省咸阳市泾阳县永乐镇。</li>
+  <li>参考椭球面：参考椭球面(surface of reference ellipsoid)，处理大地测量成果而采用的与地球大小、形状接近并进行定位的椭球体表面。
+    <ul>
+      <li>参考椭球面是测量、计算的基准面。</li>
+      <li>各国为处理大地测量的成果，往往根据本国及其他国家的天文，大地，重力测量结果采用适合本国的椭球参数并将其定位。</li>
+      <li>我国在成立之前采用海福特椭球参数，新中国成立之初采用克拉索夫斯基椭球参数（其大地原点在前苏联，对我国密合不好，越往南方误差越大）。目前采用的是1975年国际大地测量学与物理学联合会（IUGG）推荐的椭球，在我国称为“1980年国家大地坐标系”。坐标原点即是前面提到的“陕西省咸阳市泾阳县永乐镇”。2008年7月1日我国启动了2000国家大地坐标系，计划用8~10年完成现行国家大地坐标系到2000国家大地坐标系的过渡与转换工作。（现在2011年，在我国很多的地方仍然采用的“54北京坐标系”坐标系的转换工作的难度和工作量可想而知）</li>
+    </ul>
+  </li>
+  <li>总地球椭球：与大地水准面最接近的地球椭球称为总地球椭球。总地球椭球只有一个。参考椭球是与某个区域如一个国家大地水准面最为密合的椭球，可以有许多个。总地球椭球需要满足：
+    <ul>
+      <li>椭球质量等于地球质量，两者旋转角速度相等。</li>
+      <li>椭球体积与大地体积相等，它的表面与大地水准面之间的差距平方和为最小。</li>
+      <li>椭球中心与地心重合，椭球短轴与地球自转轴重合，大地起始子午面与天文起始子午面平行。</li>
+    </ul>
+  </li>
+  <li>垂线偏差：<strong>垂线偏差是指同一测站点上铅垂线与椭球面法线之间的夹角u。u通常用南北方向分量ζ和东西方向分量η表示。</strong>地面点的垂线同其在椭球面上对应点的法线之间的夹角，它表示大地水准面的倾斜。垂线偏差通常用两个分量来表示，一个是子午圈分量ξ，即垂线偏差南北分量；一个是卯酉圈分量η，即垂线偏差东西分量。<a href="https://ae06.alicdn.com/kf/H6da6c4b19dfd4ca3a98b477d81c5a57bp.png" rel="nofollow" target="_blank" class="extlinks">垂线偏差</a><img src="https://ae06.alicdn.com/kf/H6da6c4b19dfd4ca3a98b477d81c5a57bp.png" alt="image.png">
+</li>
+  <li>大地水准面差距：大地水准面差距（geoid undulation）是从大地水准面上的点沿地球椭球法线到地球椭球的距离。
+    <blockquote>
+      <p>垂线偏差和大地水准面差距对确定天文坐标与大地坐标的关系、地球椭球的定位以及研究地球的形状和大小等问题有着重要的意义。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="关系理解">关系理解</h4>
+<h5 id="1常用大地坐标系统的定义及各坐标系统之间的转换">1.常用大地坐标系统的定义及各坐标系统之间的转换</h5>
+<ul>
+  <li>天球坐标系：天球直角坐标系的原点0-般定义为地心，Z轴与地球自转轴重合， XY平面与赤道面重合， X轴指向赤道上的春分点γ。 天球球面坐标系基准面是天球赤道面，基准点是春分点。
+    <ul>
+      <li>用途：描述人造卫星的位置采用天球坐标系是方便的。也可以描述天空中的恒星的坐标。</li>
+      <li>天球空间直角坐标系与天球球面坐标系之间的转换（二者具有唯一的坐标转换关系。）：
+\(\begin{aligned}
+&amp;X=r \cos \alpha \cos \delta\\
+&amp;\begin{array}{l}
+{Y=r \sin \alpha \cos \delta} \\
+{Z=r \sin \delta} \\
+{r=\sqrt{X^{2}+Y^{2}+Z^{2}}} \\
+{\alpha=\arctan (Y / X)} \\
+{\delta=\arctan (Z / \sqrt{X^{2}+Y^{2}})}
+\end{array}
+\end{aligned}\)
+<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1833001532,568644167&amp;fm=26&amp;gp=0.jpg" alt="天球坐标系">
+</li>
+    </ul>
+  </li>
+  <li>地球坐标系
+    <ul>
+      <li>天文坐标系：天文地理坐标又称天文坐标,表示地面点在大地水准面上的位置,它的基准是铅垂线和大地水准面,它用天文经度λ和天文纬度φ两个参数来表示地面点在球面上的位置.
+        <ul>
+          <li>过地面上任一点P的铅垂线与地球旋转轴NS所组成的平面称为该点的天文子午面,天文子午面与大地水准面的交线称为天文子午线,也称经线.称过英国格林尼治天文台G的天文子午面为首子午面.过P点的天文子午面与首子午面的二面角称为P点的天文经度.在首子午面以东为东经,以西为西经,取值范围为.同一子午线上各点的经度相同.</li>
+          <li>过P点垂直于地球旋转轴的平面与地球表面的交线称为P点的纬线,过球心O的纬线称为赤道.过P点的铅垂线与赤道平面的夹角称为P点的天文纬度.在赤道以北为北纬,在赤道以南为南纬。<a href="https://ae01.alicdn.com/kf/Hf024bf90586f4d2caf06481e35ff1c12F.png" rel="nofollow" target="_blank" class="extlinks">天文坐标系</a>
+<img src="https://ae01.alicdn.com/kf/Hf024bf90586f4d2caf06481e35ff1c12F.png" alt="image.png">
+</li>
+        </ul>
+      </li>
+      <li>大地坐标系：大地坐标系是大地测量中以参考椭球面为基准面建立起来的坐标系。地面点的位置用大地经度、大地纬度和大地高度表示。大地坐标系的确立包括选择一个椭球、对椭球进行定位和确定大地起算数据。
+        <ul>
+          <li>大地坐标系是大地测量的基本坐标系，其大地经度L、大地纬度B和大地高H为此坐标系的3个坐标分量。它包括地心大地坐标系和参心大地坐标系。</li>
+          <li>其中，对于地心大地坐标系，其地面上一点的大地经度L为大地起始子午面与该点所在的子午面所构成的二面角，由起始子午面起算，向东为正，称为东经（0~180），向西为负，称为西经（0~180）；大地纬度B是经过该点作椭球面的法线与赤道面的夹角，由赤道面起算，向北为正，称为北纬（0~90），向南为负，称为南纬（0~90）；大地高H是地面点沿椭球的法线到椭球面的距离。</li>
+          <li><strong>重点：在大地坐标系中，两点间的方位是用大地方位角来表示 。例如P点至R点的大地方位角A，就是P点的子午面与过P点法线及R点所作平面间的夹角，由子午面顺时针方向量起。</strong></li>
+        </ul>
+      </li>
+      <li>
+        <blockquote>
+          <p>天文坐标系与大地坐标系的比较：<a href="https://ae04.alicdn.com/kf/H50c320c02bce4587b566ba661491bef0f.png" rel="nofollow" target="_blank" class="extlinks">比较</a></p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://ae04.alicdn.com/kf/H50c320c02bce4587b566ba661491bef0f.png" alt="批注 2020-02-13 201633.png"></p>
+
+<ul>
+  <li>空间大地直角坐标系：在卫星大地测量中，常采用空间大地直角坐标系来确定地面点的三维坐标。空间直角坐标系的坐标原点位于参考椭球的中心，Z轴与椭球的旋转轴一致，指向参考椭球的北极; X轴指向起始子午面与赤道的交点，Y轴位于赤道面上，按右手系与X轴正交成90°夹角。</li>
+  <li>地心坐标系：建立大地坐标系时，如果选择的旋转椭球为总地球椭球，椭球中心就是地球质心，再定义坐标轴的指向，此时建立的大地坐标系叫做地心坐标系。
+    <ul>
+      <li>分类:地心大地坐标系与地心空间直角坐标系</li>
+      <li>应用:空间技术和卫星大地测量中</li>
+    </ul>
+  </li>
+  <li>参心坐标系</li>
+  <li>站心坐标系
+    <ul>
+      <li>站心地平直角坐标系：以站心（如GPS接收天线中心）为坐标系原点O，Z轴与椭球法线重合，向上为正（天向），y与椭球短半轴重合（北向），x轴与地球椭球的长半轴重合（东向）所构成的直角坐标系，称为当地东北天坐标系（ENU）。</li>
+      <li>站心极坐标系：以站心为坐标极点O，以水平面（即xoy平面）为基准面，以东向轴（即x轴）为极轴，ρ为卫星到站点的距离，az为星视方向角（azimuth angle），el为星视仰角（elevation）。</li>
+    </ul>
+  </li>
+  <li>高斯平面直角坐标系：<a href="https://baike.baidu.com/item/%E9%AB%98%E6%96%AF%E5%B9%B3%E9%9D%A2%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87/6594274?fr=aladdin" rel="nofollow" target="_blank" class="extlinks">定义直接点我</a>。特点：
+    <ul>
+      <li>椭球面上角度投影到平面上后保持不变</li>
+      <li>中央子午线投影后为X轴,在x轴上投影后长度不变</li>
+      <li>赤道投影线为y轴</li>
+      <li>中央子午线与赤道交点投影后为坐标原点</li>
+      <li>距中央子午线越远,投影变形越大,为减少变形应分带投影</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="2各时间系统的定义及相互之间的关系">2.各时间系统的定义及相互之间的关系</h5>
+<ul>
+  <li>恒星时：恒星时是以春分点为参照点的时间系统（ST）。春分点（或出太阳以外的任一恒星）连续两次经过测站子午圈的时间间隔为一恒星日。</li>
+  <li>平太阳时：平太阳时是以平太阳( 以平均速度运行的太阳)为参照点的时间系统(MT) 。平太阳连续两次经过测站子午圈的时间间隔为一平太阳日。平太阳时从半夜零点起算称为民用时。</li>
+  <li>世界时：格林尼治的平太阳时(从半夜零点算起)定义为世界时(UT)。由于地球自转的不稳定性，在UT中加入极移改正即得到UT1。UT1加上地球自转速度季节性变化后为UT2。以经度15度的倍数的子午线Ln所处地点定义的民用时叫区时Tn。Tn=UT+n, n为时区号。</li>
+  <li>历书时（ET）与力学时（DT）：由于地球自转速度不均匀用其定义的恒星时与平太阳时不均匀。1958年 第十届国际天文协会决定，自1960年起开始以地球公转运动为基准的历书时代替世界时。历书时的秒长规定为1900年1月1日12时整回归年长度的1/31556925.9747,，起始历元定在1900年1月1日12时。历书时对应的地球运动理论是牛顿力学，根据广义相对论，太阳质心系和地心系所定义的历书时间将不相同。于是，1976年国际天文联合会定义了太阳系质心力学时(TDB)和地球质心力学时(TDT)。</li>
+  <li>原子时：以物质内部原子运动周期(如色原子133能级辐射震荡频率9192631170周为一秒)定义原子时(IAT)原子时起点定在1958年1月1日0时0分0秒(UT2)，即在此时刻原子时与世界时重合。但事后发现，原子时与世界时此刻之差为0.0039秒，此后，原子时与世界时之差便逐年积累。
+    <ul>
+      <li>原子时时间精度高，可达毫微秒以上。而平太阳时精度只能达到毫秒量级。</li>
+      <li>力学时TDT的计量已用原子钟实现，因两者的起点不同，  TDT=IAT+32.184</li>
+    </ul>
+  </li>
+  <li>协调世界时：以原子时秒长定义的世界时为协调世界时(UTC)协调世界时秒长为原子时，但表示时间的年月日时分秒仍是世界时。由于原子时快于世界时，UTC每年要跳秒，才能保证时分秒与世界时一致。</li>
+  <li>GPS时间系统：秒长为IAT,时间起算点为1980.1.6. UTC 0时，启动后不跳秒，连续运行的时间系统。GPS时-原子时IAT-19s</li>
+</ul>
+
+<p><a href="https://ae04.alicdn.com/kf/H0333f9671d5d49b68cfce09153e2e705N.png" rel="nofollow" target="_blank" class="extlinks">关系</a>
+<a href="https://ae06.alicdn.com/kf/H3209582de4534017800352ab8fea1af8V.png" rel="nofollow" target="_blank" class="extlinks">关系</a>
+<a href="https://ae04.alicdn.com/kf/H91ceafac516643d2bf44beac001867780.png" rel="nofollow" target="_blank" class="extlinks">关系</a></p>
+
+<p><img src="https://ae04.alicdn.com/kf/H0333f9671d5d49b68cfce09153e2e705N.png" alt="批注 2020-02-13 212823.png">
+<img src="https://ae06.alicdn.com/kf/H3209582de4534017800352ab8fea1af8V.png" alt="批注 2020-02-13 213143.png">
+<img src="https://ae04.alicdn.com/kf/H91ceafac516643d2bf44beac001867780.png" alt="批注 2020-02-13 213156.png"></p>
+
+<h5 id="3内外业测量基准面和基准线">3.内外业测量基准面和基准线</h5>
+<ul>
+  <li>外业测量：大地水准面 和 铅垂线</li>
+  <li>内业测量：参考椭球面 和 椭球面法线</li>
+</ul>
+
+<h4 id="基本概念2">基本概念2</h4>
+<ul>
+  <li>重力位：在重力场中，单位质量质点所具有的能量称为此点的重力位。
+    <ul>
+      <li>正常椭球产生的重力位称为<a href="https://baike.baidu.com/item/%E6%AD%A3%E5%B8%B8%E9%87%8D%E5%8A%9B%E4%BD%8D/437092?fr=aladdin" rel="nofollow" target="_blank" class="extlinks">正常重力位</a>。正常重力位是指正常引力位与离心力位之和。</li>
+    </ul>
+  </li>
+  <li>正高：正高是以大地水准面为基准的高程，即地面点到大地水准面的铅垂距离。又称为绝对高程或者海拔，简称高程。
+    <ul>
+      <li>地面点沿铅垂线到<a href="https://baike.baidu.com/item/%E4%BC%BC%E5%A4%A7%E5%9C%B0%E6%B0%B4%E5%87%86%E9%9D%A2" rel="nofollow" target="_blank" class="extlinks">似大地水准面</a>的距离称为正常高，以似大地水准面定义的高程系统成为正常高系统。正常高与正高的差值与正常重力等参数有一定关系。</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://baike.baidu.com/item/%E5%A4%A7%E5%9C%B0%E9%AB%98/1751836?fr=aladdin" rel="nofollow" target="_blank" class="extlinks">大地高</a>：大地高是地面点沿参考椭球面法线到参考椭球面的距离，大地高一般用符号H表示。</li>
+  <li>大地高、正常高与正高间的关系：
+<a href="https://ae03.alicdn.com/kf/Hb31c1c7829504067837917a4590e7b31p.png" rel="nofollow" target="_blank" class="extlinks">关系</a>
+<img src="https://ae03.alicdn.com/kf/Hb31c1c7829504067837917a4590e7b31p.png" alt="image.png">
+如图表示地面一点的大地高H大与正常高H常以及正高H正之间的关系．N为大地水准面与参考椭球面之间的高程差，称为大地水准面差距，ξ为似大地水准面和参考椭球面之何的高程差，称为高程异常。这两者都可通过天文水准或天文重力水准的方法求定。由图可知：
+    <ul>
+      <li>H大=H正+N</li>
+      <li>H大=H常+ξ
+于是，大地高H大同正高H正或同正常高H常之间通过N或ξ联系了起来而可互相换算。但因正高的精确值不能得到，故严格地说，大地高只能通过正常高求得。由此可见，大地高高差可以从几何水准测量的结果中算出。另外，因为三角高程测量所测得的两点间的高差是以垂线为依据的。而大地高高差是以法线为依据的，故由三角测量所得高差在消除了垂线偏差影响之后就是大地高高差。</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://baike.baidu.com/item/%E5%9E%82%E7%BA%BF%E5%81%8F%E5%B7%AE/5874943?fr=aladdin#2" rel="nofollow" target="_blank" class="extlinks">垂线偏差</a>：垂线偏差是指同一测站点上铅垂线与椭球面法线之间的夹角u。u通常用南北方向分量ζ和东西方向分量η表示。地面点的垂线   同其在椭球面上对应点的法线之间的夹角，它表示大地水准面的倾斜。垂线偏差通常用两个分量来表示，一个是子午圈分量ξ，即垂线偏差南北分量；一个是卯酉圈分量η，即垂线偏差东西分量。
+    <ul>
+      <li>绝对垂线偏差：又称重力垂线偏差，是垂线同平均地球椭球面法线之间的夹角。因为平均地球椭球是不变的，所以过地面点的法线或正常重力线也是不变的。因而垂线偏差具有绝对意义，它可以利用重力异常，按韦宁·迈内兹公式计算。</li>
+      <li>相对垂线偏差：又称天文大地垂线偏差，是垂线和参考椭球面的法线之间的夹角。因为不同的参考椭球过地面点的法线不同，垂线偏差也各不相同，所以它具有相对意义。相对垂线偏差可以利用天文和大地经纬度来计算。</li>
+    </ul>
+  </li>
+  <li>重力垂线偏差：一点的重力方向与正常重力方向的夹角。</li>
+  <li>水准面的不平行性产生的原因，对水准测量成果产生影响：是由于地球质量（密度）分布不均匀引起的。这种现象对水准测量会导致经过不同的水准路线测得的两地之间的高差不完全相等。</li>
+</ul>
+
+<p><img src="https://lz.sinaimg.cn/osj1080/ebeef3aaly3gbv4nrxv4ij20zk0kldi0.jpg" alt="img"></p>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 大地测量学基础-1 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html" class="cplink">https://jmbaozi.github.io/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('基本概念1')">基本概念1</a></li><li><a onclick="scrollToAdjust('关系理解')">关系理解</a><ul><li><a onclick="scrollToAdjust('1.常用大地坐标系统的定义及各坐标系统之间的转换')">1.常用大地坐标系统的定义及各坐标系统之间的转换</a></li><li><a onclick="scrollToAdjust('2.各时间系统的定义及相互之间的关系')">2.各时间系统的定义及相互之间的关系</a></li><li><a onclick="scrollToAdjust('3.内外业测量基准面和基准线')">3.内外业测量基准面和基准线</a></li></ul></li><li><a onclick="scrollToAdjust('基本概念2')">基本概念2</a></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html" class="read-next-link" aria-label="Bilibili-处处吻"></a>
+            <section>
+                <span>Bilibili-处处吻</span>
+                <p> 我同学在B站发的视频，星爷【处处吻】，挺有意思的。UP：繁缕스</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html" class="read-next-link"
+                aria-label="物理-质点运动的描述"></a>
+            <section>
+                <span>物理-质点运动的描述</span>
+                <p>  我直接把原图片的url放出来了，看不到图片的搜索url就能看到原图片。如果点击发现403，就直接复制网址搜索，...</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2020-02-13-大地测量学基础1-大地测量.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

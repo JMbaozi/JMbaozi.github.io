@@ -1,0 +1,1618 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNSS复习题集 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="GNSS复习题集">
+    <meta name="keywords"
+        content="GNSS, 学习">
+    
+    <meta property="og:previous_url" content="/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">
+    
+    
+    <meta property="og:next_url" content="/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2020-03-26 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="GNSS复习题集 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#GNSS" class="post-tag">GNSS</a>
+            
+            <a href="/tags.html#%E5%AD%A6%E4%B9%A0" class="post-tag">学习</a>
+            
+            
+        </div>
+        <h1>GNSS复习题集</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 20-03-26">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 20-03-26">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  13.0k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 38 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">《GPS定位原理及应用》</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <h3 id="第一章-绪论">第一章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" rel="nofollow" target="_blank" class="extlinks">绪论</a>
+</h3>
+
+<h4 id="1简述全球定位系统的组成部分及各部分的作用">1.简述全球定位系统的组成部分及各部分的作用？</h4>
+
+<ul>
+  <li>卫星部分（空间）作用：发送用于导航定位的信号其他特殊用途，如通讯、监测核暴等。</li>
+  <li>监控部分（地面）作用：监测和控制卫星运行，编算卫星星历（导航电文），保持系统时间。</li>
+  <li>接收部分（用户）作用：接收、跟踪、变换和测量GPS信号。</li>
+</ul>
+
+<h4 id="2简述全球定位系统的特点">2.简述全球定位系统的特点？</h4>
+
+<p>(1)全天候；(2) 全球覆盖；(3)三维定速定时高精度；(4)快速省时高效率：(5)应用广泛多功能：（6）抗干扰性能好、保密性强</p>
+
+<h4 id="3简述双星导航定位系统的定位原理">3.简述双星导航定位系统的定位原理？</h4>
+
+<p><img src="https://yanxuan.nosdn.127.net/e2bb6b8b3b27eb9154fd5cafcc339da8.png" alt="image.png"></p>
+
+<h4 id="4简述全球定位系统的国民经济建设中的应用及发展情况">4.简述全球定位系统的国民经济建设中的应用及发展情况？</h4>
+
+<blockquote>
+  <p>应用：</p>
+</blockquote>
+
+<ul>
+  <li>陆地应用：主要包括车辆导航、应急反应、大气物理观测、地球物理资源勘探、工程测量、变形监测、地壳运动监测、 市政规划控制等；</li>
+  <li>海洋应用：括远洋船最佳航程航线测定、船只实时调度与导航、海洋救援、海洋探宝、水文地质测量以及海洋平台定位、海平面升降监测等；</li>
+  <li>航空航天应用：括飞机导航、航空遥 感姿态控制、低轨卫星定轨、导弹制导、航空救援和载人航天器防护探测等。</li>
+</ul>
+
+<blockquote>
+  <p>发展情况：</p>
+</blockquote>
+
+<p>自80年代末我国引进GPS接收机以来，在理论研究、应用技术开发、接收机制造等方面不断取得发展。在“九五”期间，以GPS技术应用为代表的民用卫星导航、定位技术日趋成熟，已在各行业得到广泛应用，极大地提高了传统生产作业的效率与精度，解放了高强度的体力劳动。我国自主的导航定位系统整体方案已付诸实施，与国际先进系统相近的自主系统在理论、整体方案设计、关键技术上也有了长足的发展。</p>
+
+<p>俄罗斯的GLONASS系统的运行和欧洲伽利略计划的开展实施，已引起我国有关主管部门与应用部门的关注，并开始筹划建设广域增强系统，跟踪研究双模式星座应用中的参考框架、不同类型的数据处理分析及兼容机的研制等问题。</p>
+
+<h4 id="5目前gnss系统包括哪些比较这些系统的基本性能">5.目前GNSS系统包括哪些,比较这些系统的基本性能？</h4>
+
+<p>目前全球技术成熟的导航系统有GPS,伽俐略，格洛纳斯，北斗二代。其中美国的gps占主要市场，北斗二代系统后起之秀，发展迅猛，在亚太地区发展迅猛，其余两个系统由于资金投入不足，卫星更新慢，市场逐渐在萎缩。</p>
+
+<h4 id="6gpsgisrsbdsglonassgalileowaasegnoscorsigsleomeogeoigso中英文全称">6.GPS、GIS、RS、BDS、GLONASS、GALILEO、WAAS、EGNOS、CORS、IGS、LEO、MEO、GEO、IGSO中英文全称。</h4>
+
+<ul>
+  <li>GPS:全球卫星定位系统(Global Positioning System)</li>
+  <li>GIS:地理信息系统(Geographic Information System)</li>
+  <li>RS:遥感(Remote Sensing)</li>
+  <li>BDS:北斗卫星导航系统(BeiDou Navigation Satellite System)</li>
+  <li>GLONASS:格洛纳斯卫星导航系统(GLOBAL NAVIGATION SATELLITE SYSTEM)</li>
+  <li>WAAS:广域增强系统(Wide Area Augmentation System)</li>
+  <li>EGNOS:欧洲地球静止导航重叠服务(European Geostationary Navigation Overlay Service)</li>
+  <li>CORS:连续运行（卫星定位服务）参考站(Continuously Operating Reference Stations)</li>
+  <li>IGS:地质科学研究所(institute of geological science)</li>
+  <li>LEO:宇航近地轨道(low earth orbit)</li>
+  <li>MEO:中轨道地球(Medium Earth Orbit);中轨道地球卫星(Medium orbit earth satellite)</li>
+  <li>GEO:地球同步轨道(Geosynchronous Orbit);地球同步轨道卫星(Geostationary orbit satellite)</li>
+  <li>IGSO:倾斜地球同步轨道(Inclined GeoSynchronous Orbit)</li>
+</ul>
+
+<h3 id="第二章-坐标系统和时间系统">第二章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" rel="nofollow" target="_blank" class="extlinks">坐标系统和时间系统</a>
+</h3>
+
+<h4 id="1名词解释--天球坐标系---地球坐标系---大地坐标系---站心坐标系---岁差---章动---wgs-84大地坐标系---cgcs2000坐标系---恒星时--协调世界时--gpst时间系统">1.名词解释：  天球坐标系   地球坐标系   大地坐标系   站心坐标系   岁差   章动   WGS-84大地坐标系   CGCS2000坐标系   恒星时  协调世界时  GPST时间系统</h4>
+
+<ul>
+  <li>天球坐标系：天球坐标系，别名天文坐标系，是一种以天极和春分点作为天球定向基准的坐标系。为准确表示天体在天球上的投影位置而引入的球面坐标系。根据不同需要，设有地平坐标系，第一赤道坐标系（时角坐标系），第二赤道坐标系（赤道坐标系），黄道坐标系和银道坐标系等</li>
+  <li>地球坐标系：地固坐标系也称地球坐标系，是固定在地球上与地球一起旋转的坐标系。如果忽略地球潮汐和板块运动，地面上点的坐标值在地固坐标系中是固定不变的。对于天球坐标系，地面上点的坐标值受地球自转的影响一直处于变化运动之中。用地固坐标系描述地球表面点的空间位置更为方便，而天球坐标系主要是用于描述卫星和地球的运行位置和状态。根据坐标系原点位置的不同，地固坐标系分为地心坐标系(原点与地球质心重合)和参心坐标系(原点与参考椭球中心重合)，前者以参考椭球为基准，后者以总地球椭球为基准，以地心为原点的地固坐标系也称为地心地固坐标系(ECEF)。无论是参心坐标系还是地心坐标系均可分为空间直角坐标系和大地坐标系两种形式，它们都与地球体固连在一起，与地球同步运动。</li>
+  <li>大地坐标系：大地坐标系是大地测量中以参考椭球面为基准面建立起来的坐标系。地面点的位置用大地经度、大地纬度和大地高度表示。大地坐标系的确立包括选择一个椭球、对椭球进行定位和确定大地起算数据。一个形状、大小和定位、定向都已确定的地球椭球叫参考椭球。参考椭球一旦确定，则标志着大地坐标系已经建立。大地坐标系是一种伪地理坐标系。大地坐标系为右手系。</li>
+  <li>站心坐标系：站心坐标系是以测站为原点的坐标系，即用准备好的基座来定点并进行观察和测量，一般用于施工工程。也用于需了解以观察者为中心的其他物体运动规律，如接收机可见GPS卫星的视角、方位角及距离等，需要用到站心坐标系。</li>
+  <li>岁差：岁差，是指地球自转轴长期进动，引起春分点沿黄道西移，致使回归年短于恒星年的现象。岁差是地球公转和地轴运动相结合的结果，这种结合决定了二分二至地球位置不是定点，而是在公转轨道上不断西移的动点，从而导致地球公转一周不等于太阳直射点纬度变化一周。岁差在天文学中亦指一个天体的自转轴指向因为重力作用导致在空间中缓慢且连续的变化。例如，地球自转轴的方向逐渐漂移，追踪它摇摆的顶部，以大约26,000年的周期扫掠出一个圆锥（在占星学称为大年或柏拉图年）。”岁差”这个名词通常只针对长期运动，其他在地轴准线上的变动章动和极移规模要小了许多。</li>
+  <li>章动：当陀螺的自转角速度不够大时，则除了自转和进动外，陀螺的对称轴还会在铅垂面内上下摆动，称为章动。
+章动数值通常可以分为平行和垂直于黄道的两个分量，在黄道上的分量称为黄经章动，垂直黄道的分量称为斜章动。
+岁差和章动的共同影响，使得真天极绕着黄极在天球上描绘出一条波状曲线。另外影响火箭弹锥形运动稳定性的主要因素是弹体的章动和进动的耦合运动。</li>
+  <li>WGS-84大地坐标系：WGS-84是修正NSWC9Z-2参考系的原点和尺度变化，并旋转其参考子午面与BIH定义的零度子午面一致而得到的一个新参考系，WGS-84坐标系的原点在地球质心，Z轴指向BIH1984.0定义的协定地球极（CTP）方向，X轴指向BIH1984.0的零度子午面和CTP赤道的交点，Y轴和Z、X轴构成右手坐标系。它是一个地固坐标系</li>
+  <li>CGCS2000坐标系：2000国家大地坐标系，是我国当前最新的国家大地坐标系，英文名称为China Geodetic Coordinate System 2000，英文缩写为CGCS2000。
+2000国家大地坐标系的原点为包括海洋和大气的整个地球的质量中心；2000国家大地坐标系的Z轴由原点指向历元2000.0的地球参考极的方向，该历元的指向由国际时间局给定的历元为1984.0的初始指向推算，定向的时间演化保证相对于地壳不产生残余的全球旋转，X轴由原点指向格林尼治参考子午线与地球赤道面（历元2000.0）的交点，Y轴与Z轴、X轴构成右手正交坐标系。采用广义相对论意义下的尺度。</li>
+  <li>恒星时：恒星时，是指以地球相对于恒星的自转周期为基准的时间计量系统。春分点相继两次上中天所经历的时间称为恒星日，等于23时56分4.09秒平太阳时，并以春分点在该地上中天的瞬间作为这个计量系统的起点，即恒星时为零时，用春分点时角来计量。
+为了计量方便，把恒星日分成24 个恒星小时，一恒星小时分为60恒星分，一恒星分分为60恒星秒。所有这些单位统称为计量时间的恒星时单位，简称恒星时单位。按上述系统计量时间，在天文学中称恒星时。</li>
+  <li>协调世界时：协调世界时，又称世界统一时间、世界标准时间、国际协调时间。由于英文（CUT）和法文（TUC）的缩写不同，作为妥协，简称UTC。
+协调世界时是以原子时秒长为基础，在时刻上尽量接近于世界时的一种时间计量系统。中国大陆采用ISO 8601-1988的《数据元和交换格式信息交换日期和时间表示法》（GB/T 7408-1994）称之为国际协调时间，代替原来的GB/T 7408-1994；中国台湾采用CNS 7648的《资料元及交换格式–资讯交换–日期及时间的表示法》，称之为世界统一时间。</li>
+  <li>GPST时间系统：时间系统规定了时间测量的参考标准，包括时刻的参考标准和时间间隔的尺度标准。时间系统也称为时间基准或时间标准。频率基准规定了“秒长”的尺度，任何一种时间基准都必须建立在某个频率基准的基础上，因此，时间基准又称为时间频率基准。时间系统框架是在某一区域或全球范围内，通过守时、授时和时间频率测量技术，实现和维持统一的时间系统。</li>
+</ul>
+
+<h4 id="2简述卫星测量中常用的坐标系以及它们之间的转换关系">2.简述卫星测量中常用的坐标系以及它们之间的转换关系？</h4>
+
+<ul>
+  <li>瞬时极天球坐标系与地球坐标系
+<img src="https://yanxuan.nosdn.127.net/33fcecf7c84cabc32538ad4d1681439c.png" alt="image.png">
+</li>
+  <li>固定极天球坐标系——平天球坐标系
+<img src="https://yanxuan.nosdn.127.net/1d9242e5eb5e52fe1ce1491ab07e7faa.png" alt="image.png">
+</li>
+  <li>固定极地球坐标系——平地球坐标系
+<img src="https://yanxuan.nosdn.127.net/f6772fc88a19992ab6bdc331ae34f9d7.png" alt="image.png">
+</li>
+</ul>
+
+<h4 id="3简述不同空间直角坐标系统之间的转换原理及方法七参转换模型">3.简述不同空间直角坐标系统之间的转换原理及方法(七参转换模型)？</h4>
+
+<p>进行两个不同空间直角坐标系统之间的坐标转换，需要求出坐标系统之间的转换参数。
+<img src="https://yanxuan.nosdn.127.net/03f48d305899faea361decced72fd269.png" alt="image.png">
+<img src="https://yanxuan.nosdn.127.net/0305fb5c08545747d29e7304a4cddfa7.png" alt="image.png"></p>
+
+<h4 id="4gps定位系统中涉及到那些时间概念儒略日和gpst之间的换算年积日gps周儒略日和gpst">4.GPS定位系统中涉及到那些时间概念,儒略日和GPST之间的换算？(年积日、GPS周、儒略日和GPST）</h4>
+
+<ul>
+  <li>年积日：年积日是仅在一年中使用的连续计算日期的方法，是从当年1月1日起开始计算的天数。例如：每年的1月1日为第1日，2月1日为第32日，以此类推。平年的12月31日为第365日，闰年的12月31日为第366日。用它可以简便地求出一年内两个时刻间的时间间隔。通常在GPS测量中会用到此概念。</li>
+  <li>GPS周：GPS周（GPS Week）是GPS系统内部所采用的时间系统。时间零点定义的为：1980年1月5日夜晚与1980年1月6日凌晨之间0点。最大时间单位是周（一周：604800秒）。每1024周（即7168天）为一循环周期。第一个GPS周循环点为1999年8月22日0时0分0秒。即从这一刻起，周数重新从0开始算起。星期记数规则是：Sunday为0，Monday为1，以此类推，依次记作0~6，GPS周记数（GPS Week Number）为“GPS周 星期记数”。
+表示方法：从1980年1月6日0时开始起算的周数加上周内时间的秒数（从每周周六/周日之夜开始起算的秒数，例如：1980年1月6日0时0分0秒的GPS周：第0周，第0秒。</li>
+  <li>儒略日：儒略日（Julian Day）是在儒略周期内以连续的日数计算时间的计时法，主要是天文学家在使用。
+    <ul>
+      <li>儒略日数（Julian Day Number，JDN）的计算是从格林威治标准时间的中午开始，包含一个整天的时间，起点的时间（0日）回溯至儒略历的公元前4713年1月1日中午12点（在格里历是公元前4714年11月24日），这个日期是三种多年周期的共同起点，且是历史上最接近现代的一个起点。例如，2000年1月1日的UT12:00是儒略日2,451,545。</li>
+      <li>儒略日期（Julian date，JD）是以格林威治标准时中午12:00的儒略日加上那一天的瞬时时间的分数。儒略日期是儒略日添加小数部分所表示的儒略日数。例如，2013年1月1日00:30:00（UT）是儒略日期2,456,293.520833。</li>
+      <li>儒略周期（Julian Period）是开始于公元前4713年，长达7980年的纪年法，被用于历史上各种不同历法的日期转换。公元2018年是儒略周期的6731年，下一个儒略周期将开始于公元3268年。</li>
+    </ul>
+  </li>
+  <li>
+    <p>GPST：GPS时间系统采用原子时AT1秒长作时间基准，秒长定义为铯原子CS133基态的两个超精细能级间跃迁辐射振荡9192631170周所持续的时间，时间起算的原点定义在1980年1月6日世界协调时UTC0时，启动后不跳秒，保证时间的连续。以后随着时间积累，GPS时与UTC时的整秒差以及秒以下的差异通过时间服务部门定期公布。
+GPS卫星广播星历采用WGS-84（G873）世界大地坐标系，其起始时元为1996年9月29日，而它的坐标基准时元是1997.0。</p>
+  </li>
+  <li>儒略日和GPST之间的换算：</li>
+</ul>
+
+<h4 id="5协议天球坐标系与协议地球坐标系之间的转换需要经过哪些转换过程">5.协议天球坐标系与协议地球坐标系之间的转换，需要经过哪些转换过程？</h4>
+
+<ul>
+  <li>(1) 两个坐标系原点相同，都位于地球质心。</li>
+  <li>(2) 瞬时天球坐标系(ICS)Z 轴与瞬时地球坐标系(ITS)Z 轴指向相同。</li>
+  <li>(3) 两瞬时坐标系的X 轴指向不同，其夹角为瞬时春分点的格林尼治恒星时(GAST)。</li>
+</ul>
+
+<p>由于惯性系与地球自转无关，而地球坐标系与地球固联，它们的相互关系是时刻变化的， 或者说它们的转换关系是时间的函数。假设(x, y ,z)CIS 、(x, y, z)Mt、(x, y ,z)ICS、(x, y, z)ITS 和 (x, y, z)CTS 分别表示卫星在J2000.0 协议天球坐标系、观测历元t 的瞬时平天球坐标系、观测 历元t 的瞬时天球坐标系、观测历元t 的瞬时地球坐标系和协议地球坐标系中的坐标。则：</p>
+
+<p><img src="http://www.rf-gsm.com/uploads/allimg/150302/1-150302093635Q7.jpg" alt=""></p>
+
+<h3 id="第三章-卫星定轨理论gps卫星信号与星历">第三章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" rel="nofollow" target="_blank" class="extlinks">卫星定轨理论、GPS卫星信号与星历</a>
+</h3>
+
+<h4 id="1名词解释卫星的无摄运动---卫星的受摄运动---卫星历书--广播星历---精密星历">1.名词解释：卫星的无摄运动   卫星的受摄运动   卫星历书  广播星历   精密星历</h4>
+
+<ul>
+  <li>卫星的无摄运动：卫星在轨运动受到中心力和摄动力的影响。假设地球为匀质球体，其对卫星的引力称为中心力（质量集中于球体的中心）。中心力决定着卫星运动的基本规律和特征，此时卫星的运动称为无摄运动，由此所决定的卫星轨道可视为理想的轨道，又称卫星的无摄运动轨道。</li>
+  <li>卫星的受摄运动：在考虑中心引力的同时，考虑摄动力的影响来研究地球的运动。</li>
+  <li>卫星历书：卫星轨道信息或某一时刻轨道参数及其变率或某一时刻卫星位置及其变化率。分为预报星历（又叫广播星历）和后处理星历（精密星历）。</li>
+  <li>广播星历：广播星历是根据美国GPS控制中心跟踪站的观测数据进行外推处理后通过GPS卫星播发的一种预报星历，主要用于实时导航定位。</li>
+  <li>精密星历：精密星历是由若干卫星跟踪站的观测数据，经事后处理算得的供卫星精密定位等使用的卫星轨道信息。</li>
+</ul>
+
+<h4 id="2开普勒轨道六参数名称定义">2.开普勒轨道六参数名称、定义</h4>
+
+<ul>
+  <li>1.a 半长轴，确定轨道的大小；</li>
+  <li>2.e 偏心率，定义轨道的形状；</li>
+  <li>3.i 倾角，赤道平面与卫星轨道平面间的夹角</li>
+  <li>4.Ω 升交点赤经，从春分点到卫星轨道由南往北穿过赤道的那一点的角度</li>
+  <li>5.ω 近地点幅角，在轨道平面内升交点到近地点的角度</li>
+  <li>6.V或fs 在历元时刻的真近点角，在指定时间（历元）由近地点到卫星所在点的角度。</li>
+</ul>
+
+<h4 id="3无摄运动和受摄运动的含义">3.无摄运动和受摄运动的含义</h4>
+
+<p>只考虑地球质心引力作用的卫星运动称为卫星的无摄运动。</p>
+
+<p>对于卫星精密定位来说，在只考虑地球质心引力情况下计算卫星的运 动状态（即研究二体问题）是不能满足精度要求的。必须考虑地球引力场 摄动力、日月摄动力、大气阻力、光压摄动力、潮汐摄动力对卫星运动状 态的影响。考虑了摄动力作用的卫星运动称为卫星的受摄运动。</p>
+
+<h4 id="4了解计算无摄运动时卫星的真近点角和瞬时位置">4.了解：计算无摄运动时卫星的真近点角和瞬时位置？</h4>
+
+<p><img src="https://yanxuan.nosdn.127.net/bdee7849dbd1403fc629203ed506d7b0.png" alt="image.png">
+详细计算过程见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228007&amp;objectId=56d35165ac2aef250288c428abc848ec" rel="nofollow" target="_blank" class="extlinks">PPT文件</a></p>
+
+<h4 id="5gps卫星星历的分类和特点即预报星历和精密星历定义">5.GPS卫星星历的分类和特点（即预报星历和精密星历——定义）</h4>
+
+<ul>
+  <li>广播星历（预报星历）：广播星历是根据美国GPS控制中心跟踪站的观测数据进行外推处理后通过GPS卫星播发的一种预报星历，主要用于实时导航定位。</li>
+  <li>精密星历：精密星历是由若干卫星跟踪站的观测数据，经事后处理算得的供卫星精密定位等使用的卫星轨道信息。</li>
+</ul>
+
+<h4 id="6区别gps卫星不同星历得到卫星坐标的方法">6.区别GPS卫星不同星历得到卫星坐标的方法。</h4>
+<ul>
+  <li>
+    <p>广播星历下卫星位置计算
+<img src="https://yanxuan.nosdn.127.net/7930d5d3093bf46a0395fa066373ca44.png" alt="image.png">
+详细计算过程见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228008&amp;objectId=80843e10e6f9b31be25d22e3ee7c5fc6" rel="nofollow" target="_blank" class="extlinks">PPT</a></p>
+  </li>
+  <li>
+    <p>精密星历的插值方法（拉格朗日插值）
+<img src="https://yanxuan.nosdn.127.net/9d5259d04b90a53075289acd88b133aa.png" alt="image.png">
+详细解释见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228009&amp;objectId=da0f556f5c37e3a2e7a280f99e1b9420" rel="nofollow" target="_blank" class="extlinks">PPT</a></p>
+  </li>
+</ul>
+
+<h4 id="7理解如何计算gps卫星的坐标">7.理解如何计算GPS卫星的坐标？</h4>
+
+<p><img src="https://yanxuan.nosdn.127.net/af7a2629511a138ecbb1c06dc0fa1825.png" alt="image.png">
+<img src="https://yanxuan.nosdn.127.net/cec63e50294d9fc4df4e7ab54b8c6712.png" alt="image.png">
+<img src="https://yanxuan.nosdn.127.net/dc1c5ee1c9900d080fd2f98e62c31be5.png" alt="image.png">
+<img src="https://yanxuan.nosdn.127.net/36e753d40ce06ce6cfa705f048c80570.png" alt="image.png">
+<img src="https://yanxuan.nosdn.127.net/eae160c34671ca5f61ac8599f72be25b.png" alt="image.png">
+来源：<a href="https://mooc1-1.chaoxing.com/coursedata?classId=20883645&amp;courseId=210245151&amp;type=1&amp;ut=s&amp;enc=075818aeb1070244ae9de7305a27a9a9&amp;cpi=67244457&amp;openc=4cf775ea15a3e0955ebe6580e226062e" rel="nofollow" target="_blank" class="extlinks">《GPS测量原理及应用》</a>P40</p>
+
+<h4 id="8本机格式rinex格式和sp3精密星历数据格式">8.本机格式、RINEX格式和SP3精密星历数据格式</h4>
+
+<ul>
+  <li>本机格式
+<img src="https://yanxuan.nosdn.127.net/1eddf38f2f7dbfb62a07974ec7b80659.png" alt="image.png">
+</li>
+  <li>RINEX格式
+<img src="https://yanxuan.nosdn.127.net/c00e9a810b88badbc1be5ced271d9d34.png" alt="image.png">
+</li>
+  <li>SP3精密星历数据格式
+<img src="https://yanxuan.nosdn.127.net/6d1e9fc2dd069d94460a76869868263b.png" alt="image.png">
+</li>
+</ul>
+
+<p>详细内容见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228029&amp;objectId=024672c6c43eb317333ea4ce84f827a6" rel="nofollow" target="_blank" class="extlinks">PPT</a></p>
+
+<h4 id="9述gps卫星发射的三类信号">9.述GPS卫星发射的三类信号。</h4>
+
+<ul>
+  <li>载波信号 （Carrier Phase）</li>
+  <li>测距码 (Ranging Code)</li>
+  <li>导航电文(Navigation Message/Data Message)</li>
+</ul>
+
+<h4 id="10gps-载波信号有哪几种频率和波长各是多少">10.GPS 载波信号有哪几种，频率和波长各是多少。</h4>
+
+<ul>
+  <li>L1
+    <ul>
+      <li>频率：1575.43MHz</li>
+      <li>波长：19.03cm</li>
+    </ul>
+  </li>
+  <li>L2
+    <ul>
+      <li>频率：1227.60MHZ</li>
+      <li>波长：24.42cm</li>
+    </ul>
+  </li>
+  <li>L5
+    <ul>
+      <li>频率：1176.45MHz</li>
+      <li>波长：25.48cm</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="11述随机噪声码和伪随机噪声码的性质">11.述随机噪声码和伪随机噪声码的性质。</h4>
+
+<ul>
+  <li>
+    <p>随机噪声码
+<img src="https://yanxuan.nosdn.127.net/4a84c931c6475f6b219eb425c17818e2.png" alt="image.png"></p>
+  </li>
+  <li>
+    <p>伪随机噪声码
+<img src="https://yanxuan.nosdn.127.net/b8bc230ba0c1702cd1145409ec3e5dfe.png" alt="image.png"></p>
+  </li>
+</ul>
+
+<p>详细内容见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228010&amp;objectId=26aaaf054a34533792b2469743f8d6fc" rel="nofollow" target="_blank" class="extlinks">PPT</a></p>
+
+<h4 id="12导航电文卫星星历用户差分距离误差等效钟差改正-电离层垂直格网点误差">12.导航电文、卫星星历、用户差分距离误差、等效钟差改正、 电离层垂直格网点误差。</h4>
+
+<ul>
+  <li>导航电文：卫星导航电文是由导航卫星播发给用户的描述导航卫星运行状态参数的电文，包括系统时间、星历、历书、卫星时钟的修正参数、导航卫星健康状况和电离层延时模型参数等内容。导航电文的参数给用户提供了时间信息，利用导航电文参数可以计算用户的位置坐标和速度。</li>
+  <li>卫星星历：卫星星历，又称为两行轨道数据（TLE，Two-Line Orbital Element），由美国celestrak发明创立，是用于描述太空飞行体位置和速度的表达式———两行式轨道数据系统。
+    <blockquote>
+      <p>卫星、航天器或飞行体一旦进入太空，即被列入NORAD卫星星历编号目录。列入NORAD卫星星历编号目录的太空飞行体将被终生跟踪。
+卫星星历以开普勒定律的6个轨道参数之间的数学关系确定飞行体的时间、坐标、方位、速度等各项参数，具有极高的精度。
+卫星星历能精确计算、预测、描绘、跟踪卫星、飞行体的时间、位置、速度等运行状态；能表达天体、卫星、航天器、导弹、太空垃圾等飞行体的精确参数；能将飞行体置于三维的空间；用时间立体描绘天体的过去、现在和将来。
+卫星星历的时间按世界标准时间（UTC）计算。
+卫星星历定时更新。</p>
+    </blockquote>
+  </li>
+  <li>用户差分距离误差：</li>
+  <li>等效钟差改正：
+<img src="https://yanxuan.nosdn.127.net/34bcdc22ac98bf852caab2ad46008974.png" alt="image.png">
+</li>
+  <li>电离层垂直格网点误差：</li>
+</ul>
+
+<h4 id="13gps卫星在协议地球坐标系的坐标计算流程">13.GPS卫星在协议地球坐标系的坐标计算流程。</h4>
+
+<p><img src="https://yanxuan.nosdn.127.net/7930d5d3093bf46a0395fa066373ca44.png" alt="image.png">
+详细计算过程见<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228008&amp;objectId=80843e10e6f9b31be25d22e3ee7c5fc6" rel="nofollow" target="_blank" class="extlinks">PPT</a></p>
+
+<h4 id="14bds卫星在协议地球坐标系的坐标计算流程">14.BDS卫星在协议地球坐标系的坐标计算流程。</h4>
+
+<p><img src="https://yanxuan.nosdn.127.net/5eb2b39926fa9d60abcef2ed61411ea0.png" alt="">
+<img src="https://yanxuan.nosdn.127.net/3425c122436a4e51c7a1099c224c51c8.png" alt="image.png">
+来源：<a href="https://wenku.baidu.com/view/bca3f81589eb172dec63b75e.html" rel="nofollow" target="_blank" class="extlinks">BDS卫星位置和速度</a></p>
+
+<h4 id="15简述gps接收机的分类及工作原理">15.简述GPS接收机的分类及工作原理？</h4>
+
+<p>分类：</p>
+
+<ul>
+  <li><img src="https://yanxuan.nosdn.127.net/ecca5b1f7afa65b557e88985e4873bcd.png" alt="image.png"></li>
+  <li>按接收机通道数分类：多通道接收机、序贯通道接收机、多路多用通道接收机</li>
+  <li>按接收机工作原理分类：码相关型接收机、平方型接收机、混合型接收机、干涉型接收机
+    <blockquote>
+      <p>来源：<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186227999&amp;objectId=001d88295fa51476d1006fae92c7f4da" rel="nofollow" target="_blank" class="extlinks">PPT</a>和<a href="https://mooc1-1.chaoxing.com/coursedata?classId=20883645&amp;courseId=210245151&amp;type=1&amp;ut=s&amp;enc=075818aeb1070244ae9de7305a27a9a9&amp;cpi=67244457&amp;openc=4cf775ea15a3e0955ebe6580e226062e" rel="nofollow" target="_blank" class="extlinks">《GPS测量原理与应用》</a>P43</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>工作原理：</p>
+
+<p><img src="https://pic.rmb.bdstatic.com/b74f7269c4cd766e7c00b679bb16ab56.png" alt="20180620140503_40165.png"></p>
+
+<p>1.接收机天线</p>
+
+<p>接收机天线部分由天线和前置放大器组成。天线的作用是将GPS卫星信号的极微弱的电磁波转化为相应的电流；前置放大器的作用则是将微弱的GPS信号电流进行相应放大。通常对天线部分有如下要求:</p>
+
+<blockquote>
+  <p>(1)天线与前置放大器密封为一体，保障天线部分能够正常工作，减少信号损失。</p>
+</blockquote>
+
+<blockquote>
+  <p>(2)能够接收来自任何方向的卫星信号，不产生接收死角。</p>
+</blockquote>
+
+<blockquote>
+  <p>(3)拥有防护和屏蔽多路径效应的措施。</p>
+</blockquote>
+
+<blockquote>
+  <p>(4)天线的相位中心可保持高度的稳定，并与其几何中心尽量保持一致。</p>
+</blockquote>
+
+<p>2.接收机主机</p>
+
+<ul>
+  <li>1)变频器</li>
+</ul>
+
+<p>经过GPS前置放大器的信号仍然很微弱，为了使接收机通道得到稳定的高增益，并且使L频段的射频信号变成低频信号，必须采用变频器。</p>
+
+<p>信号通道：信号通道是GPS接收机的核心部分，GPS信号通道是硬软件结合的电路，不同类型的接收机其通道是不同的。GPS信号通道具有以下作用:</p>
+<blockquote>
+  <p>(1)搜索卫星，牵引并跟踪卫星。</p>
+</blockquote>
+
+<blockquote>
+  <p>(2)对广播电文数据信号实行解扩，解调出广播电文。</p>
+</blockquote>
+
+<blockquote>
+  <p>(3)进行伪距测量、载波相位测量及多普勒频移测量。</p>
+</blockquote>
+
+<p>由于接收机接收到的信号是扩频的调制信号，所以要经过解扩、解调才能得到导航电文，因此在相关通道电路中设有伪码相位跟踪环和载波相位跟踪环。</p>
+<ul>
+  <li>2)存储器</li>
+</ul>
+
+<p>接收机内设有存储器或存储卡，以存储卫星星历、卫星历书、接收机采集到的码相位伪距观测值、载波相位观测值及多普勒频移。目前GPS接收机都装有半导体存储器(简称内存)，接收机内存数据可以通过数据口传到微机上，以便进行数据处理和数据保存。在存储器内还装有多种工作软件，如自测试软件、卫星预报软件、导航电文解码软件、GPS单点定位软件等。</p>
+<ul>
+  <li>3)微处理器CPU</li>
+</ul>
+
+<p>微处理是GPS接收机工作的灵魂，GPS接收机工作都是在微机指令统一协同下进行的，其主要工作步骤为如下:</p>
+<blockquote>
+  <p>(1)接收机开机后，立即指示各个通道进行自检，实时地在视屏显示窗内展示各自的自检结果，并测定、校正和存储各个通道的时延值。</p>
+</blockquote>
+
+<blockquote>
+  <p>(2)接收机对卫星进行捕捉跟踪后，根据跟踪环路所输出的数据码，解译出GPS卫星星历。当同时锁定4颗卫星时，将C/A码伪距观测值连同星历一起计算出测站的三维位置，并按照预置的位置数据更新率，不断地更新(计算)点的坐标。</p>
+</blockquote>
+
+<blockquote>
+  <p>(3)用己测得的点位坐标和GPS卫星历书，计算所有在轨卫星的升降时间、方位和高度角，并为作业人员提供在视卫星数量及其工作状况，以便选用”健康”的且分布适宜的定位卫星，达到提高点位精度的目的。</p>
+</blockquote>
+
+<blockquote>
+  <p>(4)接收用户输入的信号，如测站名、测站号、天线高和气象参数等。</p>
+</blockquote>
+
+<p>3.电源：</p>
+
+<p>GPS接收机的电源包括内电源和外接电源。内电源采用锂电池，主要用于RAM存储器供电，以防止数据丢失。外接电源一般采用汽车电瓶或者随机配备的专用电源适配器。当用交流电时，要经过稳定电源或专用电流交换器。</p>
+
+<p>综上所述，GPS信号接收机的任务：接收GPS卫星发射的信号，能够捕获到按一定卫星高度截止角所选择的待测卫星的信号，并跟踪这些卫星的运行，获得必要的导航和定位信息及观测量；对所接收到的GPS信号进行变换、放大和处理，以便测量出GPS信号从卫星到接收机天线的传播时间，解译出GPS卫星所发送的导航电文，实时地计算出测站的三维位置，基至三维速度和时间。</p>
+
+<h3 id="第四章-gps卫星定位基本原理">第四章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" rel="nofollow" target="_blank" class="extlinks">GPS卫星定位基本原理</a>
+</h3>
+
+<h4 id="1掌握观测量的误差源分类其基本特性影响程度及其消除方法">1.掌握观测量的误差源分类、其基本特性、影响程度及其消除方法。</h4>
+
+<p><img src="https://pic.rmb.bdstatic.com/988299906290d5e2f57d030578d167fb.png" alt="image.png">
+改正措施：
+<img src="https://pic.rmb.bdstatic.com/81a28a869f1c4f6605ef4dfad6264682.png" alt="image.png"></p>
+
+<h4 id="2重点掌握对流层折射误差电离层折射误差多路径传播效应卫星钟差卫星轨道误差星历误差影响程度及其削弱方法">2.重点掌握对流层折射误差、电离层折射误差、多路径传播效应、卫星钟差、卫星轨道误差（星历误差）影响程度及其削弱方法。</h4>
+
+<ul>
+  <li>对流层折射误差
+    <ul>
+      <li>影响程度：对流层的折射与地面气候、大气压力、温度和湿度变化密切相关，这也使得对流层折射比电离层折射更复杂。对流层折射的影响与信号的高度角有关，当在天顶方向（高度角为90°），其影响达2.3m；当在地面方向（高度角为10°），其影响可达20m。</li>
+      <li>削弱方法：<img src="https://pic.rmb.bdstatic.com/e3b82aa3f1e32b1d024c4538b5d147dd.png" alt="image.png">
+</li>
+    </ul>
+  </li>
+  <li>电离层折射误差
+    <ul>
+      <li>影响程度：所谓电离层，之地球上空距地面高度在50~1000km之间的大气层。电离层中的气体分子由于受到太阳等天体各种射线辐射，产生强烈的电离形成大量的自由电子和正离子。当GPS信号通过电离层时，如同其他电磁波一样,信号的路径会发生夸曲，传播速度也会发生变化。所以用信号的传播时间乘上真空中光速而得到的距离就会不等于卫星至接收机间的几何距离.这种偏差叫电离层折射误差。电离层含有较高密度的电子,它属于弥散性介质,电磁波在这种介质内传播时,其速度与频率有关。</li>
+      <li>削弱方法：（1）利用双频观测；（2）利用电离层改正模型加以修正；（3）利用同步观测值求差</li>
+    </ul>
+  </li>
+  <li>多路径传播效应
+    <ul>
+      <li>影响程度：在GPS测量中，如果测站周围的反射物所反射的卫星信号(反射波)进入接收机天线，这就将和直接来自卫星的信号(直接波)产生干涉，从而使观测值偏离真值产生所谓的“多路径误差”。这种由于多路径的信号传播所引起的干涉时延效应被称做多路径效应。多路径效应是GPS测量中一种重要的误差源，将严重损害GPS测量的精度，严重时还将引起信号的失锁。</li>
+      <li>削弱方法：（1）选择合适的站址；（2）对接收机天线有合适的要求</li>
+    </ul>
+  </li>
+  <li>卫星钟差
+    <ul>
+      <li>影响程度：卫星钟的钟差包括由钟差、频偏、频漂等产生的误差，也包含钟的随机误差。在GPS测量中，无论是码相位观测或载波相位观测，均要求卫星钟和接收机钟保持严格同步。尽管GPS卫星均设有高精度的原子钟(铷钟和铯钟)，但与理想的GPS时之间仍存在着偏差或漂移。这些偏差的总量均在1ms以内，由此引起的等效距离误差约可达300km。</li>
+      <li>削弱方法：<img src="https://pic.rmb.bdstatic.com/0dab08ec5067ea863b5499fab8becbb5.png" alt="image.png">
+</li>
+    </ul>
+  </li>
+  <li>卫星轨道误差（星历误差）
+    <ul>
+      <li>影响程度：由星历所给出的卫星在空间的位置与实际位置之差称为卫星星历误差。由于卫星在运行  中要受到多种摄动力的复杂影响,而通过地面监测站又难以充分可靠地测定这些作用力并掌  握它们的作用规律,因此在星历预报时会产生较大的误差。在一个观测时间段内星历误差属  系统误差特性,是一种起算数据误差。它将严重影响单点定位的精度,也是精密相对定位中的重要误差源。</li>
+      <li>削弱方法：（1）建立自己的卫星跟踪网独立定轨；（2）轨道松弛法；（3）同步观测值求差</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>详细内容见<a href="https://mooc1-1.chaoxing.com/coursedata?classId=20883645&amp;courseId=210245151&amp;type=1&amp;ut=s&amp;enc=075818aeb1070244ae9de7305a27a9a9&amp;cpi=67244457&amp;openc=4cf775ea15a3e0955ebe6580e226062e" rel="nofollow" target="_blank" class="extlinks">《GPS测量原理及应用》</a>P87</p>
+</blockquote>
+
+<h3 id="第五章--gps卫星定位基本原理">第五章  <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" rel="nofollow" target="_blank" class="extlinks">GPS卫星定位基本原理</a>
+</h3>
+
+<h4 id="1名词解释-伪距--钟差--整周模糊度--周跳---静态绝对定位---静态相对定位---载波相位差分---基线向量粗差常规rtk网络rtk">1.名词解释： 伪距  钟差  整周模糊度  周跳   静态绝对定位   静态相对定位   载波相位差分   基线向量、粗差、常规RTK、网络RTK</h4>
+
+<ul>
+  <li>伪距：拟极差（Pseudorange）又称伪距，是指卫星定位过程中，地面接收机到卫星之间的大概距离。用于例如全球定位系统（GPS）接收器，为了确定它的位置，卫星导航接收机将确定（至少）四颗卫星的距离以及它们在发射时的位置。了解卫星的轨道参数，可以在任何时间点计算这些位置。<strong>每个卫星的拟极差通过将信号从卫星发射到接收机的时间乘以光速来获得。</strong>由于测量时间存在准确度误差，因此使用术语拟极差而不是此距离的范围。</li>
+  <li>钟差：天文钟虽然比较准确,但也存在误差。钟差是在同一瞬间指示准确世界时的钟时减去天文钟的时间，即:钟差=世界时-钟时。钟差的大小是由启动时天文钟的读数和世界时的差别决定的，它的大小不能说明天文钟的质量。钟差可用无线电对时法测定。</li>
+  <li>整周模糊度：整周模糊度（ambiguity of whole cycles）又称整周未知数，是在全球定位系统技术的载波相位测量时，载波相位与基准相位之间相位差的首观测值所对应的整周未知数。</li>
+  <li>周跳：周跳（cycle slips）是指在全球导航卫星系统(GNSS)技术的载波相位测量中，由于卫星信号的失锁而导致的整周计数的跳变或中断。正确地探测并恢复周跳，是载波相位测量中非常重要且必须解决的问题之一。</li>
+  <li>静态绝对定位：接收机天线处于静止状态下,确定观测站坐标的方法称为静态绝对定位。这时,可以连续地在不同历元同步观测不同的卫星,测定卫星至观测站的伪距，获得充分的多余观测量。测后通过数据处理求得观测站的绝对坐标。</li>
+  <li>静态相对定位：相对定位是用两台接收机分别安置在基线的两端,同步观测相同的GPS卫星，以确定基线端点的相对位置或基线向量。同样，多台接收机安置在若干条基线的端点，通过同步观测GPS 卫星可以确定多条基线向量。在一个端点坐标已知的情况下,可以用基线向量推求见一待定点的坐标。
+将两台接收机分别安置在基线的两个端点，其位置静止不动，并同步观测相同的4颗以上的GPS卫星，确定基线两个端点在协议地球坐标系中的相对位置，这种定位模式称为相对定位。
+相对定位中，两颗不同卫星对同一测站求一次差，称为星间单差，可有效消除或削弱与该测站有关的误差。</li>
+  <li>载波相位差分：载波相位差分，亦称积分多普勒。由导航定位接收机锁定信号后测得的导航卫星信号载波的累积相位。</li>
+  <li>基线向量：对两接收机的观测数据进行解算所得到的两测站间的三维坐标点称为基线向量。</li>
+  <li>粗差：粗差是指在相同观测条件下作一系列的观测，是测量误差的种类之一，一般是指绝对值大于3倍中误差的观测误差，包括内外业中因疏忽大意而造成的差错在内。其绝对值超过限差的测量偏差，含有粗差的测量数据绝不能采用。</li>
+  <li>常规RTK：RTK（Real - time kinematic，实时动态）载波相位差分技术，是实时处理两个测量站载波相位观测量的差分方法，将基准站采集的载波相位发给用户接收机，进行求差解算坐标。这是一种新的常用的卫星定位测量方法，以前的静态、快速静态、动态测量都需要事后进行解算才能获得厘米级的精度，而RTK是能够在野外实时得到厘米级定位精度的测量方法，它采用了载波相位动态实时差分方法，是GPS应用的重大里程碑，它的出现为工程放样、地形测图，各种控制测量带来了新的测量原理和方法，极大地提高了作业效率。</li>
+  <li>网络RTK：网络RTK也称基准站RTK，是近年来在常规RTK和差分GPS的基础上建立起来的一种新技术，尚处于试验、发展阶段。我们通常把在一个区域内建立多个（一般为三个或三个以上）的GPS参考站，对该区域构成网状覆盖，并以这些基准站中的一个或多个为基准计算和发播GPS改正信息，从而对该地区内的GPS用户进行实时改正的定位方式称为GPS网络RTK，又称为多基准站RTK。</li>
+</ul>
+
+<h4 id="2简述gps卫星定位的基本原理">2.简述GPS卫星定位的基本原理？</h4>
+
+<p>测量出已知位置的卫星到用户接收机之间的距离，然后综合多颗卫星的数据就可知道接收机的具体位置。要达到这一目的，卫星的位置可以根据星载时钟所记录的时间在卫星星历中查出。而用户到卫星的距离则通过记录卫星信号传播到用户所经历的时间，再将其乘以光速得到(由于大气层电离层的干扰，这一距离并不是用户与卫星之间的真实距离，而是伪距。为了计算用户的三维位置和接收机时钟偏差，伪距测量要求至少接收来自4颗卫星的信号。通过接收机时钟得到时间差，从而知道四个信号从卫星到接收机的不准确距离（含同一个误差值，由接收机时钟误差造成），用这四个不准确距离和四个卫星的准确位置构建四个方程，解方程组就得到接收机位置</p>
+
+<h4 id="3简述伪距法单点定位的原理及其观测方程以四颗卫星为例">3.简述伪距法单点定位的原理及其观测方程？（以四颗卫星为例）</h4>
+
+<ul>
+  <li>原理：伪距法定位是由GPS接收机在某一时刻测出得到四颗以上GPS卫星的伪距以及已知的卫星位置，采用距离交会的方法求定接收机天线所在点的三维坐标。</li>
+  <li>观测方程：<img src="https://pic.rmb.bdstatic.com/32c82eabb618ceaaa54ee5781efbe8ed.png" alt="image.png">
+</li>
+</ul>
+
+<h4 id="4简述载波相位测量定位的原理以四颗卫星为例">4.简述载波相位测量定位的原理？（以四颗卫星为例）</h4>
+
+<p><img src="https://pic.rmb.bdstatic.com/5fd70f92ad44a681a939409acfcd5f48.png" alt="image.png">
+<img src="https://pic.rmb.bdstatic.com/125c631f0696796404e00ecc3cff43a0.png" alt="image.png">
+来源：<a href="https://mooc1-1.chaoxing.com/coursedata?classId=20883645&amp;courseId=210245151&amp;type=1&amp;ut=s&amp;enc=075818aeb1070244ae9de7305a27a9a9&amp;cpi=67244457&amp;openc=4cf775ea15a3e0955ebe6580e226062e" rel="nofollow" target="_blank" class="extlinks">《GPS测量原理及应用》</a>P51</p>
+
+<h4 id="5简述各种观测值的各种线性组合及其特性">5.简述各种观测值的各种线性组合及其特性？</h4>
+
+<p><img src="https://pic.rmb.bdstatic.com/21b3d13faeb6c14a8a771a22ffb5b8da.png" alt="image.png">
+优点：</p>
+
+<ul>
+  <li>可消除或减弱一些系统性误差影响，如卫星轨道误差、钟差和大气折射误差等；</li>
+  <li>可减少平差计算中未知数的数量。</li>
+</ul>
+
+<p>缺点：</p>
+
+<ul>
+  <li>原始的独立观测量，通过求差将引起差分量之间的相关性，平差不可忽视；</li>
+  <li>差分后将使观测方程的数据明显减少；</li>
+  <li>在差分时，如果于某一历元，对参考站或参考卫星的观测量无法采用，则使观测量的差分产生困难，参加观测的接收机越多情况越复杂。</li>
+</ul>
+
+<blockquote>
+  <p>其他常用的线性组合</p>
+</blockquote>
+
+<p><img src="https://pic.rmb.bdstatic.com/41c79a96dd68e8c2aeb4703e084bcba0.png" alt="image.png">
+<img src="https://pic.rmb.bdstatic.com/84c202e1a474d2b3fb0c3914f3ee48db.png" alt="image.png">
+<img src="https://pic.rmb.bdstatic.com/cf1f635a414564ce687b42a7916a77ca.png" alt="image.png">
+<img src="https://pic.rmb.bdstatic.com/2373fab16cab0d0743c610cd37d3728a.png" alt="image.png">
+<img src="https://pic.rmb.bdstatic.com/58c3d3d4ab27c3a6c3061c7c56ad452d.png" alt="image.png"></p>
+
+<p>来源：<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228018&amp;objectId=e69e43cc50f1ab22f2d10feb4469848a" rel="nofollow" target="_blank" class="extlinks">PPT1</a>、<a href="https://mooc1-1.chaoxing.com/coursedata/toPreview?courseId=210245151&amp;dataId=186228019&amp;objectId=1cc2b97abac35235be8bb822ff7b1cbb" rel="nofollow" target="_blank" class="extlinks">PPT2</a></p>
+
+<h4 id="6简述常规rtk的工作原理及测量过程">6.简述常规RTK的工作原理及测量过程？</h4>
+
+<ul>
+  <li>原理：RTK(real time kinematic)是以载波相位观测值进行实时动态相对定位的技术。其原理是将位于基准站上的GPS接收机观测的卫星数据，通过数据通信链（无线电台）实时发送出去，而位于附近的移动站GPS接收机在对卫星观测的同时，也接收来自基准站的电台信号，通过对所收到的信号进行实时处理，给出移动站的三维坐标，并估“其精度。</li>
+  <li>测量过程：（1）确定测站点；（2）架设仪器；（3）测量读数；（4）记录；（5）测站点检验及校核</li>
+</ul>
+
+<h4 id="7简述cors网络rtk的工作原理及其外业实测过程">7.简述CORS（网络RTK）的工作原理及其外业实测过程？</h4>
+
+<ul>
+  <li>
+    <p>原理：基本原理是在一个较大的区域内稀疏地、较均匀地布设多个基准站, 构成一个基准站网, 那么我们就能借鉴广域差分GPS和具有多个基准站的局域差分GPS 中的基本原理和方法来设法消除或削弱各种系统误差的影响, 获得高精度的定位结果。
+网络RTK由基准站网、数据处理中心和数据通信线路组成，基准站网实时采集观测数据，并通过数据通信链将数据传送给数据处理中心；数据中心根据流动站的近似坐标判断流动站所在区域，然后将系统误差信息播发给流动站，流动站根据收到的误差信息修正观测数据，从而得到精确的观测数据。</p>
+  </li>
+  <li>
+    <p>测量过程：（1）架设基准站；（2）连接手簿；（3）新建工程；（4）采集坐标点</p>
+  </li>
+</ul>
+
+<h4 id="8简述vrs技术的基本原理">8.简述VRS技术的基本原理？</h4>
+
+<p>工作原理是在某一大区域(或某一城市)内,建立若干个(3个以上)连续运行的GPS基准站;根据这些GPS基准站的观测值(由于GPS基准站有长时间的观测,故点位坐标精度很高),建立区域内GPS 主要误差模型(如电离层、对流层、卫星轨道等误差模型);系统运行时将这些误差从基准站的观测值中除去,形成“无误差”的观测值;一旦接收到移动站( 用户一一单台GPS接收机)的概略坐标，即在移动站附近(几米到几十米)建立起一个虚拟参考站;移动站与虚拟参考站进行载波相位差分改正，实现实时RTK。</p>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 GNSS复习题集 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" class="cplink">https://jmbaozi.github.io/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('第一章-<a-href="https://jmbaozi.top/2020/03/26/gnss-%e5%a4%8d%e4%b9%a0%e9%a2%98%e9%9b%86.html">绪论</a>')">第一章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">绪论</a></a><ul><li><a onclick="scrollToAdjust('1.简述全球定位系统的组成部分及各部分的作用？')">1.简述全球定位系统的组成部分及各部分的作用？</a></li><li><a onclick="scrollToAdjust('2.简述全球定位系统的特点？')">2.简述全球定位系统的特点？</a></li><li><a onclick="scrollToAdjust('3.简述双星导航定位系统的定位原理？')">3.简述双星导航定位系统的定位原理？</a></li><li><a onclick="scrollToAdjust('4.简述全球定位系统的国民经济建设中的应用及发展情况？')">4.简述全球定位系统的国民经济建设中的应用及发展情况？</a></li><li><a onclick="scrollToAdjust('5.目前gnss系统包括哪些,比较这些系统的基本性能？')">5.目前GNSS系统包括哪些,比较这些系统的基本性能？</a></li><li><a onclick="scrollToAdjust('6.gps、gis、rs、bds、glonass、galileo、waas、egnos、cors、igs、leo、meo、geo、igso中英文全称。')">6.GPS、GIS、RS、BDS、GLONASS、GALILEO、WAAS、EGNOS、CORS、IGS、LEO、MEO、GEO、IGSO中英文全称。</a></li></ul></li><li><a onclick="scrollToAdjust('第二章-<a-href="https://jmbaozi.top/2020/03/26/gnss-%e5%a4%8d%e4%b9%a0%e9%a2%98%e9%9b%86.html">坐标系统和时间系统</a>')">第二章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">坐标系统和时间系统</a></a><ul><li><a onclick="scrollToAdjust('1.名词解释--天球坐标系---地球坐标系---大地坐标系---站心坐标系---岁差---章动---wgs-84大地坐标系---cgcs2000坐标系---恒星时--协调世界时--gpst时间系统')">1.名词解释：  天球坐标系   地球坐标系   大地坐标系   站心坐标系   岁差   章动   WGS-84大地坐标系   CGCS2000坐标系   恒星时  协调世界时  GPST时间系统</a></li><li><a onclick="scrollToAdjust('2.简述卫星测量中常用的坐标系以及它们之间的转换关系？')">2.简述卫星测量中常用的坐标系以及它们之间的转换关系？</a></li><li><a onclick="scrollToAdjust('3.简述不同空间直角坐标系统之间的转换原理及方法(七参转换模型)？')">3.简述不同空间直角坐标系统之间的转换原理及方法(七参转换模型)？</a></li><li><a onclick="scrollToAdjust('4.gps定位系统中涉及到那些时间概念,儒略日和gpst之间的换算？(年积日、gps周、儒略日和gpst）')">4.GPS定位系统中涉及到那些时间概念,儒略日和GPST之间的换算？(年积日、GPS周、儒略日和GPST）</a></li><li><a onclick="scrollToAdjust('5.协议天球坐标系与协议地球坐标系之间的转换，需要经过哪些转换过程？')">5.协议天球坐标系与协议地球坐标系之间的转换，需要经过哪些转换过程？</a></li></ul></li><li><a onclick="scrollToAdjust('第三章-<a-href="https://jmbaozi.top/2020/03/26/gnss-%e5%a4%8d%e4%b9%a0%e9%a2%98%e9%9b%86.html">卫星定轨理论、gps卫星信号与星历</a>')">第三章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">卫星定轨理论、GPS卫星信号与星历</a></a><ul><li><a onclick="scrollToAdjust('1.名词解释卫星的无摄运动---卫星的受摄运动---卫星历书--广播星历---精密星历')">1.名词解释：卫星的无摄运动   卫星的受摄运动   卫星历书  广播星历   精密星历</a></li><li><a onclick="scrollToAdjust('2.开普勒轨道六参数名称、定义')">2.开普勒轨道六参数名称、定义</a></li><li><a onclick="scrollToAdjust('3.无摄运动和受摄运动的含义')">3.无摄运动和受摄运动的含义</a></li><li><a onclick="scrollToAdjust('4.了解计算无摄运动时卫星的真近点角和瞬时位置？')">4.了解：计算无摄运动时卫星的真近点角和瞬时位置？</a></li><li><a onclick="scrollToAdjust('5.gps卫星星历的分类和特点（即预报星历和精密星历——定义）')">5.GPS卫星星历的分类和特点（即预报星历和精密星历——定义）</a></li><li><a onclick="scrollToAdjust('6.区别gps卫星不同星历得到卫星坐标的方法。')">6.区别GPS卫星不同星历得到卫星坐标的方法。</a></li><li><a onclick="scrollToAdjust('7.理解如何计算gps卫星的坐标？')">7.理解如何计算GPS卫星的坐标？</a></li><li><a onclick="scrollToAdjust('8.本机格式、rinex格式和sp3精密星历数据格式')">8.本机格式、RINEX格式和SP3精密星历数据格式</a></li><li><a onclick="scrollToAdjust('9.述gps卫星发射的三类信号。')">9.述GPS卫星发射的三类信号。</a></li><li><a onclick="scrollToAdjust('10.gps-载波信号有哪几种，频率和波长各是多少。')">10.GPS 载波信号有哪几种，频率和波长各是多少。</a></li><li><a onclick="scrollToAdjust('11.述随机噪声码和伪随机噪声码的性质。')">11.述随机噪声码和伪随机噪声码的性质。</a></li><li><a onclick="scrollToAdjust('12.导航电文、卫星星历、用户差分距离误差、等效钟差改正、-电离层垂直格网点误差。')">12.导航电文、卫星星历、用户差分距离误差、等效钟差改正、 电离层垂直格网点误差。</a></li><li><a onclick="scrollToAdjust('13.gps卫星在协议地球坐标系的坐标计算流程。')">13.GPS卫星在协议地球坐标系的坐标计算流程。</a></li><li><a onclick="scrollToAdjust('14.bds卫星在协议地球坐标系的坐标计算流程。')">14.BDS卫星在协议地球坐标系的坐标计算流程。</a></li><li><a onclick="scrollToAdjust('15.简述gps接收机的分类及工作原理？')">15.简述GPS接收机的分类及工作原理？</a></li></ul></li><li><a onclick="scrollToAdjust('第四章-<a-href="https://jmbaozi.top/2020/03/26/gnss-%e5%a4%8d%e4%b9%a0%e9%a2%98%e9%9b%86.html">gps卫星定位基本原理</a>')">第四章 <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">GPS卫星定位基本原理</a></a><ul><li><a onclick="scrollToAdjust('1.掌握观测量的误差源分类、其基本特性、影响程度及其消除方法。')">1.掌握观测量的误差源分类、其基本特性、影响程度及其消除方法。</a></li><li><a onclick="scrollToAdjust('2.重点掌握对流层折射误差、电离层折射误差、多路径传播效应、卫星钟差、卫星轨道误差（星历误差）影响程度及其削弱方法。')">2.重点掌握对流层折射误差、电离层折射误差、多路径传播效应、卫星钟差、卫星轨道误差（星历误差）影响程度及其削弱方法。</a></li></ul></li><li><a onclick="scrollToAdjust('第五章--<a-href="https://jmbaozi.top/2020/03/26/gnss-%e5%a4%8d%e4%b9%a0%e9%a2%98%e9%9b%86.html">gps卫星定位基本原理</a>')">第五章  <a href="https://jmbaozi.top/2020/03/26/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html">GPS卫星定位基本原理</a></a><ul><li><a onclick="scrollToAdjust('1.名词解释-伪距--钟差--整周模糊度--周跳---静态绝对定位---静态相对定位---载波相位差分---基线向量、粗差、常规rtk、网络rtk')">1.名词解释： 伪距  钟差  整周模糊度  周跳   静态绝对定位   静态相对定位   载波相位差分   基线向量、粗差、常规RTK、网络RTK</a></li><li><a onclick="scrollToAdjust('2.简述gps卫星定位的基本原理？')">2.简述GPS卫星定位的基本原理？</a></li><li><a onclick="scrollToAdjust('3.简述伪距法单点定位的原理及其观测方程？（以四颗卫星为例）')">3.简述伪距法单点定位的原理及其观测方程？（以四颗卫星为例）</a></li><li><a onclick="scrollToAdjust('4.简述载波相位测量定位的原理？（以四颗卫星为例）')">4.简述载波相位测量定位的原理？（以四颗卫星为例）</a></li><li><a onclick="scrollToAdjust('5.简述各种观测值的各种线性组合及其特性？')">5.简述各种观测值的各种线性组合及其特性？</a></li><li><a onclick="scrollToAdjust('6.简述常规rtk的工作原理及测量过程？')">6.简述常规RTK的工作原理及测量过程？</a></li><li><a onclick="scrollToAdjust('7.简述cors（网络rtk）的工作原理及其外业实测过程？')">7.简述CORS（网络RTK）的工作原理及其外业实测过程？</a></li><li><a onclick="scrollToAdjust('8.简述vrs技术的基本原理？')">8.简述VRS技术的基本原理？</a></li></ul></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html" class="read-next-link" aria-label="《大地测量学基础》复习题集"></a>
+            <section>
+                <span>《大地测量学基础》复习题集</span>
+                <p>第一章 绪论</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html" class="read-next-link"
+                aria-label="Python爬虫-爬取福利图片&踩坑"></a>
+            <section>
+                <span>Python爬虫-爬取福利图片&踩坑</span>
+                <p>这个个人博客是我无意中发现的，经过Ping测试服务器应该是在海外，所以传输速度并不理想，为了减轻博主服务器的压力，...</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2020-03-27-GNSS-复习题集.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

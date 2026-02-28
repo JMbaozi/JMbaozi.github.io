@@ -1,0 +1,3528 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yucol | 2 of 8 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta name="keywords" content="yucol，yucol的博客，baozi，python，前端，后段，智慧农业">
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Yucol | 2 of 8 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/blog/page2/index.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.css">
+
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+            
+                <div id="all" data-theme="default">
+            
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            <div
+    class="g-banner home-banner banner-theme-default"
+    data-theme="default"
+    style=""
+>
+    <h2>Welcome to yucol's blog!</h2>
+    <h3>One, Two, Three</h3>
+</div>
+
+<main class="g-container home-content">
+    <div class="article-list">
+        
+
+
+
+
+
+
+
+
+    
+    
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html" title="计算及应用静校正量"></a>
+        <h2 class="post-title">
+            
+            计算及应用静校正量
+        </h2>
+        
+        <h3 class="post-subtitle">处理</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6 class="post-tag">绿山软件</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E5%A4%84%E7%90%86 class="post-tag">地震处理</a>
+                
+                <a href=/tags.html#GeoEast class="post-tag">GeoEast</a>
+                
+                <a href=/tags.html#%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F class="post-tag">静校正量</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-22">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-22 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+        <div class="post-cover">
+            <a class="post-link" href="/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html" title="逃离涿州计划1.0"></a>
+            <img class="lazyload" src="/assets/img/loading.gif" data-src="https://free.picui.cn/free/2025/09/19/68ccb8adbdd4a.jpg" href="/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html" alt="">
+        </div>
+    
+    <section class="post-preview">
+        <a class="post-link" href="/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html" title="逃离涿州计划1.0"></a>
+        <h2 class="post-title">
+            
+            逃离涿州计划1.0
+        </h2>
+        
+        <h3 class="post-subtitle">这么近，那么美</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E4%BB%8A%E6%97%A5%E6%96%B9%E7%9F%A5%E6%88%91%E6%98%AF%E6%88%91 class="post-tag">今日方知我是我</a>
+                
+                <a href=/tags.html#%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E class="post-tag">逃离涿州</a>
+                
+                <a href=/tags.html#%E7%94%9F%E6%B4%BB class="post-tag">生活</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-19">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-19 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html" title="GeoEast SPS观测系统定义"></a>
+        <h2 class="post-title">
+            
+            GeoEast SPS观测系统定义
+        </h2>
+        
+        <h3 class="post-subtitle">定观</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#GeoEast class="post-tag">GeoEast</a>
+                
+                <a href=/tags.html#SPS class="post-tag">SPS</a>
+                
+                <a href=/tags.html#%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F class="post-tag">观测系统</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-10">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-10 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/Linux%E6%93%8D%E4%BD%9C.html" title="Linux操作"></a>
+        <h2 class="post-title">
+            
+            Linux操作
+        </h2>
+        
+        <h3 class="post-subtitle">基础</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#Linux class="post-tag">Linux</a>
+                
+                <a href=/tags.html#%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B class="post-tag">菜鸟教程</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-08">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-08 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html" title="Picker初至拾取"></a>
+        <h2 class="post-title">
+            
+            Picker初至拾取
+        </h2>
+        
+        <h3 class="post-subtitle">拾取</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6 class="post-tag">绿山软件</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E5%A4%84%E7%90%86 class="post-tag">地震处理</a>
+                
+                <a href=/tags.html#Picker class="post-tag">Picker</a>
+                
+                <a href=/tags.html#%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96 class="post-tag">初至拾取</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-03">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-03 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html" title="GeoScribeⅡ绿山软件建观"></a>
+        <h2 class="post-title">
+            
+            GeoScribeⅡ绿山软件建观
+        </h2>
+        
+        <h3 class="post-subtitle">观测系统</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6 class="post-tag">绿山软件</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E5%A4%84%E7%90%86 class="post-tag">地震处理</a>
+                
+                <a href=/tags.html#GeoScribe%E2%85%A1 class="post-tag">GeoScribeⅡ</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-09-02">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-09-02 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+        <div class="post-cover">
+            <a class="post-link" href="/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html" title="改头不换面"></a>
+            <img class="lazyload" src="/assets/img/loading.gif" data-src="https://images.unsplash.com/photo-1529322365446-6efd62aed02e?w=1600&q=900" href="/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html" alt="">
+        </div>
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html" title="改头不换面"></a>
+        <h2 class="post-title">
+            
+            改头不换面
+        </h2>
+        
+        <h3 class="post-subtitle">域名更改</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E5%9F%9F%E5%90%8D class="post-tag">域名</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="25-08-28">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2025-08-28 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html" title="地震预测统计分析方法总结（2）"></a>
+        <h2 class="post-title">
+            
+            地震预测统计分析方法总结（2）
+        </h2>
+        
+        <h3 class="post-subtitle">案例</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6 class="post-tag">统计地震学</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B class="post-tag">地震预测</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="23-05-07">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2023-05-07 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html" title="地震预测统计分析方法总结（1）"></a>
+        <h2 class="post-title">
+            
+            地震预测统计分析方法总结（1）
+        </h2>
+        
+        <h3 class="post-subtitle">案例</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6 class="post-tag">统计地震学</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B class="post-tag">地震预测</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="23-05-05">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2023-05-05 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html" title="地震预测研究进展（遥感）"></a>
+        <h2 class="post-title">
+            
+            地震预测研究进展（遥感）
+        </h2>
+        
+        <h3 class="post-subtitle">研究进展</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6 class="post-tag">统计地震学</a>
+                
+                <a href=/tags.html#%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95 class="post-tag">研究进展</a>
+                
+                <a href=/tags.html#CiteSpace class="post-tag">CiteSpace</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B class="post-tag">地震预测</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="23-03-20">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2023-03-20 
+            
+        </time>
+    </footer>
+</article>
+    
+        
+        
+<article class="article-item">
+
+    
+    <section class="post-preview">
+        <a class="post-link" href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html" title="地震预测研究进展-英文"></a>
+        <h2 class="post-title">
+            
+            地震预测研究进展-英文
+        </h2>
+        
+        <h3 class="post-subtitle">研究进展</h3>
+        
+        
+    </section>
+    <footer class="post-meta">
+        <div class="post-tags">
+            
+                
+                <a href=/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6 class="post-tag">统计地震学</a>
+                
+                <a href=/tags.html#%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95 class="post-tag">研究进展</a>
+                
+                <a href=/tags.html#CiteSpace class="post-tag">CiteSpace</a>
+                
+                <a href=/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B class="post-tag">地震预测</a>
+                
+            
+        </div>
+        <time class="post-date" datetime="23-02-22">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-time2"></use>
+            </svg>
+            
+                2023-02-22 
+            
+        </time>
+    </footer>
+</article>
+    
+
+
+
+        
+            <nav class="pagination">
+    <input type="hidden" id="total_pages" value="8">
+    <input type="hidden" id="current_pages" value="2">
+    <input type="hidden" id="base_url" value="/blog/">
+    <div class="page-links">
+        
+            
+            <a href="/blog//index.html" class="page-link" title="Previous Page">&laquo;</a>
+            
+        
+        <div id="page-link-container"></div>
+        
+        <a href="/blog/page3/index.html" class="page-link">&raquo;</a>
+        
+    </div>
+</nav>
+
+        
+    </div>
+    
+
+
+<aside class="g-sidebar-wrapper">
+    <div class="g-sidebar">
+        <section class="author-card">
+            <div class="avatar">
+                <img src="/assets/img/profile_photo.jpg" alt="">
+            </div>
+            <div class="author-name" rel="author">yucol</div>
+            <div class="bio">
+                <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+            </div>
+            <div class="level">
+                <div class="level-item">
+                    <p class="heading">文章</p>
+                    <a href="/archives.html">
+                        <p class="title">75</p>
+                    </a>
+                </div>
+                <div class="level-item">
+                    <p class="heading">类别</p>
+                    <a href="/categories.html">
+                        <p class="title">9</p>
+                    </a>
+                </div>
+                <div class="level-item">
+                    <p class="heading">标签</p>
+                    <a href="/tags.html">
+                        <p class="title">75</p>
+                    </a>
+                </div>
+            </div>
+            
+            <ul id="sns-links" class="sns-links">
+                
+                <li>
+                    <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </section>
+        
+            <section class="tags-card">
+    <div class="links">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-calendar"></use>
+        </svg> 日历
+    </div>
+    <div id="cal-heatmap">
+        <div id="ex-ghDay" class="calendar-top">
+            <a id="ex-ghDay-prev" class="button" href="#" aria-label="Prev month">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-left"></use>
+                </svg>
+            </a>
+            <a id="ex-ghDay-next" class="button" href="#" aria-label="Next month">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-right"></use>
+                </svg>
+            </a>
+            <a id="ex-ghDay-today" class="button" href="#" aria-label="Rotate view to today">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-rotate"></use>
+                </svg>
+            </a>
+            <div class="legends">
+                <span class="text">少</span>
+                <div id="ex-ghDay-legend"></div>
+                <span class="text">多</span>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+        
+        
+        <section class="tags-card">
+            <div class="links" rel="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-tags"></use>
+                </svg>                
+                热门标签
+            </div>
+            
+            
+                
+                    
+                        
+                        
+                        <a href="/tags.html#Python" class="tag">Python<sup>17</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%AD%A6%E4%B9%A0" class="tag">学习<sup>12</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E6%9D%82%E8%B0%88" class="tag">杂谈<sup>9</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6" class="tag">统计地震学<sup>9</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E7%88%AC%E8%99%AB" class="tag">爬虫<sup>6</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#ArcPy" class="tag">ArcPy<sup>6</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B" class="tag">地震预测<sup>5</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E7%89%A9%E7%90%86" class="tag">物理<sup>4</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E8%8B%B1%E8%AF%AD" class="tag">英语<sup>4</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%9B%9B%E7%BA%A7" class="tag">四级<sup>4</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E6%88%90%E6%9E%9C" class="tag">成果<sup>4</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%89%8D%E7%AB%AF" class="tag">前端<sup>4</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                            
+                
+                    
+        </section>
+        
+
+        
+        <section class="tags-card">
+            <div class="links" rel="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-links"></use>
+                </svg>       
+                链接
+            </div>
+            
+                <a href="https://blog.bj-yan.top/" target="_blank" class="tag" rel="noreferrer"> 北屿 </a>
+            
+                <a href="https://peng-yq.github.io/" target="_blank" class="tag" rel="noreferrer"> PYQ </a>
+            
+                <a href="https://zimingyuan.github.io/" target="_blank" class="tag" rel="noreferrer"> VnYzm </a>
+            
+                <a href="https://zhangzhao219.github.io/" target="_blank" class="tag" rel="noreferrer"> ZhangZhao Blog </a>
+            
+                <a href="https://yayu.net/" target="_blank" class="tag" rel="noreferrer"> 雅余 </a>
+            
+                <a href="https://jiangkp.com/" target="_blank" class="tag" rel="noreferrer"> 江快跑 </a>
+            
+                <a href="https://lisz.me" target="_blank" class="tag" rel="noreferrer"> Mr Li </a>
+            
+        </section>
+        
+
+        <section class="tags-card">
+            
+            <div class="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-new"></use>
+                </svg>       
+                最近更新
+            </div>
+            <ul class="latest-articles">
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/life/concert.html"> 我的现场编年史：不只是听歌！ </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2026-02-25 
+                            
+                        </span>
+                    </li>   
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/server/server-setup.html"> 从零到一：阿里云 200M 带宽服务器的全栈基建（1Panel + Docker + GitHub Actions） </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2026-02-25 
+                            
+                        </span>
+                    </li>   
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/app/PartyDice.html"> 我的第一款酒局神器App“摇了么” </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2026-02-22 
+                            
+                        </span>
+                    </li>   
+                
+            </ul>
+
+        </section>
+
+    </div>
+
+    
+        
+        <div class="search-card">
+            <input id="search_input" type="text" placeholder="Search..." autocomplete="off">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-search"></use>
+            </svg>
+            <div class="search_result"></div>
+        </div>
+        
+    
+</aside>
+</main>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/Tooltip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/LegendLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/CalendarLabel.min.js"></script>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

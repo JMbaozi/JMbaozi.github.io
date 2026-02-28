@@ -1,0 +1,1647 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土壤处方图 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="土壤处方图">
+    <meta name="keywords"
+        content="土壤处方图, GIS, 智慧农业">
+    
+    <meta property="og:previous_url" content="/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html">
+    
+    
+    <meta property="og:next_url" content="/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2025-10-29 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="土壤处方图 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE" class="post-tag">土壤处方图</a>
+            
+            <a href="/tags.html#GIS" class="post-tag">GIS</a>
+            
+            <a href="/tags.html#%E6%99%BA%E6%85%A7%E5%86%9C%E4%B8%9A" class="post-tag">智慧农业</a>
+            
+            
+        </div>
+        <h1>土壤处方图</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 25-10-29">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 25-10-29">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  5.9k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 17 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">处理</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <h1 id="土壤成分处方图调查">土壤成分处方图调查</h1>
+
+<h2 id="何为土壤成分处方图">何为土壤成分处方图</h2>
+
+<blockquote>
+  <p>“土壤成分处方图”（Soil Composition Prescription Map）是近年来智慧农业、精准施肥领域非常重要的一个概念。</p>
+</blockquote>
+
+<p>土壤成分处方图是根据不同地块的土壤养分含量与作物需求，生成的 <strong>“精准管理地图”，指导农民在不同区域定量施肥、灌溉或改良土壤</strong>。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>功能</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>精准施肥</strong></td>
+      <td>不同地块施不同的量，避免浪费或缺肥</td>
+    </tr>
+    <tr>
+      <td><strong>提高产量和品质</strong></td>
+      <td>让作物在“适宜”的营养环境下生长</td>
+    </tr>
+    <tr>
+      <td><strong>减少环境污染</strong></td>
+      <td>减少氮磷流失、面源污染</td>
+    </tr>
+    <tr>
+      <td><strong>辅助农机作业</strong></td>
+      <td>无人机、变量施肥机可以按图执行处方作业</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="相关企业">相关企业</h2>
+
+<h3 id="soiloptix">SoilOptix</h3>
+
+<blockquote>
+  <p>技术原理：https://soiloptix.com/case_studies/from-start-to-finish-how-soiloptix-technology-works/</p>
+</blockquote>
+
+<p>这是一家位于加拿大的公司，创始人为<strong>Paul Raymer</strong>。SoilOptix的传感器以伽马射线为核心原理，以<strong>827个点/公顷</strong>的分辨率对土壤内腐殖物产生的<strong>铯-137，铀-238，钍-232，钾-40</strong>物质进行测量。由于这些物质稳定且可重复，因此监测到的数据能够在多年内有效使用。</p>
+
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/245133/12/34980/94840/69017b7aF45bd11ff/da58b5daa3d8caba.jpg" alt="土壤成分检测技术原理.png"></p>
+
+<p>此外，还需要从田间提取土壤样本。每个田地的样品数量基于田地大小，源于每 8 英亩（3 公顷）1 个样品的比率;对于小于 25ac （10ha）的田地，至少需要 3 个样品。</p>
+
+<p>结合传感器收集数据和土地采样信息，SoilOptix团队会在48小时内为用户们提供一份全方位展现耕地<strong>物理特性、宏微观影响因素、PH值、以及有机物在内的25层土壤分析图</strong>，直观全面地展现土壤的状况，帮助种植者们准确判断“种什么、种哪里、什么时候种”的问题，达到产量目标、作物死亡率和土壤肥力的最佳平衡，以获得经济和环境的双赢。</p>
+
+<blockquote>
+  <p>对80 英亩（32 公顷）的田地进行了采样，其中获得了 10 个土壤样本</p>
+</blockquote>
+
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/346203/11/18232/52594/69017b8cF8fda93bb/8c789ad7d1393d65.jpg" alt="土壤成分表1.png">
+<img src="https://img13.360buyimg.com/ddimg/jfs/t1/341748/32/19262/65918/69017b9aF0f848466/10fe61aec42c70ed.jpg" alt="土壤成分表2.png"></p>
+
+<p>Greasley在德比郡经营一家占地80公顷的畜牧场，SoilOptix的Terramap 产品提供的PH值地图图层让他节约了大量成本。“如果对所有田地都进行无差别的酸碱度调整措施，那么每公顷土地需要消耗5000公斤石灰；但SoilOptix使我们明确需要调整的点位，按需施用仅消耗石灰3050公斤，节省下来的石灰和人力成本可到达每公顷 66 英镑。”</p>
+<blockquote>
+  <p>原文：https://www.hutchinsons.co.uk/how-terramap-is-saving-a-derbyshire-farmer-over-66-ha-in-liming-costs/</p>
+</blockquote>
+
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/353557/31/2454/49186/69017bacFe7614018/011fd237278426b8.jpg" alt="pH.png"></p>
+
+<h4 id="可用的地表土壤属性">可用的地表土壤属性</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>分类</th>
+      <th>英文属性名</th>
+      <th>中文名称</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🟤 <strong>Physical Properties（物理性质）</strong>
+</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Clay</td>
+      <td>黏土含量 (%)</td>
+      <td>土壤中粒径 &lt;0.002 mm 部分的比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Sand</td>
+      <td>砂含量 (%)</td>
+      <td>土壤中粒径 0.05–2 mm 部分的比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Loam</td>
+      <td>壤土比例</td>
+      <td>表征土壤质地平衡程度的综合指标</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Silt</td>
+      <td>粉粒含量 (%)</td>
+      <td>土壤中粒径 0.002–0.05 mm 部分的比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Cation Exchange Capacity (CEC)</td>
+      <td>阳离子交换量</td>
+      <td>土壤吸附与交换养分的能力（单位：cmol(+)/kg）</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Organic Matter</td>
+      <td>有机质含量 (%)</td>
+      <td>土壤中来源于动植物残体的有机成分</td>
+    </tr>
+    <tr>
+      <td>🧪 <strong>Macro Nutrients（常量营养元素）</strong>
+</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Calcium (Ca)</td>
+      <td>钙含量</td>
+      <td>促进根系发育、改善土壤结构</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Calcium-Base Saturation</td>
+      <td>钙基饱和度 (%)</td>
+      <td>交换性阳离子中钙所占比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Calcium-Magnesium Ratio</td>
+      <td>钙镁比</td>
+      <td>土壤中钙、镁离子的平衡关系</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Magnesium Base Saturation</td>
+      <td>镁基饱和度 (%)</td>
+      <td>交换性阳离子中镁所占比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Potassium-Magnesium Ratio</td>
+      <td>钾镁比</td>
+      <td>土壤中钾、镁比例关系</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>pH</td>
+      <td>酸碱度</td>
+      <td>土壤溶液的酸碱水平</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Phosphorus-Bicarb</td>
+      <td>重碳酸盐磷（Olsen-P）</td>
+      <td>碳酸盐或中性土壤中可有效利用的磷</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Phosphorus-Bray</td>
+      <td>Bray 磷</td>
+      <td>酸性土壤中可利用磷含量</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Potassium (K)</td>
+      <td>钾含量</td>
+      <td>作物生长必需的大量元素之一</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Potassium Base Saturation</td>
+      <td>钾基饱和度 (%)</td>
+      <td>交换性阳离子中钾所占比例</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Nitrate as N</td>
+      <td>硝态氮 (以N计)</td>
+      <td>土壤中可直接被植物吸收的氮形态</td>
+    </tr>
+    <tr>
+      <td>🧩 <strong>Micro Nutrients（微量营养元素）</strong>
+</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Aluminum (Al)</td>
+      <td>铝</td>
+      <td>高浓度时对根系有毒性</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Boron (B)</td>
+      <td>硼</td>
+      <td>与花粉活性、细胞分裂相关</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Copper (Cu)</td>
+      <td>铜</td>
+      <td>参与酶活性与光合作用</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Iron (Fe)</td>
+      <td>铁</td>
+      <td>参与叶绿素合成与电子传递</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Manganese (Mn)</td>
+      <td>锰</td>
+      <td>参与光合作用与氧化还原反应</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Sodium (Na)</td>
+      <td>钠</td>
+      <td>过高会导致盐害</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Sulfur (S)</td>
+      <td>硫</td>
+      <td>构成氨基酸和蛋白质的成分</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Zinc (Zn)</td>
+      <td>锌</td>
+      <td>参与酶合成、促进生长素生成</td>
+    </tr>
+    <tr>
+      <td>⚙️ <strong>Complex Models（复杂模型/衍生属性）</strong>
+</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Plant Available Water</td>
+      <td>植物可利用水分</td>
+      <td>指植物能从土壤中吸收的有效水分含量</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Elevation</td>
+      <td>高程</td>
+      <td>地表相对高度（m）</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Leakability</td>
+      <td>渗透性/漏失性</td>
+      <td>土壤水分渗漏或流失的易发生程度</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/338165/12/26237/75425/69017bbcFfdbd1be9/ce08aa71094da58b.jpg" alt="土壤属性图.png"></p>
+
+<p>Nutrien VRA 石灰施用处方图（Lime Prescription Zone Map）。基于可变速率施用（Variable Rate Application, VRA）技术生成的石灰施用区划图。
+该图用于根据土壤酸碱度（pH）、缓冲能力、有机质及养分状况等差异，将农田划分为多个管理区，从而确定每个区域应施用的石灰量。通过这种方式，可在保证土壤酸碱平衡的同时，实现精准施肥、节约成本、提高作物产量和土壤健康。</p>
+
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/344696/28/19412/114353/69017bcdFd81cbd56/f1202d693505add1.jpg" alt="石灰施用处方图.png"></p>
+
+<h3 id="medusa-explorations">Medusa Explorations</h3>
+
+<p>公司位于荷兰，其部门<strong>Medusa Radiometrics</strong>制作伽马射线传感器等来检土壤成分。通过伽马射线可以测量土壤中的<strong>有机质、湿度</strong>等指标。</p>
+
+<h4 id="应用案例土壤测绘以提高作物产量">应用案例：土壤测绘以提高作物产量</h4>
+
+<p>在西班牙北部半干旱地区的许多依靠雨水灌溉、位于高海拔的农田中，土壤容易受到侵蚀、压实，并且有机质含量较低。因此，这些土壤的养分供应能力和持水能力都较差。再加上降水量低，导致作物产量低，农业生产难以持续。</p>
+
+<p>欧盟 LIFE+ 项目“Crops for better soil”（更优土壤作物项目）旨在通过一系列农艺措施，证明这些农田的（土地和经济）产出都可以得到改善。该项目通过在100多个农田上实施这些措施，在相当大的规模上验证了这一方法。这些农田总面积为300至400公顷，分布在卡斯蒂利亚-拉曼查（瓜达拉哈拉）、阿拉贡、纳瓦拉以及卡斯蒂利亚-莱昂（萨莫拉/贝纳文特）等地区，由14至20位不同的农民所有。</p>
+
+<p>所采取的农艺措施包括：转向有机农业、增加作物轮作、引入豆科植物，以及推广更适应寒冷半干旱气候的传统作物品种。</p>
+
+<p>为评估哪些作物和哪种轮作适合哪种田地，并评估土壤的改良情况，设计了土壤数据采集和监测计划。要评估的土壤和田地特性包括土壤质地、土壤有机质、耕作层深度、压实度、海拔、坡度和养分浓度。</p>
+
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/346022/27/19006/131292/69017bddF11e82a9b/622cc1c2a8c5bb9e.jpg" alt="土壤测绘方法.png"></p>
+
+<p>所使用的多种数据类型示例如下：IGME 提供的激光雷达数字高程模型（LIDAR DEM，左上）、IGME 的 MAGNA 50 地质图（左上）、由伽马射线能谱仪获取的⁴⁰K（钾-40）浓度分布图（右上）、由地质雷达（GPR）获取的 0–20 厘米深度时间切片（左下）以及 20–80 厘米深度时间切片（右下）。这些农田位于马德里以东、卡斯蒂利亚-拉曼查大区的伊亚纳（Illana）附近。</p>
+
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/345687/17/18435/206272/69017bfbF11731775/1a1d7b0e59008efe.jpg" alt="多种数据类型图.png"></p>
+
+<h2 id="处方图相关方法">处方图相关方法</h2>
+
+<h3 id="一般流程">一般流程</h3>
+
+<ul>
+  <li>土壤样品采集</li>
+  <li>实验室数据分析</li>
+  <li>结果解读</li>
+  <li>肥料施用建议</li>
+</ul>
+
+<h3 id="插值方法">插值方法</h3>
+
+<h4 id="克里金插值">克里金插值</h4>
+
+<h4 id="反距离权重插值">反距离权重插值</h4>
+
+<h3 id="土壤数据点采样测土方法">土壤数据点采样测土方法</h3>
+
+<h4 id="grid测土">Grid测土</h4>
+
+<p>Grid 测土通常要求较高的采样密度，可能会在1-5米的网格范围内进行采样，适合对土壤特性进行高精度分析。通过规则网格化采样，保证了数据点的均匀分布。每个网格中需要采样点，因此会产生大量数据，有时需要大量的计算和分析。</p>
+
+<h4 id="zone测土">Zone测土</h4>
+
+<p>土壤的地力成分并不是线性分布的，因此采用格点方式进行分割，取得的测土数据很有可能不能反映出地块的全貌。</p>
+
+<p>Zone 测土技术，首先利用土壤、遥感、地形等数据将地块划分为若干区域（Zones），每个区域土壤情况相对一致，这样可以适当减少每个区域的测土数量，降低成本；同时，按照区域的方式进行测土规划，能够更加精准地还原土壤数据的全貌，提升测土的精度。</p>
+
+<p>当拿到基于Zone的测土数据后，我们还可以进一步优化Zone Map，让地块的区域划分更加合理，为后续的测土规划、变量处方图的制作提供更加精准而有力的支撑。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>Grid 测土</th>
+      <th>Zone 测土</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>采样密度</strong></td>
+      <td>高（密集的采样点）</td>
+      <td>低（每个区域一个采样点）</td>
+    </tr>
+    <tr>
+      <td><strong>数据量</strong></td>
+      <td>数据量大，分析复杂</td>
+      <td>数据量少，分析简单</td>
+    </tr>
+    <tr>
+      <td><strong>精度</strong></td>
+      <td>高（适合详细分析）</td>
+      <td>低（适合大致评估）</td>
+    </tr>
+    <tr>
+      <td><strong>成本</strong></td>
+      <td>高（需要更多资源）</td>
+      <td>低（节省资源和时间）</td>
+    </tr>
+    <tr>
+      <td><strong>适用范围</strong></td>
+      <td>精准农业、土地细分分析</td>
+      <td>土地管理、大规模区域性调查</td>
+    </tr>
+    <tr>
+      <td><strong>应用场景</strong></td>
+      <td>土壤成分精确分析，作物精准施肥</td>
+      <td>区域性土壤质量监测和评估</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Grid采样、 EC–Zone Sampling、SoilOptix采样区别：<a href="https://soiloptix.com/wp-content/uploads/2021/11/SoilOptix-Technology-Comparison-Study.pdf" rel="nofollow" target="_blank" class="extlinks">pdf</a></strong></p>
+</blockquote>
+
+<h4 id="medusa伽马射线光谱仪数据采集示例">Medusa伽马射线光谱仪数据采集示例</h4>
+
+<blockquote>
+  <p>原文：https://the.medusa.institute/wiki/Working-version/on-accuracy-and-spatial-resolution#Onaccuracyandspatialresolution-RepeatedAverage</p>
+</blockquote>
+
+<p>我们使用了一个来自农田的示例数据集，该农田面积为 300×400 米，测绘时的测线间距为 12 米。采样频率为 1 Hz，车辆以 3.6 km/h 的速度行驶，因此相邻采样点之间的距离约为 1 米。</p>
+
+<p>该数据集使用三种不同的方法进行了分析。在本次分析中，采用了一个较大的样本窗口，即对 15 个数据点进行平均处理，这会放大平滑效果。通常情况下，并不会采用 15 个样本的滑动平均，而是会使用较少数量的样本进行平滑计算。</p>
+
+<ul>
+  <li>Fit each 方法</li>
+</ul>
+
+<blockquote>
+  <p>对每一个采样点分别进行拟合或插值计算，而不对数据进行平滑或平均。</p>
+</blockquote>
+
+<p>该方法的结果显示了所有数据点，但整体表现出一定的“噪声”特征。使用简单的 <strong>反距离加权（IDW）</strong> 生成的地图中，可以看到许多极端的高值和低值，因此需要应用 <strong>空间平滑滤波器（spatial smoothing filter）</strong> 来去除噪声、改善空间连续性。</p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddavbd47c62cad236a4c73965b3448411173.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddav83dc554e20b3d359685d043d13fc9806.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<ul>
+  <li>滑动平均法（Running Average）</li>
+</ul>
+
+<p>采用滑动平均方法后，数据在测线方向上表现出明显的高值区和低值区。在对数据进行插值时，这种各向异性（anisotropy）特征十分明显，呈现出沿测线分布的条带状结构。</p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddavf36cd7e04114d6b1aa853986de2a5690.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddav97776506c4baeb2759a3a6bb1615eba5.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<ul>
+  <li>重复平均法（Repeated Average）</li>
+</ul>
+
+<p>经过重复平均分析后，数据集中包含的采样点数量减少，但这些点不再沿测线分布，而是呈现出更加均匀（随机）分布的空间格局。</p>
+
+<p>每个采样点都具有较高的精度，这在插值结果中得到了体现：高值和低值在网格中表现为<strong>“斑点状（bullet-like）”分布</strong>。这种分布是<strong>各向同性（omnidirectional）</strong>的，不会出现沿测线方向的过度采样现象。</p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddavc1034695c3ec33378bfa845be05af6b6.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<p><img src="https://the.medusa.institute/__attachments/351143217/worddav585b384fb2f913fbb88573e4c54ec955.png?inst-v=e2dfee16-41a5-4baf-a20c-9cfa3e0d709c" alt="alt text"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>方法名称</th>
+      <th>原理概述</th>
+      <th>数据特征</th>
+      <th>优点</th>
+      <th>缺点</th>
+      <th>典型应用场景</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Fit each</strong></td>
+      <td>对每个采样点单独拟合，不进行平滑或平均处理；所有原始数据直接用于插值</td>
+      <td>数据完整，细节丰富，但噪声大</td>
+      <td>保留全部原始信息；便于发现异常点</td>
+      <td>噪声多，空间连续性差；需后续平滑处理</td>
+      <td>初步数据探索；噪声分析；原始信号验证</td>
+    </tr>
+    <tr>
+      <td><strong>Running Average</strong></td>
+      <td>沿采样路径对连续数据进行滑动平均（如每次平均 3–5 个点）</td>
+      <td>沿测线方向平滑，形成条带结构（各向异性明显）</td>
+      <td>降低噪声；平滑局部波动</td>
+      <td>容易产生条纹效应；丢失横向空间特征</td>
+      <td>实时监测；沿轨迹数据平滑；线性传感分析</td>
+    </tr>
+    <tr>
+      <td><strong>Repeated Average</strong></td>
+      <td>多次平均并重新采样，使点分布更加均匀随机</td>
+      <td>数据点更少但分布均匀；无明显方向性</td>
+      <td>平滑且各向同性；噪声低，插值效果更自然</td>
+      <td>细节略有损失；需较多计算</td>
+      <td>制图与建模；空间插值；最终成果展示</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="土壤成分探测方法">土壤成分探测方法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>方法</strong></th>
+      <th><strong>技术描述</strong></th>
+      <th><strong>应用/用途</strong></th>
+      <th><strong>优点</strong></th>
+      <th><strong>缺点</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>传统土壤采样与实验室分析</strong></td>
+      <td>采集土壤样本并通过实验室化学分析测试主要养分（氮、磷、钾等）、pH、有机质、CEC等。</td>
+      <td>提供准确的土壤化学成分、物理性质和有机质含量的详细信息。</td>
+      <td>高精度，标准化方法。</td>
+      <td>成本高，时间长，空间覆盖局限。</td>
+    </tr>
+    <tr>
+      <td><strong>卫星遥感</strong></td>
+      <td>通过卫星影像分析土壤反射率，推算土壤湿度、养分含量等，利用光谱反射特性分析土壤组成。</td>
+      <td>适用于大范围土壤监测，提供土壤湿度、养分分布等的空间分布数据。</td>
+      <td>大范围覆盖，实时监测。</td>
+      <td>精度较低，受环境影响较大，无法提供详细的土壤成分数据。</td>
+    </tr>
+    <tr>
+      <td><strong>无人机遥感</strong></td>
+      <td>利用高分辨率相机和光谱传感器搭载于无人机，获取农田土壤的详细影像和光谱数据。</td>
+      <td>提供农田的详细土壤信息，评估土壤湿度、肥力等。</td>
+      <td>高分辨率，快速获取数据。</td>
+      <td>高成本，需要技术支持，数据处理量大。</td>
+    </tr>
+    <tr>
+      <td><strong>电磁探测</strong></td>
+      <td>使用电磁感应仪（EMI）通过测量土壤电导率来推算土壤盐分、湿度等。</td>
+      <td>适用于评估土壤的盐分、含水量等。</td>
+      <td>非侵入性，快速获取大范围数据。</td>
+      <td>精度较低，无法直接测量详细的化学成分。</td>
+    </tr>
+    <tr>
+      <td><strong>伽马射线探测</strong></td>
+      <td>通过探测土壤中的自然放射性元素（如钾-40、铀、钍等）辐射推算土壤的矿物成分。</td>
+      <td>用于评估土壤中钾、铀、钍等元素的分布情况，间接推算土壤的矿物成分。</td>
+      <td>非侵入性，快速覆盖大面积区域。</td>
+      <td>只能推算某些矿物成分（如钾），不能测量氮、磷、pH等成分。</td>
+    </tr>
+    <tr>
+      <td><strong>近红外光谱（NIR）分析</strong></td>
+      <td>测量土壤样本的光谱反射特性，通过光谱数据推算土壤的有机质含量、水分和矿物成分。</td>
+      <td>用于快速分析土壤的有机质、湿度、矿物含量等。</td>
+      <td>高效、非破坏性，快速获取数据。</td>
+      <td>需与化学分析结合，且精度受限于光谱数据模型的准确性。</td>
+    </tr>
+    <tr>
+      <td><strong>土壤传感器网络</strong></td>
+      <td>在农田中布设土壤传感器，实时监测土壤的pH、湿度、温度、盐分等。</td>
+      <td>提供实时的土壤数据，帮助农民实时调整施肥、灌溉等管理措施。</td>
+      <td>实时监测，高精度，连续数据。</td>
+      <td>高成本，设备需要维护，数据处理复杂。</td>
+    </tr>
+    <tr>
+      <td><strong>智能农业管理系统</strong></td>
+      <td>集成多种技术，如土壤传感器、遥感数据、电磁探测等，进行土壤监测和作物管理，结合数据分析提供精准管理建议。</td>
+      <td>用于精确管理农业生产，提供<strong>土壤处方图</strong>和作物管理方案。</td>
+      <td>集成多种技术，提供全面、精准的农业管理方案。</td>
+      <td>需要高成本的设备和技术支持，系统复杂，数据分析需要强大的计算能力。</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>使用传感器探测土壤成分时，需要结合土壤采样来分析。</p>
+</blockquote>
+
+<h2 id="分辨率">分辨率</h2>
+
+<blockquote>
+  <p>原文：https://soiloptix.com/case_studies/a-clear-advantage-over-zone-sampling/#ftn7</p>
+</blockquote>
+
+<p>SoilOptix提供高分辨率的数据采集方法：335个数据点/英亩。下面分别是SoilOptix方法和其他方法的钾元素分布图。高分辨率数据可以分析更加细微的小区域，同时避免将存在差异性的区域连接成一片。</p>
+
+<div style="display: flex; justify-content: center; ">
+  <img src="https://soiloptix.com/wp-content/uploads/2024/04/Figure3_northeast-section.png" alt="图片1" style="margin-right: 10px;">
+  <img src="https://soiloptix.com/wp-content/uploads/2024/04/Figure4_Zone-Script_Muriate-of-Potash-219x300.png" alt="图片2">
+</div>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 土壤处方图 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html" class="cplink">https://jmbaozi.github.io/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('土壤成分处方图调查')">土壤成分处方图调查</a><ul><li><a onclick="scrollToAdjust('何为土壤成分处方图')">何为土壤成分处方图</a></li><li><a onclick="scrollToAdjust('相关企业')">相关企业</a><ul><li><a onclick="scrollToAdjust('soiloptix')">SoilOptix</a><ul><li><a onclick="scrollToAdjust('可用的地表土壤属性')">可用的地表土壤属性</a></li></ul></li><li><a onclick="scrollToAdjust('medusa-explorations')">Medusa Explorations</a><ul><li><a onclick="scrollToAdjust('应用案例土壤测绘以提高作物产量')">应用案例：土壤测绘以提高作物产量</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('处方图相关方法')">处方图相关方法</a><ul><li><a onclick="scrollToAdjust('一般流程')">一般流程</a></li><li><a onclick="scrollToAdjust('插值方法')">插值方法</a><ul><li><a onclick="scrollToAdjust('克里金插值')">克里金插值</a></li><li><a onclick="scrollToAdjust('反距离权重插值')">反距离权重插值</a></li></ul></li><li><a onclick="scrollToAdjust('土壤数据点采样测土方法')">土壤数据点采样测土方法</a><ul><li><a onclick="scrollToAdjust('grid测土')">Grid测土</a></li><li><a onclick="scrollToAdjust('zone测土')">Zone测土</a></li><li><a onclick="scrollToAdjust('medusa伽马射线光谱仪数据采集示例')">Medusa伽马射线光谱仪数据采集示例</a></li></ul></li><li><a onclick="scrollToAdjust('土壤成分探测方法')">土壤成分探测方法</a></li></ul></li><li><a onclick="scrollToAdjust('分辨率')">分辨率</a></li></ul></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html" class="read-next-link" aria-label="能谱数据处理"></a>
+            <section>
+                <span>能谱数据处理</span>
+                <p>能谱信息</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html" class="read-next-link"
+                aria-label="计算及应用静校正量"></a>
+            <section>
+                <span>计算及应用静校正量</span>
+                <p>1.计算静校正量</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2025-10-29-土壤处方图.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

@@ -1,0 +1,1888 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux操作 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="Linux操作">
+    <meta name="keywords"
+        content="Linux, 菜鸟教程">
+    
+    <meta property="og:previous_url" content="/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html">
+    
+    
+    <meta property="og:next_url" content="/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2025-09-08 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Linux操作 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/tech/Linux%E6%93%8D%E4%BD%9C.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#Linux" class="post-tag">Linux</a>
+            
+            <a href="/tags.html#%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B" class="post-tag">菜鸟教程</a>
+            
+            
+        </div>
+        <h1>Linux操作</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 25-09-08">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 25-09-08">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  12.6k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 36 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">基础</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <blockquote>
+  <p>声明：以下内容来源自<a href="https://www.runoob.com/linux/linux-tutorial.html" rel="nofollow" target="_blank" class="extlinks">菜鸟教程</a>或其他网络资源，并非本人原创！</p>
+</blockquote>
+
+<h2 id="linux系统目录结构">Linux系统目录结构</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ls /</code> : 查看树状目录结构</p>
+
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/d0c50-linux2bfile2bsystem2bhierarchy.jpg" alt=""></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">目录</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/bin</code></td>
+      <td>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/boot</code></td>
+      <td>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/dev</code></td>
+      <td>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/etc</code></td>
+      <td>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/home</code></td>
+      <td>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/lib</code></td>
+      <td>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/lost+found</code></td>
+      <td>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/media</code></td>
+      <td>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/mnt</code></td>
+      <td>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/opt</code></td>
+      <td>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/proc</code></td>
+      <td>proc 是 Processes(进程) 的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：<code class="language-plaintext highlighter-rouge">echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code>
+</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/root</code></td>
+      <td>该目录为系统管理员，也称作超级权限者的用户主目录。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/sbin</code></td>
+      <td>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/selinux</code></td>
+      <td>这个目录是 Redhat/CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/srv</code></td>
+      <td>该目录存放一些服务启动之后需要提取的数据。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/sys</code></td>
+      <td>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/tmp</code></td>
+      <td>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/usr</code></td>
+      <td>usr 是 unix system resources(unix 系统资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/usr/bin</code></td>
+      <td>系统用户使用的应用程序。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/usr/sbin</code></td>
+      <td>超级用户使用的比较高级的管理程序和系统守护程序。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/usr/src</code></td>
+      <td>内核源代码默认的放置目录。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/var</code></td>
+      <td>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/run</code></td>
+      <td>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</p>
+<ul>
+  <li>/etc：上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</li>
+  <li>/bin, /sbin, /usr/bin, /usr/sbin: 这是系统预设的执行文件的放置目录，比如 ls 就是在 /bin/ls 目录下的。</li>
+  <li>值得提出的是 /bin、/usr/bin 是给系统用户使用的指令（除 root 外的通用用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</li>
+  <li>/var： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里。</li>
+</ul>
+
+<h2 id="linux文件基本属性">Linux文件基本属性</h2>
+
+<p>Linux 系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。
+为了保护系统的安全性，Linux 系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。
+在 Linux 中我们通常使用以下两个命令来修改文件或目录的所属用户与权限：</p>
+
+<p><code class="language-plaintext highlighter-rouge">chown</code> (change owner): 修改所属用户与组。
+<code class="language-plaintext highlighter-rouge">chmod</code> (change mode): 修改用户的权限。</p>
+
+<p>在 Linux 中我们可以使用 <code class="language-plaintext highlighter-rouge">ll</code> 或者 <code class="language-plaintext highlighter-rouge">ls –l</code> 命令来显示一个文件的属性以及文件所属的用户和组，如：</p>
+
+<pre><code class="language-linux">[root@www /]# ls -l
+total 64
+dr-xr-xr-x   2 root root 4096 Dec 14  2012 bin
+dr-xr-xr-x   4 root root 4096 Apr 19  2012 boot
+……
+</code></pre>
+
+<p>实例中，bin 文件的第一个属性用 d 表示。d 在 Linux 中代表该文件是一个目录文件。
+在 Linux 中第一个字符代表这个文件是目录、文件或链接文件等等。</p>
+<ul>
+  <li>当为 d 则是目录</li>
+  <li>当为 - 则是文件；</li>
+  <li>若是 l 则表示为链接文档(link file)；</li>
+  <li>若是 b 则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；</li>
+  <li>若是 c 则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</li>
+</ul>
+
+<p>接下来的字符中，以三个为一组，且均为 <strong>rwx</strong> 的三个参数的组合。其中， <strong>r</strong> 代表可读(read)、 <strong>w</strong> 代表可写(write)、 <strong>x</strong> 代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号 - 而已。</p>
+
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/file-llls22.jpg" alt=""></p>
+
+<p>每个文件的属性由左边第一部分的 10 个字符来确定（如下图）。</p>
+
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png" alt=""></p>
+
+<p>从左至右用 <strong>0-9</strong> 这些数字来表示。
+第 <strong>0</strong> 位确定文件类型，第 <strong>1-3</strong> 位确定属主（该文件的所有者）拥有该文件的权限。
+第 <strong>4-6</strong> 位确定属组（所有者的同组用户）拥有该文件的权限，第 <strong>7-9</strong> 位确定其他用户拥有该文件的权限。
+其中，第 <strong>1、4、7</strong> 位表示读权限，如果用 <code class="language-plaintext highlighter-rouge">r</code> 字符表示，则有读权限，如果用 <code class="language-plaintext highlighter-rouge">-</code> 字符表示，则没有读权限；
+第 <strong>2、5、8</strong> 位表示写权限，如果用 <code class="language-plaintext highlighter-rouge">w</code> 字符表示，则有写权限，如果用 <code class="language-plaintext highlighter-rouge">-</code> 字符表示没有写权限；第 <strong>3、6、9</strong> 位表示可执行权限，如果用 <code class="language-plaintext highlighter-rouge">x</code> 字符表示，则有执行权限，如果用 <code class="language-plaintext highlighter-rouge">-</code> 字符表示，则没有执行权限。</p>
+
+<p><strong>Linux文件属主和属组</strong></p>
+
+<pre><code class="language-linux">[root@www /]# ls -l
+total 64
+drwxr-xr-x 2 root  root  4096 Feb 15 14:46 cron
+drwxr-xr-x 3 mysql mysql 4096 Apr 21  2014 mysql
+……
+</code></pre>
+
+<p>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户。
+同时，在Linux系统中，用户是按组分类的，一个用户属于一个或多个组。
+文件所有者以外的用户又可以分为文件所属组的同组用户和其他用户。
+因此，Linux系统按文件所有者、文件所有者同组用户和其他用户来规定了不同的文件访问权限。
+在以上实例中，mysql 文件是一个目录文件，属主和属组都为 mysql，属主有可读、可写、可执行的权限；与属主同组的其他用户有可读和可执行的权限；其他用户也有可读和可执行的权限。
+对于 root 用户来说，一般情况下，文件的权限对其不起作用。</p>
+
+<p><strong>更改文件属性</strong></p>
+
+<p>1.<code class="language-plaintext highlighter-rouge">chgrp</code>：更改文件属组</p>
+
+<p>语法：<code class="language-plaintext highlighter-rouge">chgrp [-R] 属组名 文件名</code>
+参数选项: -R：递归更改文件属组，就是在更改某个目录文件的属组时，如果加上 -R 的参数，那么该目录下的所有文件的属组都会更改。</p>
+
+<p>2.<code class="language-plaintext highlighter-rouge">chown</code>：更改文件所有者（owner），也可以同时更改文件所属组。</p>
+
+<p>语法：</p>
+<pre><code class="language-linux">chown [–R] 所有者 文件名
+chown [-R] 所有者:属组名 文件名
+</code></pre>
+
+<p>进入 /root 目录（~）将install.log的拥有者改为bin这个账号：</p>
+<pre><code class="language-linux">[root@www ~] cd ~
+[root@www ~]# chown bin install.log
+[root@www ~]# ls -l
+-rw-r--r--  1 bin  users 68495 Jun 25 08:53 install.log
+</code></pre>
+
+<p>将install.log的拥有者与群组改回为root：</p>
+<pre><code class="language-linux">[root@www ~]# chown root:root install.log
+[root@www ~]# ls -l
+-rw-r--r--  1 root root 68495 Jun 25 08:53 install.log
+</code></pre>
+
+<p>3.<code class="language-plaintext highlighter-rouge">chmod</code>：更改文件9个属性</p>
+
+<p>Linux文件属性有两种设置方法，一种是数字，一种是符号。
+Linux 文件的基本权限就有九个，分别是 <strong>owner/group/others(拥有者/组/其他)</strong> 三种身份各有自己的 read/write/execute 权限。
+刚刚上面提到的数据：文件的权限字符为： <code class="language-plaintext highlighter-rouge">-rwxrwxrwx</code> ， 这九个权限是三个三个一组的！其中，我们可以使用数字来代表各个权限，各权限的分数对照表如下：</p>
+<ul>
+  <li>r:4</li>
+  <li>w:2</li>
+  <li>x:1</li>
+</ul>
+
+<p>每种身份(owner/group/others)各自的三个权限(r/w/x)分数是需要累加的，例如当权限为： <code class="language-plaintext highlighter-rouge">-rwxrwx---</code> 分数则是：</p>
+<ul>
+  <li>owner = rwx = 4+2+1 = 7</li>
+  <li>group = rwx = 4+2+1 = 7</li>
+  <li>others= — = 0+0+0 = 0</li>
+</ul>
+
+<p>所以等一下我们设定权限的变更时，该文件的权限数字就是 770。变更权限的指令 chmod 的语法是这样的：
+` chmod [-R] xyz 文件或目录`</p>
+
+<p>选项与参数：</p>
+<ul>
+  <li>
+<strong>xyz</strong> : 就是刚刚提到的数字类型的权限属性，为 rwx 属性数值的相加。</li>
+  <li>
+<strong>-R</strong> : 进行递归(recursive)的持续变更，以及连同次目录下的所有文件都会变更</li>
+</ul>
+
+<p>举例来说，如果要将 .bashrc 这个文件所有的权限都设定启用，那么命令如下：</p>
+<pre><code class="language-linux">[root@www ~]# ls -al .bashrc
+-rw-r--r--  1 root root 395 Jul  4 11:45 .bashrc
+[root@www ~]# chmod 777 .bashrc
+[root@www ~]# ls -al .bashrc
+-rwxrwxrwx  1 root root 395 Jul  4 11:45 .bashrc
+</code></pre>
+<p>那如果要将权限变成 <em>-rwxr-xr–</em> 呢？那么权限的分数就成为 <strong>[4+2+1][4+0+1][4+0+0]=754</strong> 。</p>
+
+<p><strong>符号类型改变文件权限</strong></p>
+
+<p>还有一个改变权限的方法，从之前的介绍中我们可以发现，基本上就九个权限分别是：</p>
+<ul>
+  <li>user：用户</li>
+  <li>group：组</li>
+  <li>others：其他</li>
+</ul>
+
+<p>那么我们就可以使用 <strong>u, g, o</strong> 来代表三种身份的权限。
+此外， <strong>a</strong> 则代表 <strong>all</strong>，即全部的身份。读写的权限可以写成 <code class="language-plaintext highlighter-rouge">r, w, x</code>，也就是可以使用下表的方式来看：</p>
+
+<table>
+    <tr>
+        <td>chmod</td>
+        <td>u<br>g<br>o<br>a</td>
+        <td>+(加入)<br>-(减去)<br>=(设定)</td>
+        <td>r<br>w<br>x</td>
+        <td>文件或目录</td>
+    </tr>
+</table>
+
+<p>如果我们需要将文件权限设置为 <strong>-rwxr-xr–</strong> ，可以使用 <code class="language-plaintext highlighter-rouge">chmod u=rwx,g=rx,o=r</code> 文件名 来设定:</p>
+<pre><code class="language-linux">#  touch test1    // 创建 test1 文件
+# ls -al test1    // 查看 test1 默认权限
+-rw-r--r-- 1 root root 0 Nov 15 10:32 test1
+# chmod u=rwx,g=rx,o=r  test1    // 修改 test1 权限
+# ls -al test1
+-rwxr-xr-- 1 root root 0 Nov 15 10:32 test1
+</code></pre>
+
+<p>而如果是要将权限去掉而不改变其他已存在的权限呢？例如要拿掉全部人的可执行权限，则：</p>
+<pre><code class="language-linux">#  chmod  a-x test1
+# ls -al test1
+-rw-r--r-- 1 root root 0 Nov 15 10:32 test1
+</code></pre>
+
+<h2 id="linux文件与目录管理">Linux文件与目录管理</h2>
+
+<h3 id="处理目录的常用命令">处理目录的常用命令</h3>
+
+<ul>
+  <li>ls（英文全拼：list files）: 列出目录及文件名</li>
+  <li>cd（英文全拼：change directory）：切换目录</li>
+  <li>pwd（英文全拼：print work directory）：显示目前的目录</li>
+  <li>mkdir（英文全拼：make directory）：创建一个新的目录</li>
+  <li>rmdir（英文全拼：remove directory）：删除一个空的目录</li>
+  <li>cp（英文全拼：copy file）: 复制文件或目录</li>
+  <li>rm（英文全拼：remove）: 删除文件或目录</li>
+  <li>mv（英文全拼：move file）: 移动文件与目录，或修改文件与目录的名称</li>
+</ul>
+
+<p>可以使用 man [命令] 来查看各个命令的使用文档，如：<code class="language-plaintext highlighter-rouge">man cp</code></p>
+
+<p><strong>ls (列出目录)</strong></p>
+
+<p>语法：</p>
+<pre><code class="language-linux">[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称
+[root@www ~]# ls [--color={never,auto,always}] 目录名称
+[root@www ~]# ls [--full-time] 目录名称
+</code></pre>
+
+<p>选项与参数：</p>
+<ul>
+  <li>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)</li>
+  <li>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
+  <li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+
+<p>将目录下的所有文件列出来(含属性与隐藏档):
+<code class="language-plaintext highlighter-rouge">[root@www ~]# ls -al ~</code></p>
+
+<p><strong>cd (切换目录)</strong></p>
+
+<p>cd是Change Directory的缩写，这是用来变换工作目录的命令。
+语法：
+<code class="language-plaintext highlighter-rouge">cd [相对路径或绝对路径]</code></p>
+
+<blockquote>
+  <p>绝对路径：由根目录 <code class="language-plaintext highlighter-rouge">/</code> 写起，例如： <code class="language-plaintext highlighter-rouge">/usr/share/doc</code>
+相对路径：不是由 <code class="language-plaintext highlighter-rouge">/</code> 写起，例如由 <code class="language-plaintext highlighter-rouge">/usr/share/doc</code> 要到 <code class="language-plaintext highlighter-rouge">/usr/share/man</code> 底下时，可以写成：<code class="language-plaintext highlighter-rouge">cd ../man</code></p>
+</blockquote>
+
+<pre><code class="language-linux">#使用 mkdir 命令创建 runoob 目录
+[root@www ~]# mkdir runoob
+
+#使用绝对路径切换到 runoob 目录
+[root@www ~]# cd /root/runoob/
+
+#使用相对路径切换到 runoob 目录
+[root@www ~]# cd ./runoob/
+
+# 表示回到自己的家目录，亦即是 /root 这个目录
+[root@www runoob]# cd ~
+
+# 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；
+[root@www ~]# cd ..
+</code></pre>
+
+<p><strong>pwd (显示目前所在的目录)</strong></p>
+
+<p>pwd 是 <strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令。
+<code class="language-plaintext highlighter-rouge">[root@www ~]# pwd [-P]</code>
+选项与参数：</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">-P</code> ：显示出确实的路径，而非使用链接 (link) 路径。</li>
+</ul>
+
+<p>实例：单纯显示出目前的工作目录：</p>
+<pre><code class="language-linux">[root@www ~]# pwd
+/root   &lt;== 显示出目录啦～
+</code></pre>
+
+<p>实例显示出实际的工作目录，而非链接档本身的目录名而已。</p>
+<pre><code class="language-linux">[root@www ~]# cd /var/mail   &lt;==注意，/var/mail是一个链接档
+[root@www mail]# pwd
+/var/mail         &lt;==列出目前的工作目录
+[root@www mail]# pwd -P
+/var/spool/mail   &lt;==怎么回事？有没有加 -P 差很多～
+[root@www mail]# ls -ld /var/mail
+lrwxrwxrwx 1 root root 10 Sep  4 17:54 /var/mail -&gt; spool/mail
+# 看到这里应该知道为啥了吧？因为 /var/mail 是链接档，链接到 /var/spool/mail 
+# 所以，加上 pwd -P 的选项后，会不以链接档的数据显示，而是显示正确的完整路径啊！
+</code></pre>
+
+<p><strong>mkdir (创建新目录)</strong></p>
+
+<p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。
+语法：
+<code class="language-plaintext highlighter-rouge">mkdir [-mp] 目录名称</code>
+选项与参数：</p>
+<ul>
+  <li>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</li>
+  <li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
+</ul>
+
+<p>实例：到/tmp底下尝试创建数个新目录看看：</p>
+<pre><code class="language-linux">[root@www ~]# cd /tmp
+[root@www tmp]# mkdir test    &lt;==创建一名为 test 的新目录
+[root@www tmp]# mkdir test1/test2/test3/test4
+mkdir: cannot create directory `test1/test2/test3/test4': 
+No such file or directory       &lt;== 没办法直接创建此目录啊！
+[root@www tmp]# mkdir -p test1/test2/test3/test4
+</code></pre>
+
+<p>加了这个 -p 的选项，可以自行帮你创建多层目录！
+实例：创建权限为 rwx–x–x 的目录。</p>
+<pre><code class="language-linux">[root@www tmp]# mkdir -m 711 test2
+[root@www tmp]# ls -l
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
+<p>上面的权限部分，如果没有加上 <code class="language-plaintext highlighter-rouge">-m</code> 来强制配置属性，系统会使用默认属性。
+如果我们使用 <code class="language-plaintext highlighter-rouge">-m</code> ，如上例我们给予 <code class="language-plaintext highlighter-rouge">-m 711</code> 来给予新的目录 <code class="language-plaintext highlighter-rouge">drwx--x--x</code> 的权限。</p>
+
+<p><strong>rmdir (删除空的目录)</strong></p>
+
+<p>语法：
+<code class="language-plaintext highlighter-rouge">rmdir [-p] 目录名称</code>
+选项与参数：</p>
+<ul>
+  <li>-p ：从该目录起，一次删除多级空目录</li>
+</ul>
+
+<p>删除 runoob 目录：<code class="language-plaintext highlighter-rouge">[root@www tmp]# rmdir runoob/</code>
+将 mkdir 实例中创建的目录(/tmp 底下)删除掉！</p>
+<pre><code class="language-linux">[root@www tmp]# ls -l   &lt;==看看有多少目录存在？
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+[root@www tmp]# rmdir test   &lt;==可直接删除掉，没问题
+[root@www tmp]# rmdir test1  &lt;==因为尚有内容，所以无法删除！
+rmdir: `test1': Directory not empty
+[root@www tmp]# rmdir -p test1/test2/test3/test4
+[root@www tmp]# ls -l        &lt;==您看看，底下的输出中test与test1不见了！
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
+<p>利用 <code class="language-plaintext highlighter-rouge">-p</code> 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。
+不过要注意的是，这个<code class="language-plaintext highlighter-rouge"> rmdir</code> 仅能删除空的目录，可以使用 <code class="language-plaintext highlighter-rouge">rm</code> 命令来删除非空目录。</p>
+
+<p><strong>cp (复制文件或目录)</strong></p>
+
+<p>cp 即拷贝文件和目录。
+语法:</p>
+<pre><code class="language-linux">[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)
+[root@www ~]# cp [options] source1 source2 source3 .... directory
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+  <li>-a：相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)</li>
+  <li>-d：若来源档为链接档的属性(link file)，则复制链接档属性而非文件本身；</li>
+  <li>-f：为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；</li>
+  <li>-i：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</li>
+  <li>-l：进行硬式链接(hard link)的链接档创建，而非复制文件本身；</li>
+  <li>-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)；</li>
+  <li>-r：递归持续复制，用於目录的复制行为；(常用)</li>
+  <li>-s：复制成为符号链接档 (symbolic link)，亦即『捷径』文件；</li>
+  <li>-u：若 destination 比 source 旧才升级 destination ！</li>
+</ul>
+
+<p>用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc:</p>
+<pre><code class="language-linux">[root@www ~]# cp ~/.bashrc /tmp/bashrc
+[root@www ~]# cp -i ~/.bashrc /tmp/bashrc
+cp: overwrite `/tmp/bashrc'? n  &lt;==n不覆盖，y为覆盖
+</code></pre>
+
+<p><strong>rm (移除文件或目录)</strong></p>
+
+<p>语法：
+<code class="language-plaintext highlighter-rouge">rm [-fir] 文件或目录</code>
+选项与参数：</p>
+<ul>
+  <li>-f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息；</li>
+  <li>-i ：互动模式，在删除前会询问使用者是否动作</li>
+  <li>-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</li>
+</ul>
+
+<p>将刚刚在 cp 的实例中创建的 bashrc 删除掉:</p>
+<pre><code class="language-linux">[root@www tmp]# rm -i bashrc
+rm: remove regular file `bashrc'? y
+</code></pre>
+<blockquote>
+  <p>如果加上 -i 的选项就会主动询问喔，避免你删除到错误的档名！</p>
+</blockquote>
+
+<p><strong>mv (移动文件与目录，或修改名称)</strong></p>
+
+<p>语法：</p>
+<pre><code class="language-linux">[root@www ~]# mv [-fiu] source destination
+[root@www ~]# mv [options] source1 source2 source3 .... directory
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+  <li>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</li>
+  <li>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！</li>
+  <li>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update)</li>
+</ul>
+
+<p>复制一文件，创建一目录，将文件移动到目录中:</p>
+<pre><code class="language-linux">[root@www ~]# cd /tmp
+[root@www tmp]# cp ~/.bashrc bashrc
+[root@www tmp]# mkdir mvtest
+[root@www tmp]# mv bashrc mvtest
+</code></pre>
+
+<p>将某个文件移动到某个目录去，就是这样做！
+将刚刚的目录名称更名为 mvtest2
+<code class="language-plaintext highlighter-rouge">[root@www tmp]# mv mvtest mvtest2</code></p>
+
+<h3 id="linux-文件内容查看">Linux 文件内容查看</h3>
+
+<p>Linux系统中使用以下命令来查看文件的内容：</p>
+<ul>
+  <li>cat  由第一行开始显示文件内容</li>
+  <li>tac  从最后一行开始显示，可以看出 tac 是 cat 的倒着写！</li>
+  <li>nl   显示的时候，顺道输出行号！</li>
+  <li>more 一页一页的显示文件内容</li>
+  <li>less 与 more 类似，但是比 more 更好的是，他可以往前翻页！</li>
+  <li>head 只看头几行</li>
+  <li>tail 只看尾巴几行</li>
+</ul>
+
+<p><strong>cat</strong></p>
+
+<p>由第一行开始显示文件内容
+语法：<code class="language-plaintext highlighter-rouge">cat [-AbEnTv]</code>
+选项与参数：</p>
+
+<ul>
+  <li>-A ：相当於 -vET 的整合选项，可列出一些特殊字符而不是空白而已；</li>
+  <li>-b ：列出行号，仅针对非空白行做行号显示，空白行不标行号！</li>
+  <li>-E ：将结尾的断行字节 $ 显示出来；</li>
+  <li>-n ：列印出行号，连同空白行也会有行号，与 -b 的选项不同；</li>
+  <li>-T ：将 [tab] 按键以 ^I 显示出来；</li>
+  <li>-v ：列出一些看不出来的特殊字符</li>
+</ul>
+
+<p>检看 /etc/issue 这个文件的内容：</p>
+<pre><code class="language-linux">[root@www ~]# cat /etc/issue
+CentOS release 6.4 (Final)
+Kernel \r on an \m
+</code></pre>
+
+<p><strong>tac</strong></p>
+
+<p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写！如：</p>
+<pre><code class="language-linux">[root@www ~]# tac /etc/issue
+
+Kernel \r on an \m
+CentOS release 6.4 (Final)
+</code></pre>
+
+<p><strong>nl</strong></p>
+
+<p>显示行号
+语法：<code class="language-plaintext highlighter-rouge">nl [-bnw] 文件</code>
+选项与参数：</p>
+<ul>
+  <li>-b ：指定行号指定的方式，主要有两种：
+-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；
+-b t ：如果有空行，空的那一行不要列出行号(默认值)；</li>
+  <li>-n ：列出行号表示的方法，主要有三种：
+-n ln ：行号在荧幕的最左方显示；
+-n rn ：行号在自己栏位的最右方显示，且不加 0 ；
+-n rz ：行号在自己栏位的最右方显示，且加 0 ；</li>
+  <li>-w ：行号栏位的占用的位数。</li>
+</ul>
+
+<p>实例一：用 nl 列出 /etc/issue 的内容</p>
+<pre><code class="language-linux">[root@www ~]# nl /etc/issue
+     1  CentOS release 6.4 (Final)
+     2  Kernel \r on an \m
+</code></pre>
+
+<p><strong>more</strong></p>
+
+<p>一页一页翻动</p>
+<pre><code class="language-linux">[root@www ~]# more /etc/man_db.config 
+#
+# Generated automatically from man.conf.in by the
+# configure script.
+#
+# man.conf from man-1.6d
+....(中间省略)....
+--More--(28%)  &lt;== 重点在这一行喔！你的光标也会在这里等待你的命令
+</code></pre>
+<p>在 more 这个程序的运行过程中，你有几个按键可以按的：</p>
+<ul>
+  <li>空白键 (space)：代表向下翻一页；</li>
+  <li>Enter         ：代表向下翻『一行』；</li>
+  <li>/字串         ：代表在这个显示的内容当中，向下搜寻『字串』这个关键字；</li>
+  <li>:f            ：立刻显示出档名以及目前显示的行数；</li>
+  <li>q             ：代表立刻离开 more ，不再显示该文件内容。</li>
+  <li>b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。</li>
+</ul>
+
+<p><strong>less</strong></p>
+
+<p>一页一页翻动，以下实例输出/etc/man.config文件的内容：</p>
+<pre><code class="language-linux">[root@www ~]# less /etc/man.config
+#
+# Generated automatically from man.conf.in by the
+# configure script.
+#
+# man.conf from man-1.6d
+....(中间省略)....
+:   &lt;== 这里可以等待你输入命令！
+</code></pre>
+<p>less运行时可以输入的命令有：</p>
+<ul>
+  <li>空白键    ：向下翻动一页；</li>
+  <li>[pagedown]：向下翻动一页；</li>
+  <li>[pageup]  ：向上翻动一页；</li>
+  <li>/字串     ：向下搜寻『字串』的功能；</li>
+  <li>?字串     ：向上搜寻『字串』的功能；</li>
+  <li>n         ：重复前一个搜寻 (与 / 或 ? 有关！)</li>
+  <li>N         ：反向的重复前一个搜寻 (与 / 或 ? 有关！)</li>
+  <li>q         ：离开 less 这个程序；</li>
+</ul>
+
+<p><strong>head</strong></p>
+
+<p>取出文件前面几行
+语法：<code class="language-plaintext highlighter-rouge">head [-n number] 文件 </code>
+选项与参数：</p>
+<ul>
+  <li>-n ：后面接数字，代表显示几行的意思</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">[root@www ~]# head /etc/man.config</code></p>
+
+<p>默认的情况中，显示前面 10 行！若要显示前 20 行，就得要这样：
+<code class="language-plaintext highlighter-rouge">[root@www ~]# head -n 20 /etc/man.config</code></p>
+
+<p><strong>tail</strong></p>
+
+<p>取出文件后面几行
+语法：<code class="language-plaintext highlighter-rouge">tail [-n number] 文件</code>
+选项与参数：</p>
+<ul>
+  <li>-n ：后面接数字，代表显示几行的意思</li>
+  <li>-f ：表示持续侦测后面所接的档名，要等到按下[ctrl]-c才会结束tail的侦测</li>
+</ul>
+
+<pre><code class="language-linux">[root@www ~]# tail /etc/man.config
+# 默认的情况中，显示最后的十行！若要显示最后的 20 行，就得要这样：
+[root@www ~]# tail -n 20 /etc/man.config
+</code></pre>
+
+<h2 id="linux-ls命令">Linux ls命令</h2>
+
+<blockquote>
+  <p>不同 Linux 发行版的 ls 命令可能有细微差别，可以通过 man ls 查看具体帮助文档。</p>
+</blockquote>
+
+<p><strong>ls</strong> 命令用于显示制定工作目录下的内容（列出目前工作目录所含的文件及子目录）</p>
+
+<p>语法： <code class="language-plaintext highlighter-rouge">ls [-alrtAFR] [name...]</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">参数</th>
+      <th style="text-align: center">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">-a 或 –all</td>
+      <td style="text-align: center">显示所有文件（包括以 . 开头的隐藏文件）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-A 或 –almost-all</td>
+      <td style="text-align: center">显示除 . 和 .. 外的所有文件（包括隐藏文件）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-l</td>
+      <td style="text-align: center">以长格式（详细信息）列出文件（权限、所有者、大小、修改时间等）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-h 或 –human-readable</td>
+      <td style="text-align: center">与 -l 一起使用时，以人类可读的格式显示文件大小（如 KB、MB）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-t</td>
+      <td style="text-align: center">按修改时间排序（最新优先）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-r 或 –reverse</td>
+      <td style="text-align: center">反向排序（配合 -t、-S 等使用）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-S</td>
+      <td style="text-align: center">按文件大小排序（大文件优先）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-R 或 –recursive</td>
+      <td style="text-align: center">递归列出子目录内容。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-F 或 –classify</td>
+      <td style="text-align: center">在文件名后附加标识符（如 / 表示目录，* 表示可执行文件）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">–color</td>
+      <td style="text-align: center">彩色输出（通常默认启用，–color=auto）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-i 或 –inode</td>
+      <td style="text-align: center">显示文件的 inode 编号。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-n 或 –numeric-uid-gid</td>
+      <td style="text-align: center">以数字形式显示 UID 和 GID（替代用户名和组名）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-d 或 –directory</td>
+      <td style="text-align: center">仅显示目录本身，而非其内容（常用于配合 -l）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">每行只显示一个文件（默认在终端宽度不足时自动启用）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-m</td>
+      <td style="text-align: center">以逗号分隔的列表形式显示文件。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-Q 或 –quote-name</td>
+      <td style="text-align: center">用引号括住文件名（适用于含空格的文件名）。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">–group-directories-first</td>
+      <td style="text-align: center">先显示目录，后显示文件。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">–time-style=&lt;格式&gt;格式&gt;</td>
+      <td style="text-align: center">自定义时间显示格式（如 +%Y-%m-%d）。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>实例：</strong></p>
+
+<pre><code class="language-linux">ls -l                    # 以长格式显示当前目录中的文件和目录
+ls -a                    # 显示当前目录中的所有文件和目录，包括隐藏文件
+ls -lh                   # 以人类可读的方式显示当前目录中的文件和目录大小
+ls -t                    # 按照修改时间排序显示当前目录中的文件和目录
+ls -R                    # 递归显示当前目录中的所有文件和子目录
+ls -l /etc/passwd        # 显示/etc/passwd文件的详细信息
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">ls -la</code> : 详细列出当前目录所有文件（含隐藏文件）
+<code class="language-plaintext highlighter-rouge">ls -lShr</code> : 按大小反向排序文件（大文件优先）
+<code class="language-plaintext highlighter-rouge">ls -lhR /var/log</code> : 递归列出 /var/log 目录内容，并显示人类可读的文件大小
+<code class="language-plaintext highlighter-rouge">ls -ld /etc</code> : 仅显示目录的详细信息（不递归）
+<code class="language-plaintext highlighter-rouge">ls -ltr</code> : 按修改时间排序（最新文件最后显示）</p>
+
+<pre><code class="language-linux"># ls /
+bin               dev   lib         media  net   root     srv  upload  www
+boot              etc   lib64       misc   opt   sbin     sys  usr
+home  lost+found  mnt    proc  selinux  tmp  var
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">ls -lR /bin</code> : 将 /bin 目录以下所有目录及文件详细资料列出</p>
+
+<p>当文件名包含空格、特殊字符或者开始字符为破折号时，可以使用反斜杠（\）进行转义，或者使用引号将文件名括起来，例如：</p>
+
+<pre><code class="language-linux">ls "my file.txt"    # 列出文件名为"my file.txt"的文件
+ls my\ file.txt     # 列出文件名为"my file.txt"的文件
+ls -- -filename     # 列出文件名为"-filename"的文件
+</code></pre>
+
+<p>ls 命令还可以使用通配符进行模式匹配，例如 * 表示匹配任意字符，? 表示匹配一个字符，[…] 表示匹配指定范围内的字符，例如：</p>
+
+<pre><code class="language-linux">ls *.txt         # 列出所有扩展名为.txt的文件
+ls file?.txt     # 列出文件名为file?.txt的文件，其中?表示任意一个字符
+ls [abc]*.txt    # 列出以a、b或c开头、扩展名为.txt的文件
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">ls -ltr s*</code> : 列出目前工作目录下所有名称是 s 开头的文件，越新的排越后面</p>
+
+<p>在使用 ls -l 命令时，第一列的字符表示文件或目录的类型和权限。其中第一个字符表示文件类型，例如：</p>
+
+<ul>
+  <li>- 表示普通文件</li>
+  <li>d 表示目录</li>
+  <li>l 表示符号链接</li>
+  <li>c 表示字符设备文件</li>
+  <li>b 表示块设备文件</li>
+  <li>s 表示套接字文件</li>
+  <li>p 表示管道文件</li>
+</ul>
+
+<p>在使用 <code class="language-plaintext highlighter-rouge">ls -l</code> 命令时，第一列的其余 9 个字符表示文件或目录的访问权限，分别对应三个字符一组的 <code class="language-plaintext highlighter-rouge">rwx</code> 权限，例如：</p>
+
+<ul>
+  <li>r 表示读取权限</li>
+  <li>w 表示写入权限</li>
+  <li>x 表示执行权限</li>
+  <li>- 表示没有对应权限</li>
+</ul>
+
+<p>前三个字符表示所有者的权限，中间三个字符表示所属组的权限，后三个字符表示其他用户的权限，例如：
+<code class="language-plaintext highlighter-rouge">-rw-r--r-- 1 user group 4096 Feb 21 12:00 file.txt</code>
+表示文件名为file.txt的文件，所有者具有读写权限，所属组和其他用户只有读取权限。</p>
+
+<p><code class="language-plaintext highlighter-rouge">ls -lt | head -5</code> : 查找最近修改的文，显示最近修改的 5 个文件</p>
+
+<p><code class="language-plaintext highlighter-rouge">ls | wc -l</code> : 统计文件数量，统计当前目录下的文件数量(不包括隐藏文件)。</p>
+
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 Linux操作 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/tech/Linux%E6%93%8D%E4%BD%9C.html" class="cplink">https://jmbaozi.github.io/tech/Linux%E6%93%8D%E4%BD%9C.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('linux系统目录结构')">Linux系统目录结构</a></li><li><a onclick="scrollToAdjust('linux文件基本属性')">Linux文件基本属性</a></li><li><a onclick="scrollToAdjust('linux文件与目录管理')">Linux文件与目录管理</a><ul><li><a onclick="scrollToAdjust('处理目录的常用命令')">处理目录的常用命令</a></li><li><a onclick="scrollToAdjust('linux-文件内容查看')">Linux 文件内容查看</a></li></ul></li><li><a onclick="scrollToAdjust('linux-ls命令')">Linux ls命令</a></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html" class="read-next-link" aria-label="GeoEast SPS观测系统定义"></a>
+            <section>
+                <span>GeoEast SPS观测系统定义</span>
+                <p>观测系统定义</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html" class="read-next-link"
+                aria-label="Picker初至拾取"></a>
+            <section>
+                <span>Picker初至拾取</span>
+                <p>数据</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2025-09-08-Linux操作.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

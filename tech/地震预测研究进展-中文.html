@@ -1,0 +1,2674 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地震预测研究进展-中文 - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="地震预测研究进展-中文">
+    <meta name="keywords"
+        content="统计地震学, 研究进展, CiteSpace, 地震预测">
+    
+    <meta property="og:previous_url" content="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html">
+    
+    
+    <meta property="og:next_url" content="/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2023-01-26 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="地震预测研究进展-中文 - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6" class="post-tag">统计地震学</a>
+            
+            <a href="/tags.html#%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95" class="post-tag">研究进展</a>
+            
+            <a href="/tags.html#CiteSpace" class="post-tag">CiteSpace</a>
+            
+            <a href="/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B" class="post-tag">地震预测</a>
+            
+            
+        </div>
+        <h1>地震预测研究进展-中文</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 23-01-26">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 23-01-26">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  7.1k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 21 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">研究进展</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <center>
+<span style="color:#FF0000;font-weight:bold;">警告！</span>
+&lt;/br&gt;
+<span style="color:#FF0000;font-weight:bold;">该实验的流程存在严重漏洞</span>
+&lt;/br&gt;
+<span style="color:#FF0000;font-weight:bold;">关键词选取存在问题</span>
+&lt;/br&gt;
+<span style="color:#FF0000;font-weight:bold;">发文量Count没有统计完全，结果不可信</span>
+&lt;/br&gt;
+<span style="color:#FF0000;font-weight:bold;">结论分析不全面</span>
+&lt;/br&gt;
+<span style="color:#FF0000;font-weight:bold;">“国家”或“Country”代表的含义为“国家或地区”</span>
+&lt;/br&gt;
+</center>
+
+<h1 id="1分析示例">1.分析示例</h1>
+
+<h2 id="11下载数据">1.1下载数据</h2>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/cb941bf1-7118-4898-a5e0-278b299ab6b4.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/96db824f-ba8d-4eb3-baa1-16c6aa9bd341.png" alt="image.png"></p>
+
+<h2 id="12导入并转换数据">1.2导入并转换数据</h2>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/67a00ad1-da58-423a-bab1-f16c9adcfbe1.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/dcecff80-97b0-4832-9041-0b81bb713339.png" alt="image.png"></p>
+
+<h2 id="13新建project">1.3新建Project</h2>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/0cba7b91-cdd0-4523-91d4-6a0c02f0aeab.png" alt="image.png"></p>
+
+<h2 id="14数据分析">1.4数据分析</h2>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/c36aa44b-0018-4826-9717-268f68ffb38e.png" alt="image.png"></p>
+
+<h1 id="2地震and-遥感and-异常">2.“地震” and  “遥感” and  “异常”</h1>
+
+<blockquote>
+  <p>知网中搜索并下载对应的论文数据，共计435篇相关论文。
+搜索条件如下：</p>
+  <ul>
+    <li>2000.01.01-2022.12.31</li>
+    <li>以 “地震” and  “遥感” and  “异常” 为主题</li>
+  </ul>
+</blockquote>
+
+<h2 id="21authors">2.1Authors</h2>
+
+<h3 id="211作者关系网络">2.1.1作者关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/e160fe39-0af6-481d-8d09-d0c0ff8a0117.png" alt="image.png"></p>
+
+<p><strong>Count超过4的作者</strong></p>
+
+<ul>
+  <li>吴立新</li>
+  <li>张元生</li>
+  <li>刘善军</li>
+  <li>崔月菊</li>
+  <li>康春丽</li>
+  <li>单新建</li>
+  <li>张璇</li>
+  <li>杜建国</li>
+  <li>魏从信</li>
+  <li>屈春燕</li>
+  <li>刘放</li>
+  <li>张铁宝</li>
+  <li>张景发</li>
+  <li>闫丽莉</li>
+  <li>孙玉涛</li>
+  <li>刘德富</li>
+  <li>路茜</li>
+  <li>卢显</li>
+  <li>温少妍</li>
+  <li>强祖基</li>
+  <li>吴育华</li>
+  <li>钟美娇</li>
+  <li>程万正</li>
+  <li>申旭辉</li>
+  <li>熊攀</li>
+  <li>李永强</li>
+  <li>张丽峰</li>
+  <li>崔静</li>
+  <li>孟庆岩</li>
+  <li>姜文亮</li>
+  <li>马瑾</li>
+  <li>陈梅花</li>
+  <li>邓志辉</li>
+  <li>辛华</li>
+  <li>荆凤</li>
+  <li>田秀丰</li>
+  <li>李金平</li>
+  <li>曾佐勋</li>
+  <li>张炜斌</li>
+  <li>张友焱</li>
+  <li>宋冬梅</li>
+  <li>姚琪</li>
+  <li>刘永梅</li>
+  <li>但尚铭</li>
+  <li>任静</li>
+</ul>
+
+<h3 id="212主要的作者关系网络">2.1.2主要的作者关系网络</h3>
+
+<blockquote>
+  <p>注：括号内的数字为Count</p>
+</blockquote>
+
+<p>1.吴立新（25）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/6ec8241b-b69a-4813-a244-e509583978ad.png" alt="image.png"></p>
+
+<p>2.张元生（22）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/21f2f4af-11df-4956-b26b-b71649be0b72.png" alt="image.png"></p>
+
+<p>3.刘善军（20）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/500ef26a-1fe6-4fd6-bfdc-203ffe8dc225.png" alt="image.png"></p>
+
+<p>4.崔月菊（17）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/4a1c5749-3e16-4fab-8fcd-04428605d50d.png" alt="image.png"></p>
+
+<p>5.单新建（13）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/2fb3815c-8a8c-4a4c-aaed-be5d41702644.png" alt="image.png"></p>
+
+<p>6.康春丽（13）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/9f53c188-a98d-4036-8270-8ff121dcd067.png" alt="image.png"></p>
+
+<p>7.张璇（12）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/56001a5d-a134-4483-9e7a-a8f2588f8beb.png" alt="image.png"></p>
+
+<p>8.杜建国（11）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/2a212ca3-8b0a-4d69-8181-c1f74a688f0a.png" alt="image.png"></p>
+
+<p>9.魏从信（10）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/5cc5e534-b769-48ec-af9b-16686c0a1a79.png" alt="image.png"></p>
+
+<p>10.刘放（10）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/a63218ba-409d-4ac6-bca9-5d0398360c5f.png" alt="image.png"></p>
+
+<p>11.屈春燕（10）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/715e0dcf-d724-41e4-a3aa-ea5e51bfb8ad.png" alt="image.png"></p>
+
+<p>12.荆凤（4）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/d911f4d4-4f71-45c0-9d19-a30c3c2a42ce.png" alt="image.png"></p>
+
+<h3 id="213关键词图谱">2.1.3关键词图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/df377bd8-bdc2-4dca-8bf0-4904f04623ae.png" alt="image.png"></p>
+
+<h3 id="214时间线图谱">2.1.4时间线图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/7cd0f397-d03f-4964-a19c-a4112dcaf5d3.png" alt="image.png"></p>
+
+<h3 id="215主要论文">2.1.5主要论文</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">主要论文（以引用为主要参考）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">利用遥感技术研究断层现今活动的探索——以玛尼地震前后断层相互作用为例</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川地震卫星热红外亮温变化</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(I)——非连续组合断层破裂的热红外辐射规律及其构造地震前兆意义</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(IV)——岩石压剪破裂的热红外辐射规律及其地震前兆意义</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(VIII)——论岩石破裂的热红外前兆</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">昆仑山口西8.1级地震的卫星热红外前兆特征分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地球长波辐射 (OLR)遥感与重大自然灾害预测</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(II)——断层双剪粘滑的热红外辐射规律及其构造地震前兆意义</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(III)——交汇断层粘滑的热红外辐射与声发射规律及其构造地震前兆意义</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国大陆几次强地震活动的卫星红外异常分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">日本9级和缅甸7.2级地震热辐射表现特征</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">城市周边活断层探测中遥感技术的应用</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川芦山7.0级地震卫星热红外异常解析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">断裂带内外温差法在震前红外异常研究中的应用</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1998年1月10日张北6.2级地震前可能的卫星热红外异常现象</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">青藏高原地震前CO的排放与卫星热红外增温异常</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">红外遥感用于地震预测及其物理机理研究</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">红河断裂热红外高温条带的成因及其与地震活动性关系的探讨</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地球物理方法在干热岩勘查中的应用研究</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星热红外遥感资料在地震预报中的应用研究</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川地震前卫星热红外异常与云异常现象</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>主要论文（知网提供的综合排名）</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">论文</th>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">期刊</th>
+      <th style="text-align: center">时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">多波段多极化被动微波遥感地震应用研究进展与前沿方向探索</td>
+      <td style="text-align: center">吴立新;齐源;毛文飞;刘善军;丁逸凡;荆凤;申旭辉</td>
+      <td style="text-align: center">测绘学报</td>
+      <td style="text-align: center">2022-07-15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震遥感应用研究与地球物理场探测卫星计划</td>
+      <td style="text-align: center">申旭辉;张学民;崔静;周新;姜文亮;龚丽霞;李永生;刘芹芹</td>
+      <td style="text-align: center">遥感学报</td>
+      <td style="text-align: center">2018-12-25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星红外遥感技术及其在防灾救灾中的应用研究</td>
+      <td style="text-align: center">黄宇飞;徐嘉;白绍竣;高冀;李昂;高洪涛</td>
+      <td style="text-align: center">航天返回与遥感</td>
+      <td style="text-align: center">2020-10-15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于热红外遥感的川藏铁路昌都——林芝段地热异常区定量预测评价研究</td>
+      <td style="text-align: center">陈喆;董庆;陈建平;赵文博;蒋良文;张广泽;冯涛;王栋;毕晓佳;边民;张权平;孟德利</td>
+      <td style="text-align: center">遥感技术与应用</td>
+      <td style="text-align: center">2021-05-20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2014年国家自然科学基金批准项目一览表(地球科学部分)</td>
+      <td style="text-align: center">空</td>
+      <td style="text-align: center">地球科学进展</td>
+      <td style="text-align: center">2015-01-10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感气体探测技术在地震监测中的应用</td>
+      <td style="text-align: center">崔月菊;李静;王燕艳;刘永梅;陈志;杜建国</td>
+      <td style="text-align: center">地球科学进展</td>
+      <td style="text-align: center">2015-02-10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川地震前多圈层短—临遥感异常回顾及其时空关联性</td>
+      <td style="text-align: center">何苗;吴立新;崔静;王威;齐源;毛文飞;苗则朗;陈必焰;申旭辉</td>
+      <td style="text-align: center">遥感学报</td>
+      <td style="text-align: center">2020-06-25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星热红外遥感在地震预测和断层活动中的应用研究进展</td>
+      <td style="text-align: center">张璇; 张元生; 张丽峰</td>
+      <td style="text-align: center">地质论评</td>
+      <td style="text-align: center">2016-03-15</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="216主要作者的代表论文">2.1.6主要作者的代表论文</h3>
+
+<blockquote>
+  <p>论文根据引用次数及相关性来筛选，仅考虑第一作者。</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">吴立新</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">汶川地震前卫星热红外异常与云异常现象</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">断裂活动及孕震过程遥感热异常分析的研究进展</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川芦山Ms 7.0级地震前卫星线性云异常现象</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">多波段多极化被动微波遥感地震应用研究进展与前沿方向探索</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(I)——非连续组合断层破裂的热红外辐射规律及其构造地震前兆意义</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">张元生</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">汶川地震卫星热红外亮温变化</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">日本9级和缅甸7.2级地震热辐射表现特征</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星红外遥感在地震预报中的应用及研究进展</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">刘善军</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">遥感-岩石力学(VIII)——论岩石破裂的热红外前兆</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">台湾恒春地震前的卫星热红外异常特征及其机理</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">玉树地震前的微波辐射异常特征与机理分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川地震微波异常特征与机理研究</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川、玉树地震微波异常特征对比分析</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">崔月菊</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2010年玉树Ms7.1地震前后大气物理化学遥感信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">墨西哥下加利福尼亚MW 7.2地震前后CO遥感地球化学异常</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">遥感气体探测技术在地震监测中的应用</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">应用于地震预测的遥感气体地球化学</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地震有关的卫星高光谱气体地球化学信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">大地震前后CO、O3和CH4遥感地球化学异常特征</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">康春丽</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">昆仑山口西8.1级地震的卫星热红外前兆特征分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">大地震红外辐射异常信息时空特征分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">强震前地气系统长波辐射(OLR)异常的成因</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">华南地区强震前的卫星遥感信息特征</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于潮汐调制的玉树地震热异常现象</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">红外遥感技术在地震预报中的应用现状及发展趋势分析</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">张璇</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">四川芦山7.0级地震卫星热红外异常解析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">云南彝良5.7级地震前卫星热红外异常</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星热红外遥感在地震预测和断层活动中的应用研究进展</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">利用红外遥感资料研究断层活动变化</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于红外遥感资料的断层活动变化特征研究——以岷县—漳县6.6级地震为例</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于红外遥感资料的断层活动变化特征研究——以岷县—漳县6.6级地震为例</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">魏从信</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2009年8月11日安达曼群岛MS7.5地震热红外变化</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2018年2月台湾花莲震群热红外遥感亮温异常分析</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于热辐射遥感和GNSS的地震温度与位移异常时频特征研究</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">静止卫星热红外遥感地震异常分布特征</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">刘放</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">MODIS亮温增温异常点比值的时序分析方法及其在台湾一些5级以上地震前的异常变化</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星遥感热红外辐射与川滇强震探讨</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星遥感热红外辐射信息与云南永胜6.0级地震</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星遥感热红外辐射与川滇强震</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="22institutions">2.2Institutions</h2>
+
+<h3 id="221结构关系网络">2.2.1结构关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/e33c2fc7-6a71-4413-b36a-6413b1396b73.png" alt="image.png"></p>
+
+<p><strong>Count超过4的机构</strong></p>
+<ul>
+  <li>中国地震局地质研究所</li>
+  <li>中国地震局地震预测研究所</li>
+  <li>中国地震局兰州地震研究所</li>
+  <li>成都理工大学</li>
+  <li>中国地震台网中心</li>
+  <li>四川省地震局</li>
+  <li>中国地质大学(北京)</li>
+  <li>中国地震局地壳应力研究所</li>
+  <li>中国地震局地震预测研究所兰州创新基地</li>
+  <li>中国石油大学(华东)</li>
+  <li>东北大学资源与土木工程学院</li>
+  <li>吉林大学</li>
+  <li>中国地震局地质研究所地震动力学国家重点实验室</li>
+  <li>中国科学院大学</li>
+  <li>山东科技大学</li>
+  <li>中国地质大学（北京）</li>
+  <li>中国地震局地球物理研究所</li>
+  <li>中国矿业大学</li>
+  <li>河北省地震局</li>
+  <li>中南大学地球科学与信息物理学院</li>
+  <li>中国地质大学地球科学学院</li>
+  <li>中国地震局分析预报中心</li>
+  <li>中国石油勘探开发研究院</li>
+  <li>新疆维吾尔自治区地震局</li>
+  <li>桂林理工大学地球科学学院</li>
+  <li>长安大学</li>
+  <li>东北大学测绘遥感与数字矿山研究所</li>
+  <li>中国地震局地壳应力研究所(地壳动力学重点实验室)</li>
+  <li>中国地震局地震预测研究所兰州科技创新基地</li>
+  <li>中国科学院遥感与数字地球研究所</li>
+  <li>中国科学院遥感应用研究所</li>
+  <li>广东省地震局</li>
+  <li>应急管理部国家自然灾害防治研究院</li>
+  <li>防灾科技学院</li>
+</ul>
+
+<h3 id="222主要的机构关系网络">2.2.2主要的机构关系网络</h3>
+
+<blockquote>
+  <p>括号的内的数字为Count</p>
+</blockquote>
+
+<p>1.中国地震局地质研究所（35）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/218c1ef0-43b8-40c1-9299-551fa77ec948.png" alt="image.png"></p>
+
+<p>2.中国地震局地震预测研究所（31）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/52e6eec3-4510-417e-ab53-9aae6cbabe2a.png" alt="image.png"></p>
+
+<p>3.中国地震局兰州地震研究所（26）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/9518a9c0-dfc9-4a34-866e-bec5d297f1ef.png" alt="image.png"></p>
+
+<p>4.成都理工大学（15）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/4227291b-0f86-4f57-8e60-309634e6154b.png" alt="image.png"></p>
+
+<p>5.中国地震台网中心（16）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/d726214c-a6c9-44ba-92fc-4988e4cd414a.png" alt="image.png"></p>
+
+<p>6.四川省地震局（15）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/80484202-8e1a-44c3-b157-a0f74eb25c54.png" alt="image.png"></p>
+
+<p>7.中国地质大学-北京（13）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/ce1be3ea-edff-4781-b031-fe8427803e25.png" alt="image.png"></p>
+
+<p>8.中国地震局地壳应力研究所（11）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/7cf9d311-7a45-446e-9514-54535743a455.png" alt="image.png"></p>
+
+<p>9.中国地震局地震预测研究所兰州创新基地（）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/68fb3766-51a0-4fe8-acb3-3115f251dd62.png" alt="image.png"></p>
+
+<p>10.中国石油大学-华东（10）
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/9235d32d-3eb1-4656-8831-e313f430750c.png" alt="image.png"></p>
+
+<h3 id="223关键词图谱">2.2.3关键词图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/8099bd1b-ed62-41fb-b1cc-5600417ef43d.png" alt="image.png"></p>
+
+<h3 id="224时间线图谱">2.2.4时间线图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/480f9070-b39e-4bc1-a1b9-5929cb0a073e.png" alt="image.png"></p>
+
+<h2 id="23keywords">2.3Keywords</h2>
+
+<h3 id="231关键词关系网络">2.3.1关键词关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/f5468bb5-4070-46f1-a275-a4e797562023.png" alt="image.png"></p>
+
+<ul>
+  <li>地震</li>
+  <li>卫星遥感</li>
+  <li>遥感</li>
+  <li>地震预报</li>
+  <li>地表温度</li>
+  <li>地震遥感</li>
+  <li>热红外</li>
+  <li>地震前兆</li>
+  <li>地震预测</li>
+  <li>成矿预测</li>
+  <li>热异常</li>
+  <li>地震异常</li>
+  <li>长波辐射</li>
+  <li>背景场</li>
+  <li>地震前</li>
+  <li>小波变换</li>
+  <li>增温异常</li>
+  <li>亮温变化</li>
+  <li>地震监测</li>
+  <li>红外亮温</li>
+  <li>红外遥感</li>
+  <li>亮温</li>
+  <li>地热</li>
+  <li>地球化学</li>
+  <li>图像处理</li>
+  <li>异常</li>
+  <li>异常特征</li>
+  <li>微波辐射</li>
+  <li>断层活动</li>
+  <li>断裂</li>
+  <li>构造地震</li>
+  <li>汶川地震</li>
+  <li>遥感技术</li>
+</ul>
+
+<h3 id="232关键词图谱">2.3.2关键词图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/2f69b4e4-f3dd-400f-b535-7f7006df1685.png" alt="image.png"></p>
+
+<h3 id="233时间线图谱">2.3.3时间线图谱</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/518ea285-b9aa-4b02-9668-a3364e51e0ec.png" alt="image.png"></p>
+
+<h2 id="24结果分析">2.4结果分析</h2>
+
+<h3 id="241作者">2.4.1作者</h3>
+
+<p>统计结果中共有503位作者，其中出现次数前十的的为：</p>
+
+<p><strong>吴立新、张元生、刘善军、崔月菊、单新建、康春丽、张璇、杜建国、魏从信、刘放</strong></p>
+
+<blockquote>
+  <p>10人的Count均在10以上，其中吴立新、张元生、刘善军均在20以上，这三位作者开始的时间均为2004。吴立新与刘善军多次合作；张元生、魏从信和张璇多次合作；崔月菊与杜建国多次合作；康春丽与刘德福多次合作。详细作者合作关系可见2.1.2。</p>
+</blockquote>
+
+<p>2000左右年最早的一批作者有，他(她)们的主要方向为MODIS：</p>
+
+<ul>
+  <li>张永久</li>
+  <li>程万正</li>
+  <li>刘放</li>
+  <li>但尚铭</li>
+</ul>
+
+<p>从2015年开始且Count超过3的作者有：</p>
+
+<ul>
+  <li>丁志华（2019）</li>
+  <li>姚琪（2019）</li>
+  <li>崔静（2018）</li>
+  <li>孙珂（2017）</li>
+  <li>卢显（2016）</li>
+  <li>孟庆岩（2016）</li>
+  <li>邵楠清（2016）</li>
+  <li>任静（2015）</li>
+  <li>刘军（2015）</li>
+  <li>张丽峰（2015）</li>
+</ul>
+
+<p><strong>关键词突显结果：</strong>
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/699dabe0-0260-48e9-a174-09544fdf06b4.png" alt="image.png"></p>
+
+<h3 id="242机构">2.4.2机构</h3>
+
+<p>共出现了317个机构组织，其中Count排名前十的机构：</p>
+<ul>
+  <li>中国地震局地质研究所</li>
+  <li>中国地震局地震预测研究所</li>
+  <li>中国地震局兰州地震研究所</li>
+  <li>成都理工大学</li>
+  <li>中国地震台网中心</li>
+  <li>四川省地震局</li>
+  <li>中国地质大学(北京)</li>
+  <li>中国地震局地壳应力研究所</li>
+  <li>中国地震局地震预测研究所兰州创新基地</li>
+  <li>中国石油大学(华东)</li>
+</ul>
+
+<blockquote>
+  <p>中国地震局地质研究所、中国地震局地震预测研究所和中国地震局兰州地震研究所的Count数遥遥领先，均在26以上。</p>
+</blockquote>
+
+<p><strong>关键词突显结果</strong>
+<img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/d0570eea-b21f-4ec3-ab15-249d854d5e02.png" alt="image.png"></p>
+
+<h3 id="243关键词">2.4.3关键词</h3>
+
+<p>结果中共447个关键词，CiteSpace软件自动将关键词分为了11类，分别为：</p>
+<ul>
+  <li>卫星遥感</li>
+  <li>地震预报</li>
+  <li>遥感</li>
+  <li>成矿预测</li>
+  <li>地震监测</li>
+  <li>地震前兆</li>
+  <li>地震前</li>
+  <li>地震遥感</li>
+  <li>地震预测</li>
+  <li>成因机理</li>
+  <li>无绝缘移频自动闭塞（没用的分类，不考虑）</li>
+</ul>
+
+<p>排名前十的关键词：</p>
+<ul>
+  <li>地震</li>
+  <li>卫星遥感</li>
+  <li>遥感</li>
+  <li>地震预报</li>
+  <li>地表温度</li>
+  <li>地震遥感</li>
+  <li>热红外</li>
+  <li>地震前兆</li>
+  <li>地震预测</li>
+  <li>成矿预测</li>
+</ul>
+
+<p><strong>关键词突显结果：</strong></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/7462e6a6-8520-4b98-8481-943a7558fa03.png" alt="image.png"></p>
+
+<h1 id="3关键词相关文章分析">3.关键词相关文章分析</h1>
+
+<p><strong>将2.3获得关键词剔除掉无关词，仅留下与遥感参量有关的关键词，然后进行分类，从而获得相关性更高的内容。</strong></p>
+
+<p><strong>遥感参量：</strong></p>
+
+<ul>
+  <li>地表温度</li>
+  <li>热红外</li>
+  <li>热异常</li>
+  <li>长波辐射</li>
+  <li>增温异常</li>
+  <li>亮温变化</li>
+  <li>红外亮温</li>
+  <li>红外遥感</li>
+  <li>亮温</li>
+  <li>微波辐射</li>
+</ul>
+
+<p><strong>分类结果：</strong></p>
+
+<ul>
+  <li>地表温度 + 增温异常 + 亮温变化 + 长波辐射 + 微波辐射</li>
+  <li>热红外 + 热异常 + 红外亮温 + 红外遥感</li>
+  <li>潜热通量 + 微波亮温 + 大气温度 + 长波辐射</li>
+</ul>
+
+<h2 id="31地表温度--增温异常--亮温变化--长波辐射--微波辐射">3.1地表温度 + 增温异常 + 亮温变化 + 长波辐射 + 微波辐射</h2>
+
+<blockquote>
+  <p>知网中搜索筛选并下载对应的论文数据，共计186篇相关论文。
+搜索条件如下：</p>
+  <ul>
+    <li>2000.01.01-2022.12.31</li>
+    <li>以 “地震” 为主题</li>
+    <li>以“地表温度 + 增温异常 + 亮温变化 + 长波辐射 + 微波辐射”为关键词</li>
+  </ul>
+</blockquote>
+
+<h3 id="311作者关系网络">3.1.1作者关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/623352ea-cd0d-4744-9323-3f2c48535620.png" alt="image.png"></p>
+
+<p><strong>Count超过9的作者</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">康春丽</td>
+      <td style="text-align: center">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张元生</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">郭晓</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">徐秀登</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">荆凤</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">马未宇</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">刘德富</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">魏从信</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">申旭辉</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">熊攀</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">单新建</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">钟美娇</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">徐保华</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张璇</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">孟庆岩</td>
+      <td style="text-align: center">9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="312机构关系网络">3.1.2机构关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/ce4de961-984a-49c2-b9bc-b24608b15172.png" alt="image.png"></p>
+
+<p><strong>Count超过5的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所</td>
+      <td style="text-align: center">31</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震台网中心</td>
+      <td style="text-align: center">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局兰州地震研究所</td>
+      <td style="text-align: center">22</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地质研究所</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">浙江师范大学</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">内蒙古自治区地震局</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所兰州创新基地</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国科学院遥感应用研究所</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局分析预报中心</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地质研究所地震动力学国家重点实验室</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">新疆维吾尔自治区地震局</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地球物理研究所</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所兰州科技创新基地</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">浙江大学</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">浙江师范大学卫星遥感研究中心</td>
+      <td style="text-align: center">5</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="313代表论文">3.1.3代表论文</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">代表论文</th>
+      <th style="text-align: center">作者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">利用Terra和Aqua卫星地表温度探索汶川地震同震热响应</td>
+      <td style="text-align: center">陈顺云; 马瑾; 刘培洵; 刘力强; 扈小燕</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">青海玛多MS7.4地震前LURR与OLR短临异常关联性研究</td>
+      <td style="text-align: center">王淑艳;田辉;马克祥;于晨;马未宇;余怀忠</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">利用卫星遥感热场信息探索现今构造活动:以汶川地震为例</td>
+      <td style="text-align: center">陈顺云;马瑾;刘培洵;刘力强;扈小燕;任雅琼</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川芦山7.0级地震卫星热红外异常解析</td>
+      <td style="text-align: center">张璇;张元生;魏从信;田秀丰;汤倩;高见</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">芦山地震（MS7.0）前甲烷释放与大气增温异常</td>
+      <td style="text-align: center">王杰;张雄;潘黎黎;曾佐勋</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">云南彝良5.7级地震前卫星热红外异常</td>
+      <td style="text-align: center">张璇; 张元生; 魏从信; 田秀丰; 冯红武</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于卫星数据稳健分析技术统计分析新疆地区热异常与地震的关系</td>
+      <td style="text-align: center">孟亚飞; 孟庆岩; 周世健; 张颖</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基于多轨道卫星观测数据分析尼泊尔地震长波辐射特征</td>
+      <td style="text-align: center">孙珂; 单新建; Dimitar Ouzounov; 申旭辉; 荆凤</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川地震卫星热红外亮温变化</td>
+      <td style="text-align: center">张元生;郭晓;钟美娇;沈文荣;李稳;何斌</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">提取地震热异常信息的功率谱相对变化法及震例分析</td>
+      <td style="text-align: center">郭晓; 张元生; 钟美娇; 沈文荣; 魏从信</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地球长波辐射 (OLR)遥感与重大自然灾害预测</td>
+      <td style="text-align: center">刘德富; 康春丽</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="314关键词突显">3.1.4关键词突显</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/b9cdf590-ce09-445a-9c73-5dd090a2764f.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/3d748c9b-c305-4f3e-a1bc-1b2ce5cb7ae4.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-2/7a4e6451-3734-4e47-9831-d4e217ef445f.png" alt="image.png"></p>
+
+<h2 id="32热红外--热异常--红外亮温--红外遥感">3.2热红外 + 热异常 + 红外亮温 + 红外遥感</h2>
+
+<blockquote>
+  <p>知网中搜索并下载对应的论文数据，共计216篇相关论文。
+搜索条件如下：</p>
+  <ul>
+    <li>2000.01.01-2022.12.31</li>
+    <li>以 “地震” 为主题</li>
+    <li>以“热红外 + 热异常 + 红外亮温 + 红外遥感”为关键词</li>
+  </ul>
+</blockquote>
+
+<h3 id="321作者关系网络">3.2.1作者关系网络</h3>
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/e2bbb2a2-755c-4e3c-8899-fd272681a8d8.png" alt="image.png"></p>
+
+<p><strong>Count超过4的作者</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">张元生</td>
+      <td style="text-align: center">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">单新建</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">屈春燕</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张璇</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">闫丽莉</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">魏从信</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">温少妍</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">郭晓</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">马未宇</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">康春丽</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张丽峰</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">刘放</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">吴立新</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">马瑾</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">孟庆岩</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">郭广猛</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">宋冬梅</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">邓志辉</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">田秀丰</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">沈文荣</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">解滔</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">刘培洵</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">陈梅花</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">陈顺云</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">徐秀杰</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">路茜</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">钟美娇</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张治广</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张铁宝</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">刘善军</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">陈国强</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">李梦莹</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汤倩</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">马晓静</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">郭卫英</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">秦凯</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张志宏</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">辛华</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">惠少兴</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">刘力强</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">王煜</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张颖</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="322机构关系网络">3.2.2机构关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/ad9d8e61-8147-4427-a6a1-549c8f143a42.png" alt="image.png"></p>
+
+<p><strong>Count超过4的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">中国地震局兰州地震研究所</td>
+      <td style="text-align: center">33</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地质研究所</td>
+      <td style="text-align: center">31</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震台网中心</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国石油大学(华东)</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地质研究所地震动力学国家重点实验室</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所兰州创新基地</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川省地震局</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">新疆维吾尔自治区地震局</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地球物理研究所</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">青海省地震局</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地震动力学国家重点实验室</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">辽宁省地震局</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">浙江师范大学</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">南阳师范学院卫星遥感中心</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="323代表论文">3.2.3代表论文</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">代表论文</th>
+      <th style="text-align: center">作者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">汶川地震卫星热红外亮温变化</td>
+      <td style="text-align: center">张元生;郭晓;钟美娇;沈文荣;李稳;何斌</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">提取地震热异常信息的功率谱相对变化法及震例分析</td>
+      <td style="text-align: center">郭晓; 张元生; 钟美娇; 沈文荣; 魏从信</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">日本9级和缅甸7.2级地震热辐射表现特征</td>
+      <td style="text-align: center">张元生; 郭晓; 魏从信; 沈文荣; 惠少兴</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川芦山7.0级地震卫星热红外异常解析</td>
+      <td style="text-align: center">张璇;张元生;魏从信;田秀丰;汤倩;高见</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">红外遥感用于地震预测及其物理机理研究</td>
+      <td style="text-align: center">尹京苑;房宗绯;钱家栋;邓明德;耿乃光;郝晋升;王众;籍全权</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">红河断裂热红外高温条带的成因及其与地震活动性关系的探讨</td>
+      <td style="text-align: center">屈春燕; 单新建; 马瑾</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国近海海域卫星热红外亮温增温异常探讨</td>
+      <td style="text-align: center">卢振权; 吴必豪; 强祖基; 杜乐天</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">从红外遥感图像提取地下热信息的透热指数法</td>
+      <td style="text-align: center">刘培洵; 刘力强; 陈顺云; 陈国强; 马瑾</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2009年8月11日安达曼群岛MS7.5地震热红外变化</td>
+      <td style="text-align: center">魏从信; 张元生; 惠少兴</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震遥感应用研究与地球物理场探测卫星计划</td>
+      <td style="text-align: center">申旭辉;张学民;崔静;周新;姜文亮;龚丽霞;李永生;刘芹芹</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川8.0级和仲巴6.8级地震中波红外热辐射异常</td>
+      <td style="text-align: center">郭晓; 张元生; 魏从信; 钟美娇; 张旋</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MODIS亮温与气温及地温的相关性分析</td>
+      <td style="text-align: center">刘放;吕弋培;江利明;辛华;张铁宝;路茜</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星热遥感技术在地震预测中应用研究进展</td>
+      <td style="text-align: center">邓志辉; 陈梅花; 王煜</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="324关键词突显">3.2.4关键词突显</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/cf87a4b6-221e-4a16-bcbb-ba544ae8ce68.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/c9e30a24-43bb-45aa-9a7c-93919c15d4c4.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/a0c19108-1611-4720-816e-788db72fe30f.png" alt="image.png"></p>
+
+<h2 id="33潜热通量--微波亮温--大气温度--长波辐射">3.3潜热通量 + 微波亮温 + 大气温度 + 长波辐射</h2>
+
+<blockquote>
+  <p>知网中搜索并下载对应的论文数据，共计113篇相关论文。
+搜索条件如下：</p>
+  <ul>
+    <li>2000.01.01-2022.12.31</li>
+    <li>以 “地震” 为主题</li>
+    <li>以“潜热通量 + 微波亮温 + 大气温度 + 长波辐射”为关键词</li>
+  </ul>
+</blockquote>
+
+<h3 id="331作者关系网络">3.3.1作者关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/fe081460-0d36-4a94-b08a-68c06e8f9f29.png" alt="image.png"></p>
+
+<p><strong>Count超过3的作者</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">康春丽</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">马未宇</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">郭晓</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">荆凤</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卢显</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">申旭辉</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张璇</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">任静</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">戴勇</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">魏从信</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">孙珂</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">姚琪</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">钟美娇</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">张元生</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">高立新</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">熊攀</td>
+      <td style="text-align: center">3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="332机构关系网络">3.3.2机构关系网络</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/053c04b1-72fa-42af-b170-b2d5e3c3187b.png" alt="image.png"></p>
+
+<p><strong>Count超过2的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">中国地震台网中心</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地震预测研究所</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局兰州地震研究所</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">内蒙古自治区地震局</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国地震局地质研究所</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国石油大学(华东)</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">应急管理部国家自然灾害防治研究院</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">东北大学资源与土木工程学院</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中南大学地球科学与信息物理学院</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国矿业大学</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中国科学院遥感与数字地球研究所</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">四川省地震局</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">广东省地震局</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">青海省地震局</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">青海省气象科学研究所</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="333代表论文">3.3.3代表论文</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">代表论文</th>
+      <th style="text-align: center">作者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">提取地震热异常信息的功率谱相对变化法及震例分析</td>
+      <td style="text-align: center">郭晓; 张元生; 钟美娇; 沈文荣; 魏从信</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">昆仑山口西8.1级地震的卫星热红外前兆特征分析</td>
+      <td style="text-align: center">康春丽; 陈正位; 陈立泽; 田勤俭; 刘德富</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地球长波辐射 (OLR)遥感与重大自然灾害预测</td>
+      <td style="text-align: center">刘德富; 康春丽</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">汶川8.0级大地震的长波辐射征象</td>
+      <td style="text-align: center">康春丽; 张艳梅; 刘德富; 荆凤</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">台湾集集强震前的卫星遥感长波辐射场变异分析</td>
+      <td style="text-align: center">刘德富</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2004年印度尼西亚9级大地震前的潜热通量异常</td>
+      <td style="text-align: center">陈梅花; 邓志辉; 杨竹转; 马晓静</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">苏门答腊岛8.7级大地震前的辐射异常现象</td>
+      <td style="text-align: center">刘德富; 康春丽</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">卫星热遥感技术在地震预测中应用研究进展</td>
+      <td style="text-align: center">邓志辉; 陈梅花; 王煜</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">中强地震前的长波辐射异常震例研究</td>
+      <td style="text-align: center">荆凤; 申旭辉; 康春丽; 孟庆岩; 熊攀</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">小波方法在地震遥感信息提取中的应用</td>
+      <td style="text-align: center">熊攀</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">强震前地气系统长波辐射(OLR)异常的成因</td>
+      <td style="text-align: center">康春丽; 韩延本; 刘德富; 曹忠权</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">长波辐射(OLR)信息预测华北地震的方法研究</td>
+      <td style="text-align: center">康春丽; 刘德富; 陈艳; 周晓成</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="334关键词突显">3.3.4关键词突显</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/b860cd04-e4ac-4431-902d-f3b1be6d33b2.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/7630b92c-acde-4cb7-b6c2-a7efe4650954.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-1/46b23480-3b94-489a-b187-4fa8f27554cf.png" alt="image.png"></p>
+
+<blockquote>
+  <p>备份PDF：<a href="https://baozi.run/absorb/article/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.pdf" rel="nofollow" target="_blank" class="extlinks">地震预测研究进展-中文.pdf</a></p>
+</blockquote>
+
+<p><img src="https://lz.sinaimg.cn/nmw690/ebeef3aaly3hah2t1wi6zj212a1knqik.jpg" alt=""></p>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 地震预测研究进展-中文 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html" class="cplink">https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('1.分析示例')">1.分析示例</a><ul><li><a onclick="scrollToAdjust('1.1下载数据')">1.1下载数据</a></li><li><a onclick="scrollToAdjust('1.2导入并转换数据')">1.2导入并转换数据</a></li><li><a onclick="scrollToAdjust('1.3新建project')">1.3新建Project</a></li><li><a onclick="scrollToAdjust('1.4数据分析')">1.4数据分析</a></li></ul></li><li><a onclick="scrollToAdjust('2.“地震” and -“遥感” and- “异常”')">2.“地震” and  “遥感” and  “异常”</a><ul><li><a onclick="scrollToAdjust('2.1authors')">2.1Authors</a><ul><li><a onclick="scrollToAdjust('2.1.1作者关系网络')">2.1.1作者关系网络</a></li><li><a onclick="scrollToAdjust('2.1.2主要的作者关系网络')">2.1.2主要的作者关系网络</a></li><li><a onclick="scrollToAdjust('2.1.3关键词图谱')">2.1.3关键词图谱</a></li><li><a onclick="scrollToAdjust('2.1.4时间线图谱')">2.1.4时间线图谱</a></li><li><a onclick="scrollToAdjust('2.1.5主要论文')">2.1.5主要论文</a></li><li><a onclick="scrollToAdjust('2.1.6主要作者的代表论文')">2.1.6主要作者的代表论文</a></li></ul></li><li><a onclick="scrollToAdjust('2.2institutions')">2.2Institutions</a><ul><li><a onclick="scrollToAdjust('2.2.1结构关系网络')">2.2.1结构关系网络</a></li><li><a onclick="scrollToAdjust('2.2.2主要的机构关系网络')">2.2.2主要的机构关系网络</a></li><li><a onclick="scrollToAdjust('2.2.3关键词图谱')">2.2.3关键词图谱</a></li><li><a onclick="scrollToAdjust('2.2.4时间线图谱')">2.2.4时间线图谱</a></li></ul></li><li><a onclick="scrollToAdjust('2.3keywords')">2.3Keywords</a><ul><li><a onclick="scrollToAdjust('2.3.1关键词关系网络')">2.3.1关键词关系网络</a></li><li><a onclick="scrollToAdjust('2.3.2关键词图谱')">2.3.2关键词图谱</a></li><li><a onclick="scrollToAdjust('2.3.3时间线图谱')">2.3.3时间线图谱</a></li></ul></li><li><a onclick="scrollToAdjust('2.4结果分析')">2.4结果分析</a><ul><li><a onclick="scrollToAdjust('2.4.1作者')">2.4.1作者</a></li><li><a onclick="scrollToAdjust('2.4.2机构')">2.4.2机构</a></li><li><a onclick="scrollToAdjust('2.4.3关键词')">2.4.3关键词</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('3.关键词相关文章分析')">3.关键词相关文章分析</a><ul><li><a onclick="scrollToAdjust('3.1地表温度-+-增温异常-+-亮温变化-+-长波辐射-+-微波辐射')">3.1地表温度 + 增温异常 + 亮温变化 + 长波辐射 + 微波辐射</a><ul><li><a onclick="scrollToAdjust('3.1.1作者关系网络')">3.1.1作者关系网络</a></li><li><a onclick="scrollToAdjust('3.1.2机构关系网络')">3.1.2机构关系网络</a></li><li><a onclick="scrollToAdjust('3.1.3代表论文')">3.1.3代表论文</a></li><li><a onclick="scrollToAdjust('3.1.4关键词突显')">3.1.4关键词突显</a></li></ul></li><li><a onclick="scrollToAdjust('3.2热红外-+-热异常-+-红外亮温-+-红外遥感')">3.2热红外 + 热异常 + 红外亮温 + 红外遥感</a><ul><li><a onclick="scrollToAdjust('3.2.1作者关系网络')">3.2.1作者关系网络</a></li><li><a onclick="scrollToAdjust('3.2.2机构关系网络')">3.2.2机构关系网络</a></li><li><a onclick="scrollToAdjust('3.2.3代表论文')">3.2.3代表论文</a></li><li><a onclick="scrollToAdjust('3.2.4关键词突显')">3.2.4关键词突显</a></li></ul></li><li><a onclick="scrollToAdjust('3.3潜热通量-+-微波亮温-+-大气温度-+-长波辐射')">3.3潜热通量 + 微波亮温 + 大气温度 + 长波辐射</a><ul><li><a onclick="scrollToAdjust('3.3.1作者关系网络')">3.3.1作者关系网络</a></li><li><a onclick="scrollToAdjust('3.3.2机构关系网络')">3.3.2机构关系网络</a></li><li><a onclick="scrollToAdjust('3.3.3代表论文')">3.3.3代表论文</a></li><li><a onclick="scrollToAdjust('3.3.4关键词突显')">3.3.4关键词突显</a></li></ul></li></ul></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html" class="read-next-link" aria-label="地震预测研究进展-英文"></a>
+            <section>
+                <span>地震预测研究进展-英文</span>
+                <p>警告！&lt;/br&gt;该实验的流程存在严重漏洞&lt;/br&gt;关键词选取存在问题&lt;/br&gt;...</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html" class="read-next-link"
+                aria-label="风云四号卫星多通道红外图像震前异常检测"></a>
+            <section>
+                <span>风云四号卫星多通道红外图像震前异常检测</span>
+                <p>  原文：Pre-Seismic Anomaly Detection from Multichannel Infr...</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2023-01-26-地震预测研究进展-中文.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>

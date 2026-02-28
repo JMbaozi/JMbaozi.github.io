@@ -1,0 +1,2990 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地震预测研究进展（遥感） - Yucol</title>
+    <meta name="author" content="yucol">
+    
+    <meta name="description" content="地震预测研究进展（遥感）">
+    <meta name="keywords"
+        content="统计地震学, 研究进展, CiteSpace, 地震预测">
+    
+    <meta property="og:previous_url" content="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html">
+    
+    
+    <meta property="og:next_url" content="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2023-03-20 00:00:00 +0000" />
+    
+    
+    <meta property="calendar-scale" content="year" />
+    <meta property="calendar-scheme" content="null" />
+    <meta property="calendar-color" content="null" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="地震预测研究进展（遥感） - Yucol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Yucol">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    <meta name="alivestart" content="02/10/2020">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css">
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+
+
+    
+    
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous">已经是最新一篇文章了！</div>
+            <div class="alert-tip" id="no-next">已经是最后一篇文章了！</div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <div class="menu-tools">
+        
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
+            </svg>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </div>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/hall/" aria-label="HALL">
+                                HALL
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="/tags.html#%E7%BB%9F%E8%AE%A1%E5%9C%B0%E9%9C%87%E5%AD%A6" class="post-tag">统计地震学</a>
+            
+            <a href="/tags.html#%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95" class="post-tag">研究进展</a>
+            
+            <a href="/tags.html#CiteSpace" class="post-tag">CiteSpace</a>
+            
+            <a href="/tags.html#%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B" class="post-tag">地震预测</a>
+            
+            
+        </div>
+        <h1>地震预测研究进展（遥感）</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                yucol
+            </span>
+            <time class="post-meta-item" datetime=" 23-03-20">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 23-03-20">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                本文总共  6.8k  字 </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        阅读全文大约需要 20 分钟
+                    </span>
+                    
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        本文总阅读量 
+                        
+                        <span id="busuanzi_page_pv"></span>
+                        
+                        次
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+    <h2 class="post-subtitle">研究进展</h2>
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <center>
+    <span style="color:#FF0000;font-weight:bold;">‘anomaly’ or ‘anomalies’</span>
+</center>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>数据库选择“Web os Science核心合集”
+时间：1991.01.01-2022.12.31
+earthquake? or seism*  (所有字段) AND ‘remote sensing’ or 'satellite'  (所有字段) AND ‘anomaly’ or ‘anomalies’  (所有字段)
+文献类型选择“论文”与“综述论文”
+共计1296篇相关论文
+</code></pre></div></div>
+
+<h2 id="11作者关系网络">1.1作者关系网络</h2>
+
+<p><strong>时间条</strong></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/49716acc-9add-4d4a-888a-a10084e3d32d.png" alt="image.png"></p>
+
+<h3 id="111shenxuhui">1.1.1Shen,Xuhui</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/3a8721a7-7bc0-4381-82ff-4e144af8373f.png" alt="image.png"></p>
+
+<h3 id="112marchettidedalo">1.1.2Marchetti,Dedalo</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/a938037f-5c64-4188-bdf2-3c1489b2c41a.png" alt="image.png"></p>
+
+<h3 id="113de-santisangelo">1.1.3De santis,Angelo</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/3680b6a4-6dff-4ab1-8bec-67fa4305edcf.png" alt="image.png"></p>
+
+<h3 id="114shahmunawar">1.1.4Shah,Munawar</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/de00c08b-0e2d-441d-baed-279c8053ba53.png" alt="image.png"></p>
+
+<h3 id="115zhangxuemin">1.1.5Zhang,Xuemin</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/112ffb60-64f7-4c37-8ea6-6e605b48b005.png" alt="image.png"></p>
+
+<h3 id="116akhoondzadehm">1.1.6Akhoondzadeh,M</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/118b482a-2426-4609-9f0a-295ebe4a39fd.png" alt="image.png"></p>
+
+<h3 id="117wulixin">1.1.7Wu,Lixin</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/119fa0b4-84ed-4eda-bc7c-c0720012c6a3.png" alt="image.png"></p>
+
+<h3 id="118parrotm">1.1.8Parrot,M</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b216f43e-8d49-4d3f-a37c-04ff46048f8a.png" alt="image.png"></p>
+
+<h3 id="119hattorikatsumi">1.1.9Hattori,Katsumi</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/ea0f84dc-ab38-4292-aea7-af3f9e5f4f73.png" alt="image.png"></p>
+
+<h3 id="1110tramutoliv">1.1.10Tramutoli,V</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/82b74aeb-0ad3-4d3c-a673-2af43f0bc196.png" alt="image.png"></p>
+
+<h3 id="1111pergolan">1.1.11Pergola,N</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/63d12770-c055-46c0-b051-3c3ad7720732.png" alt="image.png"></p>
+
+<h3 id="1112akhoondzadehmehdi">1.1.12Akhoondzadeh,Mehdi</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/29fc2007-2bc2-40ce-95ce-a66356bfe4d7.png" alt="image.png"></p>
+
+<h3 id="1113filizzolac">1.1.13Filizzola,C</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/8262f3df-8d24-49cd-9ae1-18ad78daea9e.png" alt="image.png"></p>
+
+<h3 id="1114zhimazeren">1.1.14Zhima,Zeren</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/832cece2-8f07-4bdf-a9e6-68e6577991d4.png" alt="image.png"></p>
+
+<h3 id="1115alvarezorlando">1.1.15Alvarez,Orlando</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/83621886-f560-47f8-96ff-2ff0fadc40c8.png" alt="image.png"></p>
+
+<h3 id="1116maowenfei">1.1.16Mao,Wenfei</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/54e3355d-1032-4890-b382-9c7153ef1fab.png" alt="image.png"></p>
+
+<h3 id="1117jinshuanggen">1.1.17Jin,Shuanggen</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/0e9cbb1f-d56c-4eb1-858a-396bf188e6e3.png" alt="image.png"></p>
+
+<h3 id="1118piscinialessandro">1.1.18Piscini,Alessandro</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/23736190-fc3b-43f3-b08e-3fbb23427567.png" alt="image.png"></p>
+
+<h3 id="1119battistonroberto">1.1.19Battiston,Roberto</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/91b3e2ad-14df-4c91-980f-a30d115910d3.png" alt="image.png"></p>
+
+<h3 id="1120qiyuan">1.1.20Qi,Yuan</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/c471f8a6-fc08-42b2-823c-5306360d1666.png" alt="image.png"></p>
+
+<h2 id="12机构">1.2机构</h2>
+
+<p><strong>Count超过9的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">China Earthquake Adm</td>
+      <td style="text-align: center">127</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chinese Acad Sci</td>
+      <td style="text-align: center">81</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Russian Acad Sci</td>
+      <td style="text-align: center">64</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ist Nazl Geofis &amp; Vulcanol</td>
+      <td style="text-align: center">41</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Natl Cent Univ</td>
+      <td style="text-align: center">40</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Wuhan Univ</td>
+      <td style="text-align: center">34</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Tehran</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Jilin Univ</td>
+      <td style="text-align: center">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chiba Univ</td>
+      <td style="text-align: center">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Chinese Acad Sci</td>
+      <td style="text-align: center">26</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CNR</td>
+      <td style="text-align: center">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NASA</td>
+      <td style="text-align: center">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Minist Emergency Management China</td>
+      <td style="text-align: center">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CNRS</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Basilicata</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Univ Geosci</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chapman Univ</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Acad Sinica</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Nanjing Univ Informat Sci &amp; Technol</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Inst Space Technol</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CEA</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CALTECH</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indian Inst Technol</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Earthquake Networks Ctr</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cent South Univ</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GFZ German Res Ctr Geosci</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Univ Petr</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Paris Diderot</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Consejo Nacl Invest Cient &amp; Tecn</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Nacl San Juan</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Univ Min &amp; Technol</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CSIC</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Nacl Autonoma Mexico</td>
+      <td style="text-align: center">9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/2a29af41-8743-4c7e-9c20-d3b809def8ff.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/9d21af8c-85b2-4174-9419-8ac4427ecbbe.png" alt="image.png"></p>
+
+<h3 id="121china-earthquake-adm">1.2.1China Earthquake Adm</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b58e687c-be73-4acc-9bd3-97a36158855c.png" alt="image.png"></p>
+
+<h3 id="122chinese-acad-sci">1.2.2Chinese Acad Sci</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/00d1c276-a729-4405-b4ab-6e46e2aaf292.png" alt="image.png"></p>
+
+<h3 id="123russian-acad-sci">1.2.3Russian Acad Sci</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e76c1e21-f2d6-45a4-8b48-ca3614fbc7f7.png" alt="image.png"></p>
+
+<h3 id="124ist-nazl-geofis--vulacnol">1.2.4Ist Nazl Geofis &amp; Vulacnol</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/f9d72ff1-abd7-45a2-a850-1ce163162711.png" alt="image.png"></p>
+
+<h3 id="125natl-cent-univ">1.2.5Natl Cent Univ</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/73367fdc-233f-4128-9e58-e292d412c09f.png" alt="image.png"></p>
+
+<h3 id="126wuhan-univ">1.2.6Wuhan Univ</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/510b8af5-63d6-4d92-b39a-7c0fb0c35516.png" alt="image.png"></p>
+
+<h2 id="13国家或地区">1.3国家（或地区）</h2>
+
+<p><strong>Count超过11的国家（或地区）</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">国家（或地区）</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">PEOPLES R CHINA</td>
+      <td style="text-align: center">401</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">USA</td>
+      <td style="text-align: center">195</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INDIA</td>
+      <td style="text-align: center">155</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ITALY</td>
+      <td style="text-align: center">143</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RUSSIA</td>
+      <td style="text-align: center">119</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">FRANCE</td>
+      <td style="text-align: center">111</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">JAPAN</td>
+      <td style="text-align: center">83</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GERMANY</td>
+      <td style="text-align: center">82</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ENGLAND</td>
+      <td style="text-align: center">62</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TAIWAN</td>
+      <td style="text-align: center">58</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IRAN</td>
+      <td style="text-align: center">46</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SPAIN</td>
+      <td style="text-align: center">37</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PAKISTAN</td>
+      <td style="text-align: center">32</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GREECE</td>
+      <td style="text-align: center">29</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TURKEY</td>
+      <td style="text-align: center">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ARGENTINA</td>
+      <td style="text-align: center">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AUSTRALIA</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BRAZIL</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">EGYPT</td>
+      <td style="text-align: center">19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INDONESIA</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SOUTH KOREA</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHILE</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CANADA</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SWITZERLAND</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NORWAY</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MEXICO</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NETHERLANDS</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SWEDEN</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IRELAND</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SCOTLAND</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AUSTRIA</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CZECH REPUBLIC</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SAUDI ARABIA</td>
+      <td style="text-align: center">11</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/525e9d8b-8554-4a70-97fd-ac9119b69444.png" alt="image.png"></p>
+
+<h3 id="131peoples-r-china">1.3.1PEOPLES R CHINA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/a1347003-2ebd-4cba-bc00-cbfd83f3a0fc.png" alt="image.png"></p>
+
+<h3 id="132usa">1.3.2USA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/79b39b9a-d77f-4ce9-9623-71a5d0b743f1.png" alt="image.png"></p>
+
+<h3 id="133india">1.3.3INDIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/08cfb934-1e15-40ce-822b-d4fb4863f078.png" alt="image.png"></p>
+
+<h3 id="134russia">1.3.4RUSSIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/1e10bd76-9a99-4733-8a4c-291bb3277117.png" alt="image.png"></p>
+
+<h3 id="135france">1.3.5FRANCE</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/f48630b9-3253-416c-a0cc-e233ab441442.png" alt="image.png"></p>
+
+<h3 id="136japan">1.3.6JAPAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/91ac4527-1985-4841-849e-b317ef29bbcb.png" alt="image.png"></p>
+
+<h3 id="137germany">1.3.7GERMANY</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/3711a0b4-8805-43c3-83b9-20f562738900.png" alt="image.png"></p>
+
+<h3 id="138england">1.3.8ENGLAND</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/62483196-3377-4060-b397-b26af60fd843.png" alt="image.png"></p>
+
+<h3 id="139taiwan地区">1.3.9TAIWAN（地区）</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5787e889-4d2c-40b6-8887-f5b3bf095835.png" alt="image.png"></p>
+
+<h3 id="1310iran">1.3.10IRAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/cc6128dd-4571-41e8-b803-5b670ec6c066.png" alt="image.png"></p>
+
+<h3 id="1311spain">1.3.11SPAIN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e127f524-ae5e-45ef-8979-9c62a5716797.png" alt="image.png"></p>
+
+<h3 id="1312pakistan">1.3.12PAKISTAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/44878f02-c1ce-47dd-a8b0-fae883aeb405.png" alt="image.png"></p>
+
+<h2 id="14关键词">1.4关键词</h2>
+
+<blockquote>
+  <p>下列关键词经过筛选</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">关键词</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">total electron content</td>
+      <td style="text-align: center">84</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">thermal anomaly</td>
+      <td style="text-align: center">67</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gravity anomaly</td>
+      <td style="text-align: center">44</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">wenchuan earthquake</td>
+      <td style="text-align: center">43</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">atmosphere</td>
+      <td style="text-align: center">38</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ionospheric anomaly</td>
+      <td style="text-align: center">33</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">magnetic anomaly</td>
+      <td style="text-align: center">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">temperature</td>
+      <td style="text-align: center">22</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ionosphere</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">latent heat flux</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">electron density</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">land surface temperature</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">robust satellite technique</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">outgoing longwave radiation</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">electric field</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ionospheric disturbance</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">geomagnetic storm</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">brightness temperature</td>
+      <td style="text-align: center">5</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<center>
+    <span style="color:#FF0000;font-weight:bold;">thermal anomaly</span>
+</center>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>数据库选择“Web os Science核心合集”
+时间：1991.01.01-2022.12.31
+earthquake? or seism*  (所有字段) AND ‘remote sensing’ or 'satellite'  (所有字段) AND thermal anomaly  (所有字段)
+文献类型选择“论文”与“综述论文”
+共计313篇相关论文
+</code></pre></div></div>
+
+<h2 id="21作者关系网络">2.1作者关系网络</h2>
+
+<h3 id="211pergolan">2.1.1<a href="https://scholar.google.com/citations?user=XBzG1McAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Pergola,N</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5979d598-8878-4073-892b-7b85a374b3ab.png" alt="image.png"></p>
+
+<h3 id="212filizzolac--filizzolacarolina">2.1.2<a href="https://scholar.google.com/citations?user=6oTqoi0AAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Filizzola,C / Filizzola,Carolina</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/3b2ca53e-bda3-4f42-a708-fbda04aebf64.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/aab25e0f-94db-426e-95b5-01f1b3aa04c6.png" alt="image.png"></p>
+
+<h3 id="213tramutoliv--tramutolivalerio">2.1.3<a href="https://scholar.google.com/citations?user=ItcTR0wAAAAJ&amp;hl=it" rel="nofollow" target="_blank" class="extlinks">Tramutoli,V / Tramutoli,Valerio</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4bf6ce1f-867c-46fb-afbc-07c0568ae26b.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/dc74535c-81fb-48b5-82c6-d8deca4ea289.png" alt="image.png"></p>
+
+<h3 id="214genzanonicola--genzanon">2.1.4<a href="https://scholar.google.it/citations?user=-AdtIHwAAAAJ&amp;hl=it" rel="nofollow" target="_blank" class="extlinks">Genzano,Nicola / Genzano,N</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e5d0f2cc-4616-4116-b7cf-e814eafd8af1.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/49b9c71e-4307-4e9e-8d53-3b44aa0b14b7.png" alt="image.png"></p>
+
+<h3 id="215maweiyu">2.1.5Ma,Weiyu</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b883a0a8-091f-483d-9bd8-ab7d8310b479.png" alt="image.png"></p>
+
+<h3 id="216troninaa">2.1.6Tronin,AA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/abe5cd25-959d-4449-808e-d231a2f7beb8.png" alt="image.png"></p>
+
+<h3 id="217pulinetssergey">2.1.7<a href="https://scholar.google.com/citations?user=Wu88rlgAAAAJ&amp;hl=zh-CN" rel="nofollow" target="_blank" class="extlinks">Pulinets,Sergey</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4439dbfd-2d99-4c69-9507-5ae06c9ab487.png" alt="image.png"></p>
+
+<h3 id="218lisimariano--lisim">2.1.8<a href="https://scholar.google.it/citations?user=jb2fWWYAAAAJ&amp;hl=it" rel="nofollow" target="_blank" class="extlinks">Lisi,Mariano / Lisi,M</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/6408a1fb-1342-4a5a-aad3-78d969045222.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/eecaffc1-d51a-405d-823f-0d3d03fe9dd4.png" alt="image.png"></p>
+
+<h3 id="219qiangzj">2.1.9Qiang,ZJ</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5e06a594-55b8-4ee5-b128-7e4f98a6f4f2.png" alt="image.png"></p>
+
+<h3 id="2110ouzounovdimitar">2.1.10<a href="https://scholar.google.com/citations?user=OjOlDkYAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Ouzounov,Dimitar</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/c7e16136-f290-46e0-a845-e28284d8ebb9.png" alt="image.png"></p>
+
+<h3 id="2111kangcl">2.1.11Kang,CL</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/101f3d40-9060-4307-9598-32271483e681.png" alt="image.png"></p>
+
+<h2 id="22机构">2.2机构</h2>
+
+<p><strong>Count超过4的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">China Earthquake Adm</td>
+      <td style="text-align: center">35</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CNR</td>
+      <td style="text-align: center">22</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Basilicata</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chinese Acad Sci</td>
+      <td style="text-align: center">19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Russian Acad Sci</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NASA</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chapman Univ</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Earthquake Networks Ctr</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ist Nazl Geofis &amp; Vulcanol</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Chinese Acad Sci</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indian Inst Technol Roorkee</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Tehran</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">China Univ Min &amp; Technol</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Int Space Sci Inst</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Nacl Autonoma Mexico</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Univ Hawaii</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">San Jose State Univ</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Dublin Inst Adv Studies</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chiba Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Northeastern Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Brown Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ARPA Emilia Romagna</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cent South Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indian Inst Technol</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CSIC</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Nanyang Normal Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cornell Univ</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4bc2657b-a3a3-4eef-895d-2ce93eab9a14.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/7dcd8e7f-501b-4f26-8de3-5b63f5aeb516.png" alt="image.png"></p>
+
+<h3 id="221china-earthquake-adm">2.2.1China Earthquake Adm</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/caa7ce7b-17d8-48e7-8d23-2b62a3680276.png" alt="image.png"></p>
+
+<p><strong>中国地震局-TIR</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Shan, Xinjian</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Jing, Feng</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Jiao, Zhonghu</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Shen, Xuhui</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Singh, Ramesh P</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sun, Ke</td>
+      <td style="text-align: center">3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/c980b156-27c2-4ee0-8f46-750c38a32af4.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/43fce69a-d783-4e1d-a883-52a23dd972d9.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/f76e5ff2-f7a3-4368-a82e-634ace8cea2a.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/8856f5d5-b551-422e-b737-bbbb260956d2.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/d008f670-fe15-496f-8e10-c81d52eb71c0.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/337285d4-b954-4e86-b4bf-7e3a17140e37.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/5632edcc-f1e0-4d2b-bbbd-7a66be5633c1.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/791d78c7-6108-44db-b3ff-743257fd3d72.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/0ebd8e22-1f30-40ce-9692-e9aa89b8b56d.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/39bcdf9d-a09e-400a-a810-cd330e677904.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/9b5d145e-1c53-4d59-9989-db244be642da.png" alt="image.png"></p>
+
+<p><strong>被引作者</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">OUZOUNOV D</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TRONIN AA</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TRAMUTOLI V</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GORNYI VI</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SARAF AK</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">WU LX</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PULINETS SA</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">DEY S</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PULINETS S</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">FREUND F</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">QIANG ZJ</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GENZANO N</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHEN SY</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">JING F</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">QIN K</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">AKHOONDZADEH M</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BLACKETT M</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CUI Y</td>
+      <td style="text-align: center">7</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>被引期刊</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">期刊</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">INT J REMOTE SENS</td>
+      <td style="text-align: center">22</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHINESE SCI BULL</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NAT HAZARD EARTH SYS</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">REMOTE SENS ENVIRON</td>
+      <td style="text-align: center">19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J GEODYN</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHINESE J GEOPHYS-CH</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ADV SPACE RES-SERIES</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PHYS CHEM EARTH</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TECTONOPHYSICS</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SCI CHINA SER D</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J ASIAN EARTH SCI</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOPHYS RES LETT</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">DOKL AKAD NAUK SSSR+</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ADV SPACE RES</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PURE APPL GEOPHYS</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">REMOTE SENS-BASEL</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHEM GEOL</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地震地质 SEISMOLOGY AND GEOLOGY</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOPHYS J INT</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ANN GEOPHYS-GERMANY</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B AM METEOROL SOC</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">EARTH PLANET SC LETT</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P IEEE</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J GEOPHYS RES-SOL EA</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">EARTHQ SCI</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOLOGY</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ANN GEOPHYS-ITALY</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SCIENCE</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ANN GEOFIS</td>
+      <td style="text-align: center">7</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="222cnr">2.2.2CNR</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/cfaeae00-170e-475f-bc4c-bc12b46239ef.png" alt="image.png"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Pergola, N</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tramutoli, V</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Filizzola, C</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tramutoli, Valerio</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Genzano, N</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Genzano, Nicola</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Lisi, Mariano</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Pergola, Nicola</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Filizzola, Carolina</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Lisi, M</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Corrado, R</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Paciello, R</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Mazzeo, G</td>
+      <td style="text-align: center">3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/a3c77e63-1385-4b7a-8979-398e26873c5b.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/e3346110-a287-415d-b6d6-f41cd215687c.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-4/24b62699-9434-49bd-9be4-6aa73ea3adf8.png" alt="image.png"></p>
+
+<p><strong>被引作者</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">作者</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">FILIZZOLA C</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ALIANO C</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GENZANO N</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CORRADO R</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CUOMO V</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TRAMUTOLI V</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">DI BELLOG</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GORNYI VI</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PERGOLA N</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">DOBROVOLSKY IP</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BONFANTI P</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">QIANG ZJ</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">OUZOUNOV D</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PULINETS SA</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">LISI M</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TRONIN AA</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">FREUND FT</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ELEFTHERIOU A</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BARKA A</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CICERONE RD</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHIODINI G</td>
+      <td style="text-align: center">6</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>被引期刊</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">期刊</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">ANN GEOFIS</td>
+      <td style="text-align: center">19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ANN GEOPHYS-ITALY</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PURE APPL GEOPHYS</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2007 INTERNATIONAL WORKSHOP ON THE ANALYSIS OF MULTI-TEMPORAL REMOTE SENSING IMAGES</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NAT HAZARD EARTH SYS</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">REMOTE SENS ENVIRON</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PROC SPIE</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHINESE SCI BULL</td>
+      <td style="text-align: center">14</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PHYS CHEM EARTH</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INT J REMOTE SENS</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ATMOS RES</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J GEODYN</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHEM GEOL</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOPHYS RES LETT</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">DOKL AKAD NAUK SSSR+</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B SEISMOL SOC AM</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ADV SPACE RES-SERIES</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOSCIENCE</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B GEOFIS TEOR APPL</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TECTONOPHYSICS</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J GEOPHYS RES-SOL EA</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PHYS EARTH PLANET IN</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SCIENCE</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GEOLOGY</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">APPL GEOCHEM</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">J ASIAN EARTH SCI</td>
+      <td style="text-align: center">8</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="223univ-basilicata">2.2.3Univ Basilicata</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5aea6754-81e3-4d81-936b-a59569a4d511.png" alt="image.png"></p>
+
+<h3 id="224chinese-acad-sci">2.2.4Chinese Acad Sci</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/6689b7a4-3be8-49de-a67b-f6ea31e590f8.png" alt="image.png"></p>
+
+<h3 id="225russian-acad-sci">2.2.5Russian Acad Sci</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/86d63f72-ae83-455e-8dc3-5f34147d6c51.png" alt="image.png"></p>
+
+<h3 id="226nasa">2.2.6NASA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/ac9dd78c-b99a-4ad0-be8f-e9204a9b5c11.png" alt="image.png"></p>
+
+<h3 id="227chapman-univ">2.2.7Chapman Univ</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/ada58b7d-0813-43e8-94e8-4cb7c357e8e2.png" alt="image.png"></p>
+
+<h3 id="228china-earthquake-networks-ctr">2.2.8China Earthquake Networks Ctr</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/c2ffe4be-d90f-40cc-ba58-a4fc4ce50163.png" alt="image.png"></p>
+
+<h3 id="229ist-nazl-geofis--vulcanol">2.2.9Ist Nazl Geofis &amp; Vulcanol</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/16bee93d-ede4-427a-bce1-f222590cd0a8.png" alt="image.png"></p>
+
+<h3 id="2210univ-chinese-acad-sci">2.2.10Univ Chinese Acad Sci</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/1e4b6640-0017-49d9-9651-d6493865e966.png" alt="image.png"></p>
+
+<h2 id="23国家或地区">2.3国家（或地区）</h2>
+
+<p><strong>Count超过6的国家（或地区）</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">国家（地区）</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">PEOPLES R CHINA</td>
+      <td style="text-align: center">87</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">USA</td>
+      <td style="text-align: center">69</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ITALY</td>
+      <td style="text-align: center">55</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RUSSIA</td>
+      <td style="text-align: center">32</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INDIA</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">FRANCE</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ENGLAND</td>
+      <td style="text-align: center">18</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GERMANY</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IRAN</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SPAIN</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">JAPAN</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SWITZERLAND</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PAKISTAN</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TAIWAN</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CHILE</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MEXICO</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IRELAND</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CANADA</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SCOTLAND</td>
+      <td style="text-align: center">6</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="231peoples-r-china">2.3.1PEOPLES R CHINA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/bc4e9a49-c864-44de-b9a3-a89f55444167.png" alt="image.png"></p>
+
+<h3 id="232usa">2.3.2USA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/9693a0ec-4b52-4a65-8f7b-e4af9930eabd.png" alt="image.png"></p>
+
+<h3 id="233italy">2.3.3ITALY</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b2954cb0-a3b4-4ec0-a76a-ffa2915d6b7f.png" alt="image.png"></p>
+
+<h3 id="234russia">2.3.4RUSSIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5a0e333b-e253-4308-80fb-28f4d85540a5.png" alt="image.png"></p>
+
+<h3 id="235india">2.3.5INDIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/71d53907-0c8b-4b3b-aa44-2d08733bca56.png" alt="image.png"></p>
+
+<h3 id="236france">2.3.6FRANCE</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4f9ea2f1-05e4-49af-8fdc-8692089fdcbf.png" alt="image.png"></p>
+
+<h3 id="237england">2.3.7ENGLAND</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e9a4d0a5-8ab2-4580-b5e3-a3da41986cd9.png" alt="image.png"></p>
+
+<h3 id="238germany">2.3.8GERMANY</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/7b8d59b8-dc9e-4c8f-8ef7-bdbfd0e625d2.png" alt="image.png"></p>
+
+<h3 id="239iran">2.3.9IRAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/803407ff-73d6-4c82-8318-6b976f9a72bb.png" alt="image.png"></p>
+
+<h3 id="2310spain">2.3.10SPAIN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5189065e-969d-40f5-9bc1-c720b16df6b1.png" alt="image.png"></p>
+
+<h3 id="2311japan">2.3.11JAPAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5846cab7-dce0-4502-85e2-4ecac2a0fff2.png" alt="image.png"></p>
+
+<h2 id="24关键词">2.4关键词</h2>
+
+<blockquote>
+  <p>下列关键词经过筛选</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">关键词</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">robust satellite technique</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">land surface temperature</td>
+      <td style="text-align: center">17</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">latent heat flux</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">air temperature</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">infrared radiation</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ionospheric anomaly</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">wenchuan earthquake</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">brightness temperature</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">outgoing longwave radiation</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">surface temperature</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">statistical analysis</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">air ionization</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<center>
+    <span style="color:#FF0000;font-weight:bold;">air temperature</span>
+</center>
+
+<blockquote>
+  <p><strong>CiteSpace最新版本仅支持自1993年起的数据。</strong></p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>数据库选择“Web os Science核心合集”
+时间：1991.01.01-2022.12.31
+earthquake? or seism*  (所有字段) AND ‘remote sensing’ or 'satellite'  (所有字段) AND air temperature  (所有字段)
+文献类型选择“论文”与“综述论文”
+共计103篇相关论文
+</code></pre></div></div>
+
+<h2 id="31作者关系网络">3.1作者关系网络</h2>
+
+<h3 id="311sarafarun-k">3.1.1<a href="https://scholar.google.co.in/citations?user=TLJDrHQAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Saraf,Arun K</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/bba585a1-427d-4919-98a9-ffb2c88a7666.png" alt="image.png"></p>
+
+<h3 id="312choudhuryswapnamita">3.1.2<a href="https://scholar.google.com/citations?user=zq-aD8kAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Choudhury,Swapnamita</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/058e11d2-3186-4f9f-bf44-9998226a9d9a.png" alt="image.png"></p>
+
+<h3 id="313dasguptasudipta">3.1.3<a href="https://scholar.google.com/citations?user=uNK-uRYAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Dasgupta,Sudipta</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4dfca875-cc30-40d4-92e3-df707c092ae6.png" alt="image.png"></p>
+
+<h3 id="314mahmoodirfan">3.1.4<a href="https://scholar.google.com.pk/citations?user=h8RBIjQAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Mahmood,Irfan</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/4f403451-0160-4de4-84c3-20c4bd7c2308.png" alt="image.png"></p>
+
+<h3 id="315jingfeng">3.1.5<a href="https://orcid.org/0000-0002-2875-474X" rel="nofollow" target="_blank" class="extlinks">Jing,Feng</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/6fcdf30e-e2ee-4707-bdb4-6ec513bf6345.png" alt="image.png"></p>
+
+<h3 id="316rawatvineeta">3.1.6<a href="https://www.scopus.com/authid/detail.uri?authorId=23467947400" rel="nofollow" target="_blank" class="extlinks">Rawat,Vineeta</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e78ba10b-a027-4772-b2bf-d9aa84bed4e8.png" alt="image.png"></p>
+
+<h3 id="317adilmuhammad-arqim">3.1.7<a href="https://scholar.google.com/citations?user=wMNx-jMAAAAJ&amp;hl=en" rel="nofollow" target="_blank" class="extlinks">Adil,Muhammad Arqim</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/5f2fb83b-b9bc-4be7-9b27-56a90f5f3403.png" alt="image.png"></p>
+
+<h3 id="318bondurv-g">3.1.8Bondur,V G</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/44c5e09f-e230-4996-b71e-43f2d73cbfa6.png" alt="image.png"></p>
+
+<h3 id="319zhangying">3.1.9<a href="https://sciprofiles.com/profile/474110" rel="nofollow" target="_blank" class="extlinks">Zhang,Ying</a>
+</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/c8c06c18-706c-4f13-a9d0-f54dfc9e308a.png" alt="image.png"></p>
+
+<h3 id="3110下列count均为1">3.1.10下列Count均为1</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/1c6463e5-bbfa-4fc7-b359-003ba8864695.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/7d53c491-7432-486f-a0e0-c45cfa1ce523.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/07b32232-53c1-45ff-af38-9937e8d3c99f.png" alt="image.png"></p>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/12fb3915-5c86-4046-a11a-49cc03d4d007.png" alt="image.png"></p>
+
+<h3 id="3111突显图">3.1.11突显图</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/cb568dea-db34-4e2a-86e4-66b1e9eb6109.png" alt="image.png"></p>
+
+<h3 id="32机构">3.2机构</h3>
+
+<p><strong>Count超过4的机构</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">机构</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">China Earthquake Administration</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Russian Academy of Sciences</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indian Institute of Technology System (IIT System)</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chinese Academy of Sciences</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chapman University</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indian Institute of Technology (IIT) - Roorkee</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chapman University System</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">National Aeronautics &amp; Space Administration (NASA)</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Space Research Institute of the Russian Academy of Sciences</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Helmholtz Association</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">United States Department of the Interior</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Jilin University</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">United States Geological Survey</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b1d3f5c3-5c3f-49b0-b367-e59fbc9bad43.png" alt="image.png"></p>
+
+<h3 id="321chian-earthquake-administration">3.2.1Chian Earthquake Administration</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/ae5a4b2b-0c7e-413a-932f-8222591af240.png" alt="image.png"></p>
+
+<h3 id="322russian-academy-of-sciences">3.2.2Russian Academy of Sciences</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/762c6adb-1c16-4d90-b966-3affa1e0b39b.png" alt="image.png"></p>
+
+<h3 id="323india-institute-of-technology-systemiit-system">3.2.3India Institute of Technology System(IIT System)</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/60e1499a-a42e-4dc1-997e-1e7ba3aac6fe.png" alt="image.png"></p>
+
+<h3 id="324chinese-academy-of-sciences">3.2.4Chinese Academy of Sciences</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/a8f0e923-8bc3-4668-a833-3062cead5cdf.png" alt="image.png"></p>
+
+<h3 id="325chapman-university">3.2.5Chapman University</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/0b4d1efa-936e-41ec-b9fd-6cd7445ee8e6.png" alt="image.png"></p>
+
+<h3 id="326indian-institute-of-technologyiit---roorkee">3.2.6Indian Institute of Technology(IIT) - Roorkee</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/1e9e7fba-07c2-4f06-a435-bc06155cb01f.png" alt="image.png"></p>
+
+<h3 id="327nasa">3.2.7NASA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/e76636ab-976c-4ed4-a9fc-7750fff0299a.png" alt="image.png"></p>
+
+<h3 id="328space-research-institute-of-the-russian-academy-of-sciences">3.2.8Space Research Institute of the Russian Academy of Sciences</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/753ac4f2-67de-4c79-a496-de64ab7b1453.png" alt="image.png"></p>
+
+<h3 id="329jilin-university">3.2.9Jilin University</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/fa74fbc7-8cd5-443d-bdc5-d903c8644e3b.png" alt="image.png"></p>
+
+<h3 id="3210突显图">3.2.10突显图</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/b83a480f-93b5-4042-b243-0dfc78572c65.png" alt="image.png"></p>
+
+<h3 id="33国家或地区">3.3国家（或地区）</h3>
+
+<p><strong>Count超过3的国家（或地区）</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">国家（地区）</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">PEOPLES R CHINA</td>
+      <td style="text-align: center">33</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">USA</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INDIA</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RUSSIA</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PAKISTAN</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ITALY</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ENGLAND</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GERMANY</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">JAPAN</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CANADA</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TURKEY</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ROMANIA</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">FRANCE</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IRAN</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SWITZERLAND</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">TAIWAN</td>
+      <td style="text-align: center">3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/62e138d0-4d16-4415-8bb4-beabbaba6729.png" alt="image.png"></p>
+
+<h3 id="331peoples-r-china">3.3.1PEOPLES R CHINA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/6dc75108-60ee-455d-af91-3ea3fd542ecb.png" alt="image.png"></p>
+
+<h3 id="332usa">3.3.2USA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/7346713f-81ae-41d4-8487-e479692dc270.png" alt="image.png"></p>
+
+<h3 id="333india">3.3.3INDIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/15d57bba-3e78-47ac-ae9d-0df45f55007e.png" alt="image.png"></p>
+
+<h3 id="334russia">3.3.4RUSSIA</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/44833c23-f731-4325-b8c1-c0d66d2f808b.png" alt="image.png"></p>
+
+<h3 id="335pakistan">3.3.5PAKISTAN</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/8622c7e0-0823-4816-810f-b84001e9101b.png" alt="image.png"></p>
+
+<h3 id="336italy">3.3.6ITALY</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/2fa3c011-bf5b-4214-9985-1878bf8cf7a3.png" alt="image.png"></p>
+
+<h3 id="337突显图">3.3.7突显图</h3>
+
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-3/34f4ed83-1e51-46ad-94ec-e7787ed822bb.png" alt="image.png"></p>
+
+<h3 id="34关键词">3.4关键词</h3>
+
+<blockquote>
+  <p>经过筛选</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">关键词</th>
+      <th style="text-align: center">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">latent heat flux</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">earthquake precursors</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">thermal anomaly</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">land surface temperature</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ionospheric anomaly</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">air ionization</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>备份PDF：<a href="https://baozi.run/absorb/article/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95%EF%BC%88%E9%81%A5%E6%84%9F%EF%BC%89.pdf" rel="nofollow" target="_blank" class="extlinks">地震预测研究进展-英文.pdf</a></p>
+</blockquote>
+
+<p><img src="https://pic2.58cdn.com.cn/nowater/webim/big/n_v26993ccea09284e2f912adc67e2ec13ad.png" alt="01aa443c3ddd1a2e8a2f2f6a552ba2ae.png"></p>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>版权声明：</span>
+                        如无特别声明，本文版权归
+                        <a href="https://jmbaozi.github.io" class="cplink">Yucol</a>
+                        所有，转载请注明本文链接。
+                    </p>
+                    
+                    <p>
+                        （采用 
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        许可协议进行授权）
+                    </p>
+                    
+                    <p><span>本文标题：</span>《 地震预测研究进展（遥感） 》</p>
+                    <p><span>本文链接：</span><a href="https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html" class="cplink">https://jmbaozi.github.io/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html</a></p>
+                    <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('1.1作者关系网络')">1.1作者关系网络</a><ul><li><a onclick="scrollToAdjust('1.1.1shen,xuhui')">1.1.1Shen,Xuhui</a></li><li><a onclick="scrollToAdjust('1.1.2marchetti,dedalo')">1.1.2Marchetti,Dedalo</a></li><li><a onclick="scrollToAdjust('1.1.3de-santis,angelo')">1.1.3De santis,Angelo</a></li><li><a onclick="scrollToAdjust('1.1.4shah,munawar')">1.1.4Shah,Munawar</a></li><li><a onclick="scrollToAdjust('1.1.5zhang,xuemin')">1.1.5Zhang,Xuemin</a></li><li><a onclick="scrollToAdjust('1.1.6akhoondzadeh,m')">1.1.6Akhoondzadeh,M</a></li><li><a onclick="scrollToAdjust('1.1.7wu,lixin')">1.1.7Wu,Lixin</a></li><li><a onclick="scrollToAdjust('1.1.8parrot,m')">1.1.8Parrot,M</a></li><li><a onclick="scrollToAdjust('1.1.9hattori,katsumi')">1.1.9Hattori,Katsumi</a></li><li><a onclick="scrollToAdjust('1.1.10tramutoli,v')">1.1.10Tramutoli,V</a></li><li><a onclick="scrollToAdjust('1.1.11pergola,n')">1.1.11Pergola,N</a></li><li><a onclick="scrollToAdjust('1.1.12akhoondzadeh,mehdi')">1.1.12Akhoondzadeh,Mehdi</a></li><li><a onclick="scrollToAdjust('1.1.13filizzola,c')">1.1.13Filizzola,C</a></li><li><a onclick="scrollToAdjust('1.1.14zhima,zeren')">1.1.14Zhima,Zeren</a></li><li><a onclick="scrollToAdjust('1.1.15alvarez,orlando')">1.1.15Alvarez,Orlando</a></li><li><a onclick="scrollToAdjust('1.1.16mao,wenfei')">1.1.16Mao,Wenfei</a></li><li><a onclick="scrollToAdjust('1.1.17jin,shuanggen')">1.1.17Jin,Shuanggen</a></li><li><a onclick="scrollToAdjust('1.1.18piscini,alessandro')">1.1.18Piscini,Alessandro</a></li><li><a onclick="scrollToAdjust('1.1.19battiston,roberto')">1.1.19Battiston,Roberto</a></li><li><a onclick="scrollToAdjust('1.1.20qi,yuan')">1.1.20Qi,Yuan</a></li></ul></li><li><a onclick="scrollToAdjust('1.2机构')">1.2机构</a><ul><li><a onclick="scrollToAdjust('1.2.1china-earthquake-adm')">1.2.1China Earthquake Adm</a></li><li><a onclick="scrollToAdjust('1.2.2chinese-acad-sci')">1.2.2Chinese Acad Sci</a></li><li><a onclick="scrollToAdjust('1.2.3russian-acad-sci')">1.2.3Russian Acad Sci</a></li><li><a onclick="scrollToAdjust('1.2.4ist-nazl-geofis-&amp;-vulacnol')">1.2.4Ist Nazl Geofis &amp; Vulacnol</a></li><li><a onclick="scrollToAdjust('1.2.5natl-cent-univ')">1.2.5Natl Cent Univ</a></li><li><a onclick="scrollToAdjust('1.2.6wuhan-univ')">1.2.6Wuhan Univ</a></li></ul></li><li><a onclick="scrollToAdjust('1.3国家（或地区）')">1.3国家（或地区）</a><ul><li><a onclick="scrollToAdjust('1.3.1peoples-r-china')">1.3.1PEOPLES R CHINA</a></li><li><a onclick="scrollToAdjust('1.3.2usa')">1.3.2USA</a></li><li><a onclick="scrollToAdjust('1.3.3india')">1.3.3INDIA</a></li><li><a onclick="scrollToAdjust('1.3.4russia')">1.3.4RUSSIA</a></li><li><a onclick="scrollToAdjust('1.3.5france')">1.3.5FRANCE</a></li><li><a onclick="scrollToAdjust('1.3.6japan')">1.3.6JAPAN</a></li><li><a onclick="scrollToAdjust('1.3.7germany')">1.3.7GERMANY</a></li><li><a onclick="scrollToAdjust('1.3.8england')">1.3.8ENGLAND</a></li><li><a onclick="scrollToAdjust('1.3.9taiwan（地区）')">1.3.9TAIWAN（地区）</a></li><li><a onclick="scrollToAdjust('1.3.10iran')">1.3.10IRAN</a></li><li><a onclick="scrollToAdjust('1.3.11spain')">1.3.11SPAIN</a></li><li><a onclick="scrollToAdjust('1.3.12pakistan')">1.3.12PAKISTAN</a></li></ul></li><li><a onclick="scrollToAdjust('1.4关键词')">1.4关键词</a></li><li><a onclick="scrollToAdjust('2.1作者关系网络')">2.1作者关系网络</a><ul><li><a onclick="scrollToAdjust('2.1.1<a-href="https://scholar.google.com/citations?user=xbzg1mcaaaaj&amp;hl=en">pergola,n</a>')">2.1.1<a href="https://scholar.google.com/citations?user=XBzG1McAAAAJ&amp;hl=en">Pergola,N</a></a></li><li><a onclick="scrollToAdjust('2.1.2<a-href="https://scholar.google.com/citations?user=6otqoi0aaaaj&amp;hl=en">filizzola,c-/-filizzola,carolina</a>')">2.1.2<a href="https://scholar.google.com/citations?user=6oTqoi0AAAAJ&amp;hl=en">Filizzola,C / Filizzola,Carolina</a></a></li><li><a onclick="scrollToAdjust('2.1.3<a-href="https://scholar.google.com/citations?user=itctr0waaaaj&amp;hl=it">tramutoli,v-/-tramutoli,valerio</a>')">2.1.3<a href="https://scholar.google.com/citations?user=ItcTR0wAAAAJ&amp;hl=it">Tramutoli,V / Tramutoli,Valerio</a></a></li><li><a onclick="scrollToAdjust('2.1.4<a-href="https://scholar.google.it/citations?user=-adtihwaaaaj&amp;hl=it">genzano,nicola-/-genzano,n</a>')">2.1.4<a href="https://scholar.google.it/citations?user=-AdtIHwAAAAJ&amp;hl=it">Genzano,Nicola / Genzano,N</a></a></li><li><a onclick="scrollToAdjust('2.1.5ma,weiyu')">2.1.5Ma,Weiyu</a></li><li><a onclick="scrollToAdjust('2.1.6tronin,aa')">2.1.6Tronin,AA</a></li><li><a onclick="scrollToAdjust('2.1.7<a-href="https://scholar.google.com/citations?user=wu88rlgaaaaj&amp;hl=zh-cn">pulinets,sergey</a>')">2.1.7<a href="https://scholar.google.com/citations?user=Wu88rlgAAAAJ&amp;hl=zh-CN">Pulinets,Sergey</a></a></li><li><a onclick="scrollToAdjust('2.1.8<a-href="https://scholar.google.it/citations?user=jb2fwwyaaaaj&amp;hl=it">lisi,mariano-/-lisi,m</a>')">2.1.8<a href="https://scholar.google.it/citations?user=jb2fWWYAAAAJ&amp;hl=it">Lisi,Mariano / Lisi,M</a></a></li><li><a onclick="scrollToAdjust('2.1.9qiang,zj')">2.1.9Qiang,ZJ</a></li><li><a onclick="scrollToAdjust('2.1.10<a-href="https://scholar.google.com/citations?user=ojoldkyaaaaj&amp;hl=en">ouzounov,dimitar</a>')">2.1.10<a href="https://scholar.google.com/citations?user=OjOlDkYAAAAJ&amp;hl=en">Ouzounov,Dimitar</a></a></li><li><a onclick="scrollToAdjust('2.1.11kang,cl')">2.1.11Kang,CL</a></li></ul></li><li><a onclick="scrollToAdjust('2.2机构')">2.2机构</a><ul><li><a onclick="scrollToAdjust('2.2.1china-earthquake-adm')">2.2.1China Earthquake Adm</a></li><li><a onclick="scrollToAdjust('2.2.2cnr')">2.2.2CNR</a></li><li><a onclick="scrollToAdjust('2.2.3univ-basilicata')">2.2.3Univ Basilicata</a></li><li><a onclick="scrollToAdjust('2.2.4chinese-acad-sci')">2.2.4Chinese Acad Sci</a></li><li><a onclick="scrollToAdjust('2.2.5russian-acad-sci')">2.2.5Russian Acad Sci</a></li><li><a onclick="scrollToAdjust('2.2.6nasa')">2.2.6NASA</a></li><li><a onclick="scrollToAdjust('2.2.7chapman-univ')">2.2.7Chapman Univ</a></li><li><a onclick="scrollToAdjust('2.2.8china-earthquake-networks-ctr')">2.2.8China Earthquake Networks Ctr</a></li><li><a onclick="scrollToAdjust('2.2.9ist-nazl-geofis-&amp;-vulcanol')">2.2.9Ist Nazl Geofis &amp; Vulcanol</a></li><li><a onclick="scrollToAdjust('2.2.10univ-chinese-acad-sci')">2.2.10Univ Chinese Acad Sci</a></li></ul></li><li><a onclick="scrollToAdjust('2.3国家（或地区）')">2.3国家（或地区）</a><ul><li><a onclick="scrollToAdjust('2.3.1peoples-r-china')">2.3.1PEOPLES R CHINA</a></li><li><a onclick="scrollToAdjust('2.3.2usa')">2.3.2USA</a></li><li><a onclick="scrollToAdjust('2.3.3italy')">2.3.3ITALY</a></li><li><a onclick="scrollToAdjust('2.3.4russia')">2.3.4RUSSIA</a></li><li><a onclick="scrollToAdjust('2.3.5india')">2.3.5INDIA</a></li><li><a onclick="scrollToAdjust('2.3.6france')">2.3.6FRANCE</a></li><li><a onclick="scrollToAdjust('2.3.7england')">2.3.7ENGLAND</a></li><li><a onclick="scrollToAdjust('2.3.8germany')">2.3.8GERMANY</a></li><li><a onclick="scrollToAdjust('2.3.9iran')">2.3.9IRAN</a></li><li><a onclick="scrollToAdjust('2.3.10spain')">2.3.10SPAIN</a></li><li><a onclick="scrollToAdjust('2.3.11japan')">2.3.11JAPAN</a></li></ul></li><li><a onclick="scrollToAdjust('2.4关键词')">2.4关键词</a></li><li><a onclick="scrollToAdjust('3.1作者关系网络')">3.1作者关系网络</a><ul><li><a onclick="scrollToAdjust('3.1.1<a-href="https://scholar.google.co.in/citations?user=tljdrhqaaaaj&amp;hl=en">saraf,arun-k</a>')">3.1.1<a href="https://scholar.google.co.in/citations?user=TLJDrHQAAAAJ&amp;hl=en">Saraf,Arun K</a></a></li><li><a onclick="scrollToAdjust('3.1.2<a-href="https://scholar.google.com/citations?user=zq-ad8kaaaaj&amp;hl=en">choudhury,swapnamita</a>')">3.1.2<a href="https://scholar.google.com/citations?user=zq-aD8kAAAAJ&amp;hl=en">Choudhury,Swapnamita</a></a></li><li><a onclick="scrollToAdjust('3.1.3<a-href="https://scholar.google.com/citations?user=unk-uryaaaaj&amp;hl=en">dasgupta,sudipta</a>')">3.1.3<a href="https://scholar.google.com/citations?user=uNK-uRYAAAAJ&amp;hl=en">Dasgupta,Sudipta</a></a></li><li><a onclick="scrollToAdjust('3.1.4<a-href="https://scholar.google.com.pk/citations?user=h8rbijqaaaaj&amp;hl=en">mahmood,irfan</a>')">3.1.4<a href="https://scholar.google.com.pk/citations?user=h8RBIjQAAAAJ&amp;hl=en">Mahmood,Irfan</a></a></li><li><a onclick="scrollToAdjust('3.1.5<a-href="https://orcid.org/0000-0002-2875-474x">jing,feng</a>')">3.1.5<a href="https://orcid.org/0000-0002-2875-474X">Jing,Feng</a></a></li><li><a onclick="scrollToAdjust('3.1.6<a-href="https://www.scopus.com/authid/detail.uri?authorid=23467947400">rawat,vineeta</a>')">3.1.6<a href="https://www.scopus.com/authid/detail.uri?authorId=23467947400">Rawat,Vineeta</a></a></li><li><a onclick="scrollToAdjust('3.1.7<a-href="https://scholar.google.com/citations?user=wmnx-jmaaaaj&amp;hl=en">adil,muhammad-arqim</a>')">3.1.7<a href="https://scholar.google.com/citations?user=wMNx-jMAAAAJ&amp;hl=en">Adil,Muhammad Arqim</a></a></li><li><a onclick="scrollToAdjust('3.1.8bondur,v-g')">3.1.8Bondur,V G</a></li><li><a onclick="scrollToAdjust('3.1.9<a-href="https://sciprofiles.com/profile/474110">zhang,ying</a>')">3.1.9<a href="https://sciprofiles.com/profile/474110">Zhang,Ying</a></a></li><li><a onclick="scrollToAdjust('3.1.10下列count均为1')">3.1.10下列Count均为1</a></li><li><a onclick="scrollToAdjust('3.1.11突显图')">3.1.11突显图</a></li><li><a onclick="scrollToAdjust('3.2机构')">3.2机构</a></li><li><a onclick="scrollToAdjust('3.2.1chian-earthquake-administration')">3.2.1Chian Earthquake Administration</a></li><li><a onclick="scrollToAdjust('3.2.2russian-academy-of-sciences')">3.2.2Russian Academy of Sciences</a></li><li><a onclick="scrollToAdjust('3.2.3india-institute-of-technology-system(iit-system)')">3.2.3India Institute of Technology System(IIT System)</a></li><li><a onclick="scrollToAdjust('3.2.4chinese-academy-of-sciences')">3.2.4Chinese Academy of Sciences</a></li><li><a onclick="scrollToAdjust('3.2.5chapman-university')">3.2.5Chapman University</a></li><li><a onclick="scrollToAdjust('3.2.6indian-institute-of-technology(iit)---roorkee')">3.2.6Indian Institute of Technology(IIT) - Roorkee</a></li><li><a onclick="scrollToAdjust('3.2.7nasa')">3.2.7NASA</a></li><li><a onclick="scrollToAdjust('3.2.8space-research-institute-of-the-russian-academy-of-sciences')">3.2.8Space Research Institute of the Russian Academy of Sciences</a></li><li><a onclick="scrollToAdjust('3.2.9jilin-university')">3.2.9Jilin University</a></li><li><a onclick="scrollToAdjust('3.2.10突显图')">3.2.10突显图</a></li><li><a onclick="scrollToAdjust('3.3国家（或地区）')">3.3国家（或地区）</a></li><li><a onclick="scrollToAdjust('3.3.1peoples-r-china')">3.3.1PEOPLES R CHINA</a></li><li><a onclick="scrollToAdjust('3.3.2usa')">3.3.2USA</a></li><li><a onclick="scrollToAdjust('3.3.3india')">3.3.3INDIA</a></li><li><a onclick="scrollToAdjust('3.3.4russia')">3.3.4RUSSIA</a></li><li><a onclick="scrollToAdjust('3.3.5pakistan')">3.3.5PAKISTAN</a></li><li><a onclick="scrollToAdjust('3.3.6italy')">3.3.6ITALY</a></li><li><a onclick="scrollToAdjust('3.3.7突显图')">3.3.7突显图</a></li><li><a onclick="scrollToAdjust('3.4关键词')">3.4关键词</a></li></ul></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+<div class="social-share-wrapper">
+    <div class="social-share"></div>
+</div>
+
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile_photo.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">yucol</div>
+        <div class="bio">
+            <p>🌊 白天想，夜里哭，做梦都想去看海</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="https://github.com/JMbaozi" target="_blank" aria-label="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://weibo.com/3958305706" target="_blank" aria-label="weibo">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/Yucoly" target="_blank" aria-label="twitter">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.instagram.com/yucoled/" target="_blank" aria-label="instagram">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html" class="read-next-link" aria-label="地震预测统计分析方法总结（1）"></a>
+            <section>
+                <span>地震预测统计分析方法总结（1）</span>
+                <p>            论文      作者                  A statistical ana...</p>
+            </section>
+            
+        </div>
+        
+
+        
+        <div class="read-next-item">
+            <a href="/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html" class="read-next-link"
+                aria-label="地震预测研究进展-英文"></a>
+            <section>
+                <span>地震预测研究进展-英文</span>
+                <p>警告！&lt;/br&gt;该实验的流程存在严重漏洞&lt;/br&gt;关键词选取存在问题&lt;/br&gt;...</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+<section class="post-footer-item comment comment-switch">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>评论</span>
+    </div>
+    
+        
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        
+    
+</section>
+
+    
+
+
+
+    
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.5.1"
+          target="_blank" class="extlinks">v1.5.1</a>)
+        
+      </section>
+      <section class="links">Yucol ©
+        <input type="hidden" id="footer-since" value="2020">
+        <span id="footer-year"></span>
+        
+        
+        <a href="https://icp.gov.moe/?keyword=20200502" target="_blank" class="extlinks">萌ICP备20200502号</a>
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS
+        </a>
+        <a href="/tos.html" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> 使用条款
+        </a>
+      </section>
+      
+      <section class="links">
+        <span id="busuanzi_container_site_pv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> 总浏览量
+          
+          <span id="busuanzi_site_pv">
+            
+            <b>·</b>
+          </span>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> 总访问量
+          
+          <span id="busuanzi_site_uv"></span>
+          
+        </span>
+      </section>
+      
+      <section>
+        
+        本站已运行
+        <span class="alivetime_days"></span> 天
+        <span class="alivetime_hours"></span> 小时
+        <span class="alivetime_minutes"></span> 分
+        <span class="alivetime_seconds"></span> 秒
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="/assets/icons/forever_en_default.png" alt="foreverblog">
+        </a>
+        
+        
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="/assets/icons/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
+        
+        
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="/assets/icons/travellings.gif" alt="开往-友链接力">
+        </a>
+        
+        
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
+        </a>
+        
+      </section>
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+
+<script>
+    // 1. 全局数据（保持不变）
+    window.totalPosts = [
+        
+            "/life/concert.html",
+        
+            "/server/server-setup.html",
+        
+            "/app/PartyDice.html",
+        
+            "/blog/blog-migration-notes.html",
+        
+            "/tech/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E9%87%87%E6%A0%B7%E7%82%B9.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%B1%9E%E6%80%A7%E7%BD%91%E6%A0%BC%E5%9B%BE.html",
+        
+            "/tech/Vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html",
+        
+            "/tech/%E8%83%BD%E8%B0%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.html",
+        
+            "/tech/%E5%9C%9F%E5%A3%A4%E5%A4%84%E6%96%B9%E5%9B%BE.html",
+        
+            "/tech/%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%BA%94%E7%94%A8%E9%9D%99%E6%A0%A1%E6%AD%A3%E9%87%8F.html",
+        
+            "/life/%E9%80%83%E7%A6%BB%E6%B6%BF%E5%B7%9E%E8%AE%A1%E5%88%921.0.html",
+        
+            "/tech/GeoEast-SPS%E8%A7%82%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89.html",
+        
+            "/tech/Linux%E6%93%8D%E4%BD%9C.html",
+        
+            "/tech/Picker%E5%88%9D%E8%87%B3%E6%8B%BE%E5%8F%96.html",
+        
+            "/tech/GeoScribe-%E7%BB%BF%E5%B1%B1%E8%BD%AF%E4%BB%B6%E5%BB%BA%E8%A7%82.html",
+        
+            "/tech/%E6%94%B9%E5%A4%B4%E4%B8%8D%E6%8D%A2%E9%9D%A2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-2.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93-1.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E9%81%A5%E6%84%9F.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E8%8B%B1%E6%96%87.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95-%E4%B8%AD%E6%96%87.html",
+        
+            "/tech/%E9%A3%8E%E4%BA%91%E5%9B%9B%E5%8F%B7%E5%8D%AB%E6%98%9F%E5%A4%9A%E9%80%9A%E9%81%93%E7%BA%A2%E5%A4%96%E5%9B%BE%E5%83%8F%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/Matlab2D%E7%BB%98%E5%9B%BE-Draw2D.html",
+        
+            "/tech/%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84&OLR%E9%9C%87%E5%89%8D%E5%BC%82%E5%B8%B8%E6%8F%90%E5%8F%96.html",
+        
+            "/study/%E8%80%83%E7%A0%94.html",
+        
+            "/tech/Matlab%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80.html",
+        
+            "/tech/%E5%9C%B0%E9%9C%87%E7%83%AD%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B.html",
+        
+            "/tech/3D-Molchan-diagram.html",
+        
+            "/tech/Molchan%E5%9B%BE%E8%A1%A8%E6%B3%95.html",
+        
+            "/think/%E8%BF%91%E6%9C%9F%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%B1%87%E6%80%BB.html",
+        
+            "/test/test-en.html",
+        
+            "/tech/ArcPy%E8%8E%B7%E5%8F%96GIS%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%97%E8%A1%A8%E5%92%8C%E6%8F%8F%E8%BF%B0.html",
+        
+            "/tech/ArcPy%E5%9C%A8%E8%A6%81%E7%B4%A0%E7%B1%BB%E5%92%8C%E8%A1%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Arcpy%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97.html",
+        
+            "/tech/ArcPy%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E7%90%86%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%88%9B%E5%BB%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E4%B8%8E%E8%BE%93%E5%87%BA.html",
+        
+            "/tech/ArcPy%E5%9C%B0%E5%9B%BE%E6%96%87%E6%A1%A3%E5%92%8C%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86.html",
+        
+            "/life/%E5%AF%92%E5%81%87%E5%81%87%E6%9C%9F%E7%BB%93%E6%9D%9F.html",
+        
+            "/tech/PyMySQL%E6%93%8D%E4%BD%9CMySQL.html",
+        
+            "/tech/Pillow%E5%85%A5%E9%97%A8.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E6%A0%B8%E5%BF%83%E9%AB%98%E9%A2%91%E8%AF%8D%E6%B1%87%E8%A1%A8.html",
+        
+            "/tech/%E5%9F%BA%E4%BA%8ELeanCloud%E5%AE%9E%E7%8E%B0%E7%95%99%E8%A8%80%E6%9D%BF.html",
+        
+            "/think/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-%E5%88%86%E4%BA%AB.html",
+        
+            "/tech/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96-%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8A-%E7%9F%AD%E8%AF%84%E5%B9%B6%E6%8F%90%E5%8F%96%E5%85%B3%E9%94%AE%E8%AF%8D.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/study/GNSS-%E5%A4%8D%E4%B9%A0%E9%A2%98%E9%9B%86.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E7%A6%8F%E5%88%A9%E5%9B%BE%E7%89%87&%E8%B8%A9%E5%9D%91.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1(%E7%BB%AD).html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E8%BF%98%E7%BB%AD).html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E6%88%91%E7%88%AC%E6%88%91%E8%87%AA%E5%B7%B1.html",
+        
+            "/tech/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE-%E8%B8%A9%E5%9D%91.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC2%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Github+jsDelivr+PicGo-%E6%89%93%E9%80%A0%E7%A8%B3%E5%AE%9A%E5%BF%AB%E9%80%9F%E9%AB%98%E6%95%88%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A.html",
+        
+            "/tech/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%B8%80%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%99%A8.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-(%E7%BB%AD).html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E7%AC%AC1%E7%AB%A0%E4%B9%A0%E9%A2%98.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1TOP250.html",
+        
+            "/chengguo/%E6%88%90%E6%9E%9C%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E6%88%AA%E5%9B%BE-%E6%88%AA%E5%9B%BE.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E8%8C%83%E6%96%87-%E8%8C%83%E6%96%87.html",
+        
+            "/study/%E7%89%A9%E7%90%86-%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F2-%E5%9C%9F%E5%91%B3%E5%8D%95%E8%AF%8D.html",
+        
+            "/study/%E8%8B%B1%E8%AF%AD%E5%9B%9B%E7%BA%A7%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F1-%E4%BD%9C%E6%96%87%E5%85%AC%E5%BC%8F.html",
+        
+            "/tech/Python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E8%B4%AA%E5%90%83%E8%9B%87-%E8%B4%AA%E5%90%83%E8%9B%87.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%802-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%8E%A7%E5%88%B6%E7%BD%91.html",
+        
+            "/life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C%E6%8E%A8%E8%8D%90%E6%9C%BA%E5%88%B6-%E4%BA%BA%E5%B7%A5%E6%99%BA%E9%9A%9C.html",
+        
+            "/tech/Python%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B-%E5%B0%B1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8Bmd.html",
+        
+            "/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80-%E6%AD%A3%E5%88%99.html",
+        
+            "/life/Bilibili-%E5%A4%84%E5%A4%84%E5%90%BB.html",
+        
+            "/study/%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E5%AD%A6%E5%9F%BA%E7%A1%801-%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F.html",
+        
+            "/study/%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8F%8F%E8%BF%B0-%E4%B9%A0%E9%A2%98%E8%AE%B2%E8%A7%A3.html",
+        
+            "/tech/Blog%E6%90%AD%E5%BB%BA-%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B.html",
+        
+            "/blog/%E6%84%9F%E8%B0%A2-HelloWorld.html",
+        
+            "/tech/Python%E7%88%AC%E8%99%AB-%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.html"
+        
+    ];
+
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
+    function triggerRandomJump() {
+        var list = window.totalPosts;
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
+            window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
+        }
+    }
+
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
+        var $btn = $(".random a, #random-toggle a, .nav-random a");
+        $btn.off("click").each(function() {
+            this.onclick = function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerRandomJump();
+                return false;
+            };
+        });
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
+    });
+</script>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/yucol/jekyll-theme-H2O-ac/commits?path=_posts/2023-03-20-地震预测研究进展（遥感）.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yucol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://waline-hello-world-mocha.vercel.app/',
+            reaction: true,
+        comment: true,
+        locale: {reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $(".comment:last > div").addClass("active");
+            } else {
+                $(".comment:nth-last-child(2) > div").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
+            })
+        } else {
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+        
+  </body>
+
+</html>
