@@ -25,6 +25,24 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
 {% assign locales = site.data.locales[lang] %}
 {% assign archives = locales.archives%}
 
+<style>
+  /* 针对归档列表的修复 */
+  #archive-articles ul li p.archives-title {
+    display: flex;          /* 使用弹性布局 */
+    align-items: flex-start; /* 顶部对齐 */
+    white-space: normal;    /* 允许换行 */
+    word-break: break-all;  /* 单词太长时强制断开 */
+    line-height: 1.6;       /* 增加行高，防止折行后太拥挤 */
+    margin-bottom: 10px;    /* 列表项之间的间距 */
+  }
+
+  .archives-date {
+    flex-shrink: 0;         /* 防止日期因为标题长而被挤扁 */
+    margin-right: 15px;     /* 日期和标题之间的距离 */
+    font-family: monospace; /* 让日期宽度更统一 */
+  }
+</style>
+
 <h2>{{ archives.title }}</h2>
 
 <p>
