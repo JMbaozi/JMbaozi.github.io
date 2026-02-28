@@ -164,42 +164,47 @@
 </section>
 
 <script>
-    // 1. 全局数据
+    // 1. 全局数据（保持不变）
     window.totalPosts = [
         {% for post in site.posts %}
             "{{ post.url | relative_url }}"{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ];
 
-    // 2. 核心跳转函数
+    // 2. 核心跳转函数：增加一个“避免原地踏步”的逻辑
     function triggerRandomJump() {
         var list = window.totalPosts;
-        if (list && list.length > 0) {
-            var randomIndex = Math.floor(Math.random() * list.length);
-            var target = list[randomIndex];
-            // console.log("🎲 正在从 75 篇文章中抽签... 选中了：", target);
+        if (list && list.length > 1) { // 至少有两篇才做排除
+            var currentPath = window.location.pathname;
+            var target;
+            
+            // 如果抽中的正好是当前页，就再抽一次，防止用户点完没反应
+            do {
+                target = list[Math.floor(Math.random() * list.length)];
+            } while (target === currentPath || target === (currentPath + 'index.html'));
+            
             window.location.href = target;
+        } else if (list.length === 1) {
+            window.location.href = list[0];
         }
     }
 
-    // 3. 暴力接管
-    $(document).ready(function() {
-        // 选择器涵盖了导航栏和可能的侧边栏随机按钮
+    // 3. 增强接管：处理“动态生成”的按钮
+    function applyRandomLogic() {
         var $btn = $(".random a, #random-toggle a, .nav-random a");
-
-        // 先解绑所有已知的点击事件
-        $btn.off("click");
-
-        // 使用原生 JS 监听，确保优先级最高，并阻止后续所有事件
-        $btn.each(function() {
+        $btn.off("click").each(function() {
             this.onclick = function(e) {
                 e.preventDefault();
-                e.stopImmediatePropagation(); // 关键：阻止其他 JS 脚本发现这个点击
+                e.stopImmediatePropagation();
                 triggerRandomJump();
                 return false;
             };
         });
-        
-        // console.log("✅ 随机按钮已强制接管，所有旧逻辑已屏蔽。");
+    }
+
+    $(document).ready(function() {
+        applyRandomLogic();
+        // 针对某些主题可能会动态延迟加载菜单，这里做个双保险
+        setTimeout(applyRandomLogic, 1000); 
     });
 </script>
