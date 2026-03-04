@@ -41,6 +41,7 @@ nav:
   about:   
     RSS: '/feed.xml'
     HALL: '/hall/'
+    News: 'news.yucol.top'
 
 # Gray for the whole site 全站灰色
 gray: false
