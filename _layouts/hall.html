@@ -10,9 +10,9 @@ title: 名人堂
       <p class="elegant-subtitle">Legendary Roster</p>
     </div>
 
-    <div class="glass-grid">
+    <div class="glass-flex-container">
       {% for person in site.data.hall %}
-      <div class="glass-card card-pos-{{ forloop.index }}">
+      <div class="glass-card">
         <div class="card-inner">
           <div class="avatar-ring">
             <img src="{{ person.avatar }}" alt="{{ person.name }}" class="glass-avatar">
@@ -46,7 +46,7 @@ title: 名人堂
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -71,47 +71,16 @@ title: 名人堂
     text-transform: uppercase;
   }
 
-  /* 核心布局逻辑：6列网格 */
-  .glass-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+  /* 核心布局逻辑：Flex 布局实现 3+2 且宽度一致 */
+  .glass-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 关键：让第二行的两个卡片居中 */
     gap: 30px;
+    margin: 0 auto;
   }
 
-  /* 桌面端布局适配 (3+2) */
-  @media (min-width: 992px) {
-    /* 前三个占2列 (1/3宽) */
-    .card-pos-1, .card-pos-2, .card-pos-3 {
-      grid-column: span 2;
-    }
-    /* 后两个占3列 (1/2宽) */
-    .card-pos-4, .card-pos-5 {
-      grid-column: span 3;
-      /* 限制下层卡片的最大宽度，防止在超宽屏下显得太宽 */
-      max-width: 85%;
-      justify-self: center; 
-      width: 100%;
-    }
-  }
-
-  /* 移动端与平板适配 */
-  @media (max-width: 991px) {
-    .glass-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .glass-card {
-      grid-column: span 1 !important;
-      max-width: 100% !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .glass-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* 毛玻璃卡片样式 */
+  /* 桌面端：固定宽度，确保 3 个能排下一行 */
   .glass-card {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
@@ -122,8 +91,14 @@ title: 名人堂
     box-shadow: 0 10px 30px rgba(31, 38, 135, 0.1);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     text-align: center;
+    
+    /* 核心宽度计算：(100% - gap*2) / 3 */
+    flex: 0 1 calc(33.333% - 30px);
+    min-width: 300px; /* 保证卡片不会缩得太小 */
+    box-sizing: border-box;
   }
 
+  /* 悬停效果 */
   .glass-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.35);
@@ -131,6 +106,20 @@ title: 名人堂
     border-color: rgba(255, 255, 255, 0.6);
   }
 
+  /* 移动端适配 */
+  @media (max-width: 1024px) {
+    .glass-card {
+      flex: 0 1 calc(50% - 30px); /* 平板端一行两个 */
+    }
+  }
+
+  @media (max-width: 700px) {
+    .glass-card {
+      flex: 0 1 100%; /* 手机端一行一个 */
+    }
+  }
+
+  /* 卡片内部样式保持一致 */
   .card-inner {
     display: flex;
     flex-direction: column;
@@ -192,7 +181,6 @@ title: 名人堂
     opacity: 0.85;
   }
 
-  /* 按钮优化 */
   .glass-btn {
     display: inline-block;
     padding: 12px 32px;
