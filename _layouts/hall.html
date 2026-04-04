@@ -3,136 +3,173 @@ layout: default
 title: 名人堂
 ---
 
-<section class="hall-page">
+<section class="glass-hall">
   <div class="container">
-    <h1 class="page-title">名人堂</h1>
-
-    <!-- 可选搜索/筛选 -->
-    <!--
-    <div class="hall-filter">
-      <input type="text" id="hall-search" placeholder="搜索名人...">
+    <div class="title-wrapper">
+      <h1 class="elegant-title">CPU 名人堂</h1>
+      <p class="elegant-subtitle">Legendary Roster</p>
     </div>
-    -->
-    <!-- 名人卡片网格 -->
-    <div class="hall-grid">
+
+    <div class="glass-grid">
       {% for person in site.data.hall %}
-      <div class="hall-card">
-        <img src="{{ person.avatar }}" alt="{{ person.name }}">
-        <h2>{{ person.name }}</h2>
-        <p>{{ person.title }}</p>
-        <p class="bio">{{ person.bio }}</p>
-        
-        {% if person.link %}
-        <!--隐藏查看更多按钮
-        <a href="{{ person.link }}" target="_blank" class="more-btn">查看更多</a>
-        -->
-        {% endif %}
+      <div class="glass-card">
+        <div class="card-inner">
+          <div class="avatar-ring">
+            <img src="{{ person.avatar }}" alt="{{ person.name }}" class="glass-avatar">
+          </div>
+          
+          <div class="info-group">
+            <span class="glass-role">{{ person.title }}</span>
+            <h2 class="glass-name">{{ person.name }}</h2>
+            <p class="glass-bio">{{ person.bio }}</p>
+          </div>
+          
+          {% if person.link %}
+          <a href="{{ person.link }}" target="_blank" class="glass-btn">
+            了解更多
+          </a>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<!-- 样式 -->
 <style>
-    .hall-page {
-    padding: 60px 20px;
-    background: #f9f9f9;
-    }
+  /* 柔和动感背景，让毛玻璃效果凸显 */
+  .glass-hall {
+    padding: 80px 20px;
+    /* 使用柔和的渐变色作为背景底色 */
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
 
-    .page-title {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title-wrapper {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #333;
-    }
+    margin-bottom: 60px;
+  }
 
-    .hall-filter {
-    text-align: center;
-    margin-bottom: 40px;
-    }
+  .elegant-title {
+    font-size: 3rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-weight: 700;
+  }
 
-    .hall-filter input {
-    padding: 10px 15px;
-    width: 300px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    }
+  .elegant-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
 
-    .hall-grid {
+  .glass-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    }
+  }
 
-    .hall-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
+  /* 毛玻璃卡片核心样式 */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    }
+  }
 
-    .hall-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+  .glass-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.15);
+    background: rgba(255, 255, 255, 0.35);
+  }
 
-    .hall-card img {
+  .card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  .avatar-ring {
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .glass-avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
-    }
+    display: block;
+  }
 
-    .hall-card h2 {
-    font-size: 20px;
-    margin: 10px 0 5px;
-    }
+  .info-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .hall-card p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-    }
+  .glass-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #555;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
 
-    .hall-card .more-btn {
+  .glass-name {
+    font-size: 1.3rem;
+    color: #222;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  .glass-bio {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .glass-btn {
     display: inline-block;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: #fff;
-    background: #007acc;
-    border-radius: 6px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
-    transition: background 0.2s;
-    }
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
 
-    .hall-card .more-btn:hover {
-    background: #005999;
-    }
-
+  .glass-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transform: scale(1.05);
+  }
 </style>
-
-<!-- JS 搜索功能 -->
-<!--
-<script>
-const searchInput = document.getElementById('hall-search');
-const cards = document.querySelectorAll('.hall-card');
-
-searchInput.addEventListener('input', function() {
-  const keyword = this.value.toLowerCase();
-  cards.forEach(card => {
-    const name = card.querySelector('h2').textContent.toLowerCase();
-    const bio = card.querySelector('.bio').textContent.toLowerCase();
-    if(name.includes(keyword) || bio.includes(keyword)){
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-});
-</script>
--->
