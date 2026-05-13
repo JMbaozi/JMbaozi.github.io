@@ -69,7 +69,7 @@ lang: "zh-Hans"
 
 # 📬 联系方式
 
-* **Email**: [me@yucol.uk](mailto:me@yucol.uk)
+* **Email**: [me@yucol.top](mailto:me@yucol.top)
 * **GitHub**: [JMbaozi](https://github.com/JMbaozi)
 * **Weibo**： [@乖乖龙地冬丶](https://weibo.com/3958305706)
 * **WeChat**: Yucoled & Lum0sing
