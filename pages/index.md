@@ -39,7 +39,7 @@ lang: "zh-Hans"
 | :--- | :--- |
 | **Backend** | Python / C++ |
 | **Frontend** | HTML / CSS / JavaScript / Vue |
-| **Database** | SQLite |
+| **Database** | SQLite / PostgreSQL / MySQL |
 | **Other** | GIS / RS / 统计分析 / 热红外遥感 |
 
 ---

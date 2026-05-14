@@ -37,7 +37,7 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 | :--- | :--- |
 | **Backend** | Python / C++ |
 | **Frontend** | HTML / CSS / JavaScript / Vue |
-| **Database** | SQLite |
+| **Database** | SQLite / PostgreSQL / MySQL |
 | **Domain** | GIS / Remote Sensing / Statistical Analysis / Thermal Infrared RS |
 
 ---
