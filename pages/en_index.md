@@ -24,7 +24,7 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 
 # 💼 Work Experience
 
-* **Hebei Xiong'an XX Co., Ltd.** · GIS Developer  
+* **Laboratory of Soil Big Data and Intelligent Detection, Chinese Academy of Sciences** · GIS Developer  
   *2025.11 ~ Present*
 * **Geophysical Exploration Research Institute of China National Administration of Coal Geology** · Data Processing  
   *2025.07 ~ 2025.10*
