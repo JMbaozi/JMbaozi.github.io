@@ -25,9 +25,9 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 # 💼 Work Experience
 
 * **Laboratory of Soil Big Data and Intelligent Detection, Chinese Academy of Sciences** · GIS Developer  
-  *2025.11 ~ Present*
+  XingAn New District | *2025.11 ~ Present*
 * **Geophysical Exploration Research Institute of China National Administration of Coal Geology** · Data Processing  
-  *2025.07 ~ 2025.10*
+  ZhuoZhou | *2025.07 ~ 2025.10*
 
 ---
 
@@ -35,8 +35,8 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 
 | Dimension | Skills |
 | :--- | :--- |
-| **Backend** | Python / C++ |
-| **Frontend** | HTML / CSS / JavaScript / Vue |
+| **Backend** | Python / FastAPI |
+| **Frontend** | HJC / TypeScript / JavaScript / Vue |
 | **Database** | SQLite / PostgreSQL / MySQL |
 | **Domain** | GIS / Remote Sensing / Statistical Analysis / Thermal Infrared RS |
 
@@ -71,4 +71,4 @@ I’m a die-hard fan of **Team Spirit** (big fan of **Donk**) and a lover of vid
 * **Email**: [me@yucol.uk](mailto:me@yucol.uk)
 * **GitHub**: [JMbaozi](https://github.com/JMbaozi)
 * **Weibo**: [@乖乖龙地冬丶](https://weibo.com/3958305706)
-* **WeChat**: Yucoled & Lum0sing
+* **WeChat**: Lum0sing

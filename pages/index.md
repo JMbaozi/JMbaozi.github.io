@@ -27,9 +27,9 @@ lang: "zh-Hans"
 # 💼 工作经历
 
 * **中国科学院土壤大数据与智能检测实验室** · GIS开发
-    *2025.11 ~ 至今*
+    雄安新区 | *2025.11 ~ 至今*
 * **中国煤炭地质总局地球物理勘探研究院** · 数据处理
-    *2025.07 ~ 2025.10*
+    河北涿州 | *2025.07 ~ 2025.10*
 
 ---
 
@@ -37,8 +37,8 @@ lang: "zh-Hans"
 
 | 维度 | 内容 |
 | :--- | :--- |
-| **Backend** | Python / C++ |
-| **Frontend** | HTML / CSS / JavaScript / Vue |
+| **Backend** | Python / FastAPI |
+| **Frontend** | HJC / TypeScript / JavaScript / Vue |
 | **Database** | SQLite / PostgreSQL / MySQL |
 | **Other** | GIS / RS / 统计分析 / 热红外遥感 |
 
@@ -72,4 +72,4 @@ lang: "zh-Hans"
 * **Email**: [me@yucol.top](mailto:me@yucol.top)
 * **GitHub**: [JMbaozi](https://github.com/JMbaozi)
 * **Weibo**： [@乖乖龙地冬丶](https://weibo.com/3958305706)
-* **WeChat**: Yucoled & Lum0sing
+* **WeChat**: Lum0sing
