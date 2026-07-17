@@ -71,5 +71,4 @@ lang: "zh-Hans"
 
 * **Email**: [me@yucol.top](mailto:me@yucol.top)
 * **GitHub**: [JMbaozi](https://github.com/JMbaozi)
-* **Weibo**： [@乖乖龙地冬丶](https://weibo.com/3958305706)
 * **WeChat**: Lum0sing
