@@ -101,7 +101,7 @@ mathjax: true
 
 # Share
 social-share: true
-social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
+social-share-items: ['wechat', 'douban', 'twitter']
 
 # theme color 主题皮肤
 theme-color: 'default'  # pink or default
@@ -116,7 +116,7 @@ sns:
   # researchgate: 'https://www.researchgate.net/profile/Shengzhou-Li'
   # ORCID: 'https://orcid.org/0000-0001-6973-3825'
   github: 'https://github.com/JMbaozi'
-  weibo: 'https://weibo.com/3958305706'
+  # weibo: 'https://weibo.com/3958305706'
   twitter: 'https://x.com/Yucoly'
   instagram: 'https://www.instagram.com/yucoled/'
   # linkedin: 'https://www.linkedin.com/in/shengzhouli/'
