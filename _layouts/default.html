@@ -49,6 +49,7 @@
             */
             function scrollToAdjust(id){
               var element = document.getElementById(id);
+              if (!element) return;
               var headerOffset = 90;
               var elementPosition = element.getBoundingClientRect().top;
               var offsetPosition = elementPosition + window.scrollY - headerOffset;
