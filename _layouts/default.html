@@ -33,16 +33,16 @@
             {% include layouts/footer.html %}
         </div>
         {% include plugins/markdown/mermaid_block.html %}
-        <script src="https://npm.elemecdn.com/axios/dist/axios.min.js"></script>
-        <script src="https://npm.elemecdn.com/jquery/dist/jquery.min.js"></script>
-        <script src="https://npm.elemecdn.com/lazysizes/lazysizes.min.js" async></script>
+        <script src="https://cdn.jsdmirror.com/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdmirror.com/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdmirror.com/npm/lazysizes/lazysizes.min.js" async></script>
         {% if layout.type == "post" %}
             {% include layouts/metainfo.html %}
             {% include plugins/others/social_js.html %}
         {% else %}
             {% include plugins/others/calendar_js.html %}
         {% endif %}
-        <script src="https://npm.elemecdn.com/clipboard/dist/clipboard.min.js"></script>
+        <script src="https://cdn.jsdmirror.com/npm/clipboard/dist/clipboard.min.js"></script>
         <script>
             /**
             * Better Scroll Experience
