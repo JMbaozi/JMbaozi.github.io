@@ -1,0 +1,241 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+
+<div class="hp-page">
+
+    <!-- ============ Hero ============ -->
+    <section class="hp-hero">
+        <div class="hp-avatar hp-anim hp-anim-1">
+            <img src="{{ site.avatar | relative_url }}" alt="{{ page.hero.name }}">
+        </div>
+        <h1 class="hp-name hp-anim hp-anim-2">{{ page.hero.name }}</h1>
+        <div class="hp-badgeline hp-anim hp-anim-2">
+            <span class="hp-badge">{{ page.hero.badge }}</span>
+        </div>
+        <p class="hp-quote hp-anim hp-anim-3">“{{ page.hero.quote }}”</p>
+        <p class="hp-tagline hp-anim hp-anim-3">{{ page.hero.tagline }}</p>
+        <div class="hp-hobbies hp-anim hp-anim-4">
+            {% for hobby in page.hero.hobbies %}
+            <span class="hp-chip">{{ hobby }}</span>
+            {% endfor %}
+        </div>
+        <div class="hp-socials hp-anim hp-anim-5">
+            {% for c in page.contacts %}
+            {% if c.href %}
+            <a class="hp-social" href="{{ c.href }}" {% if c.href contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+                {% if c.icon == "github" %}
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                {% elsif c.icon == "mail" %}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                {% else %}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                {% endif %}
+                <span>{{ c.label }} · {{ c.value }}</span>
+            </a>
+            {% else %}
+            <button type="button" class="hp-social" data-copy="{{ c.value }}">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                <span>{{ c.label }} · {{ c.value }}（{{ page.titles.click_copy }}）</span>
+            </button>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- ============ 主体 ============ -->
+    <main class="hp-main">
+
+        <div class="hp-lang">{% include plugins/i18n.html %}</div>
+
+        {% if page.timeline.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.timeline }}</h2>
+            <div class="hp-timeline">
+                {% for item in page.timeline %}
+                <div class="hp-tl-item hp-reveal">
+                    <div class="hp-tl-dot {{ item.type }}"></div>
+                    <div class="hp-tl-card">
+                        <div class="hp-tl-head">
+                            {% if item.type == "work" %}
+                            <span class="hp-tl-type work">{{ page.titles.type_work }}</span>
+                            {% else %}
+                            <span class="hp-tl-type edu">{{ page.titles.type_edu }}</span>
+                            {% endif %}
+                            <span class="hp-tl-date">{{ item.date }}</span>
+                        </div>
+                        <h3 class="hp-tl-org">{{ item.org }}</h3>
+                        <p class="hp-tl-role">{{ item.role }}{% if item.loc %} · {{ item.loc }}{% endif %}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.skills.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.skills }}</h2>
+            <div class="hp-cards">
+                {% for s in page.skills %}
+                <div class="hp-card hp-reveal">
+                    <div class="hp-card-icon">{{ s.icon }}</div>
+                    <h3>{{ s.category }}</h3>
+                    <div class="hp-tags">
+                        {% for t in s.items %}<span>{{ t }}</span>{% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.honors.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.honors }}</h2>
+            <div class="hp-honors">
+                {% for group in page.honors %}
+                <div class="hp-honor-group hp-reveal">
+                    <h3>{{ group.group }}</h3>
+                    {% for item in group.items %}
+                    <div class="hp-honor-item">
+                        <p class="hp-honor-title">{{ item.title }}</p>
+                        <p class="hp-honor-org">{{ item.org }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if site.posts.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.posts }}</h2>
+            <div class="hp-posts hp-reveal">
+                {% for post in site.posts limit: 5 %}
+                <a class="hp-post" href="{{ post.url | relative_url }}">
+                    <span class="hp-post-date">{{ post.date | date: '%Y-%m-%d' }}</span>
+                    <span class="hp-post-title">{{ post.title }}</span>
+                    {% if post.tags.size > 0 %}
+                    <span class="hp-post-tags">
+                        {% for t in post.tags limit: 2 %}<span class="hp-post-tag">{{ t }}</span>{% endfor %}
+                    </span>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
+            <a class="hp-viewall" href="{{ '/blog/index.html' | relative_url }}">{{ page.titles.view_all }}</a>
+
+            {% assign max_tag_count = 0 %}
+            {% for tag in site.tags %}
+                {% if tag[1].size > max_tag_count %}
+                    {% assign max_tag_count = tag[1].size %}
+                {% endif %}
+            {% endfor %}
+            {% assign shown_tags = 0 %}
+            <div class="hp-tagrow hp-reveal">
+                <span class="hp-tagrow-label">{{ page.titles.hot_tags }}</span>
+                {% for i in (1..max_tag_count) reversed %}
+                    {% for tag in site.tags %}
+                        {% if tag[1].size == i and shown_tags < 12 %}
+                            {% assign shown_tags = shown_tags | plus: 1 %}
+                            <a class="hp-tagchip" href="{{ '/tags.html' | relative_url }}">{{ tag[0] }} <small>{{ tag[1].size }}</small></a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.badges.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.badges }}</h2>
+            <div class="hp-badges">
+                {% for b in page.badges %}
+                <div class="hp-badge-card hp-reveal">
+                    <span class="hp-badge-icon">{{ b.icon }}</span>
+                    <span class="hp-badge-title">{{ b.title }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if page.contacts.size > 0 %}
+        <section class="hp-section">
+            <h2 class="hp-h2">{{ page.titles.contact }}</h2>
+            <div class="hp-contact">
+                {% for c in page.contacts %}
+                {% if c.href %}
+                <a class="hp-contact-btn" href="{{ c.href }}" {% if c.href contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+                    {% if c.icon == "github" %}
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                    {% elsif c.icon == "mail" %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                    {% else %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                    {% endif %}
+                    <span>{{ c.label }}</span>
+                </a>
+                {% else %}
+                <button type="button" class="hp-contact-btn" data-copy="{{ c.value }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                    <span>{{ c.label }}</span>
+                </button>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+    </main>
+</div>
+
+<script>
+    (function () {
+        // 滚动入场动画
+        var els = document.querySelectorAll('.hp-reveal');
+        if (!('IntersectionObserver' in window)) {
+            els.forEach(function (el) { el.classList.add('hp-in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('hp-in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        els.forEach(function (el, i) {
+            el.style.transitionDelay = (i % 4) * 0.07 + 's';
+            io.observe(el);
+        });
+
+        // 微信号点击复制
+        document.querySelectorAll('[data-copy]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var val = btn.getAttribute('data-copy');
+                var span = btn.querySelector('span');
+                var original = span.innerHTML;
+                function done(ok) {
+                    span.textContent = ok ? '✓ ' + val : val;
+                    setTimeout(function () { span.innerHTML = original; }, 1600);
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(val).then(function () { done(true); }, function () { done(false); });
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = val;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand('copy'); done(true); } catch (e) { done(false); }
+                    document.body.removeChild(ta);
+                }
+            });
+        });
+    })();
+</script>

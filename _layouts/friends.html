@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/links.css' | relative_url }}">
+
+<div class="fl-page">
+
+    <section class="fl-hero">
+        <h1 class="fl-title">LINKS</h1>
+        <p class="fl-sub">{{ page.sub }}</p>
+    </section>
+
+    <main class="fl-main">
+        {% assign idx = 0 %}
+        <div class="fl-grid">
+            {% for f in site.links %}
+            {% assign domain = f[1] | remove: 'https://' | remove: 'http://' | remove: 'www.' %}
+            {% assign domain = domain | split: '/' | first %}
+            {% assign color = idx | modulo: 6 %}
+            <a class="fl-card fl-reveal" href="{{ f[1] }}" target="_blank" rel="noopener noreferrer">
+                <div class="fl-avatar fl-c{{ color }}">{{ f[0] | slice: 0, 1 }}</div>
+                <div class="fl-info">
+                    <div class="fl-name">{{ f[0] }}</div>
+                    <div class="fl-domain">{{ domain }}</div>
+                </div>
+                <svg class="fl-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h4v-4H5v4zm0-6h4V9H5v4zm0-6h4V3H5v4zm6 12h4v-4h-4v4zm0-6h4V9h-4v4zm0-6h4V3h-4v4zm6 12h4v-4h-4v4zm0-6h4V9h-4v4zm0-6h4V3h-4v4z" fill="currentColor"/></svg>
+            </a>
+            {% assign idx = idx | plus: 1 %}
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+<script>
+    (function () {
+        var els = document.querySelectorAll('.fl-reveal');
+        if (!('IntersectionObserver' in window)) {
+            els.forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'none';
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        els.forEach(function (el, i) {
+            el.style.transitionDelay = (i % 6) * 0.06 + 's';
+            io.observe(el);
+        });
+    })();
+</script>

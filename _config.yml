@@ -38,7 +38,8 @@ nav:
   blog: '/blog/index.html'
   archives: '/archives.html'
   tags: '/tags.html'
-  about:   
+  links: '/links.html'
+  about:
     RSS: '/feed.xml'
     HALL: '/hall/'
     News: 'https://news.yucol.top'

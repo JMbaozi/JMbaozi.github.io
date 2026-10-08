@@ -1,0 +1,165 @@
+/* ==========================================================================
+   友链页样式（layout: friends）
+   配色变量与首页 home.css 保持同一套体系
+   ========================================================================== */
+
+.fl-page {
+    --fl-accent: #4a90e2;
+    --fl-card-bg: #ffffff;
+    --fl-card-border: rgba(74, 144, 226, 0.12);
+    --fl-text: #2c3a4b;
+    --fl-text-muted: #6b7a8d;
+    --fl-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    --fl-shadow-hover: 0 8px 24px rgba(74, 144, 226, 0.18);
+}
+
+.night-mode .fl-page {
+    --fl-accent: #81bbff;
+    --fl-card-bg: #262a33;
+    --fl-card-border: rgba(255, 255, 255, 0.08);
+    --fl-text: #d4dae3;
+    --fl-text-muted: #9aa5b3;
+    --fl-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    --fl-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- 页脚贴底 ---------- */
+/* 友链页内容较少，需保证页脚始终位于视口/页面底部 */
+#all {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#all .fl-page {
+    flex: 1 0 auto;
+}
+
+/* ---------- 页头 ---------- */
+.fl-hero {
+    padding: 110px 20px 40px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(140deg, #3d7cc9 0%, #5a9be6 45%, #8ec2f5 100%);
+}
+
+.fl-title {
+    margin: 0 0 6px;
+    font-size: 2rem;
+    letter-spacing: 4px;
+}
+
+.fl-sub {
+    margin: 0;
+    font-size: 0.98rem;
+    opacity: 0.92;
+}
+
+/* ---------- 卡片网格 ---------- */
+.fl-main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 44px 20px 30px;
+}
+
+.fl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.fl-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    background: var(--fl-card-bg);
+    border: 1px solid var(--fl-card-border);
+    border-radius: 14px;
+    box-shadow: var(--fl-shadow);
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.fl-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--fl-shadow-hover);
+    border-color: var(--fl-accent);
+}
+
+/* ---------- 字母头像 ---------- */
+.fl-avatar {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.fl-c0 { background: linear-gradient(135deg, #4a90e2, #74b6f5); }
+.fl-c1 { background: linear-gradient(135deg, #3fb984, #7ddcab); }
+.fl-c2 { background: linear-gradient(135deg, #f2a93b, #f6c66f); }
+.fl-c3 { background: linear-gradient(135deg, #e26d5c, #f09a8c); }
+.fl-c4 { background: linear-gradient(135deg, #9b6dd6, #bd9aec); }
+.fl-c5 { background: linear-gradient(135deg, #38b6c9, #74d6e4); }
+
+/* ---------- 文字 ---------- */
+.fl-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.fl-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--fl-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fl-domain {
+    font-size: 0.8rem;
+    color: var(--fl-text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fl-arrow {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    fill: var(--fl-text-muted);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.25s ease;
+}
+
+.fl-card:hover .fl-arrow {
+    opacity: 1;
+    transform: none;
+    fill: var(--fl-accent);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 640px) {
+    .fl-hero {
+        padding-top: 90px;
+    }
+
+    .fl-main {
+        padding-top: 32px;
+    }
+
+    .fl-grid {
+        grid-template-columns: 1fr;
+    }
+}
